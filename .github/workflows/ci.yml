@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          submodules: true
+
+      - name: Cache
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Format check
+        run: cargo fmt --check
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-features
+
+      - name: Doc build
+        run: RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps
+
+      - name: Test
+        run: cargo test --workspace --all-features
+
+      - name: Codegen drift check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          scripts/codegen.sh
+          git diff --exit-code
+          if [ -n "$(git status --porcelain crates/)" ]; then
+            echo "Untracked generated files detected:"
+            git status --porcelain crates/
+            exit 1
+          fi
+
+      - name: Publish dry-run (leaf crates)
+        run: |
+          cargo publish --dry-run --allow-dirty --package hpxml-common
+          cargo publish --dry-run --allow-dirty --package hpxml-types-v2
+          cargo publish --dry-run --allow-dirty --package hpxml-types-v3
+          cargo publish --dry-run --allow-dirty --package hpxml-types-v4
+          cargo publish --dry-run --allow-dirty --package hpxml-types-v5
+          cargo publish --dry-run --allow-dirty --no-verify --package hpxml-core
+          cargo publish --dry-run --allow-dirty --no-verify --package hpxml
+
+  msrv:
+    name: MSRV
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          submodules: true
+
+      - name: Install Rust 1.86
+        run: rustup override set 1.86.0
+
+      - name: Check
+        run: cargo check --workspace --all-features

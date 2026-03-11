@@ -1,0 +1,21 @@
+[package]
+name = "hpxml-types-v5"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+keywords.workspace = true
+homepage.workspace = true
+repository.workspace = true
+readme = "../../README.md"
+description = "Generated HPXML v5 types for the hpxml crate"
+categories = ["parser-implementations"]
+
+[dependencies]
+xsd-parser-types = { workspace = true }
+quick-xml = { workspace = true }
+regex = { workspace = true }
+
+[lints.clippy]
+never_loop = "allow"

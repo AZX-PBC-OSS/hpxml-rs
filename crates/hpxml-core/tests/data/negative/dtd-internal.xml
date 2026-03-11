@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE HPXML [
+  <!ELEMENT HPXML ANY>
+  <!ATTLIST HPXML schemaVersion CDATA "4.0">
+]>
+<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.0"/>

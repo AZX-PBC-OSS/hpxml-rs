@@ -1,0 +1,37 @@
+[package]
+name = "hpxml-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+keywords.workspace = true
+homepage.workspace = true
+repository.workspace = true
+readme = "../../README.md"
+description = "Core parsing and serialization logic for HPXML (Home Performance XML)"
+categories = ["parser-implementations", "encoding"]
+
+[dependencies]
+hpxml-common = { version = "0.1.0", path = "../hpxml-common" }
+quick-xml = { workspace = true }
+hpxml-types-v2 = { version = "0.1.0", path = "../hpxml-types-v2", optional = true }
+hpxml-types-v3 = { version = "0.1.0", path = "../hpxml-types-v3", optional = true }
+hpxml-types-v4 = { version = "0.1.0", path = "../hpxml-types-v4", optional = true }
+hpxml-types-v5 = { version = "0.1.0", path = "../hpxml-types-v5", optional = true }
+xsd-parser-types = { workspace = true, optional = true }
+
+[package.metadata.docs.rs]
+features = ["v4"]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = []
+v2 = ["dep:hpxml-types-v2", "dep:xsd-parser-types"]
+v3 = ["dep:hpxml-types-v3", "dep:xsd-parser-types"]
+v4 = ["dep:hpxml-types-v4", "dep:xsd-parser-types"]
+v5 = ["dep:hpxml-types-v5", "dep:xsd-parser-types"]
+full = ["v2", "v3", "v4", "v5"]
+
+[lints]
+workspace = true

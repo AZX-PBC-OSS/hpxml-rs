@@ -1,0 +1,43 @@
+[workspace]
+members = ["crates/*"]
+exclude = ["scripts/codegen-runner", "examples/*"]
+resolver = "2"
+
+# Use local vendor version of xsd-parser-types (has namespace fix)
+[patch.crates-io]
+xsd-parser-types = { path = "vendor/xsd-parser/xsd-parser-types" }
+
+# Workspace dependencies (for patched xsd-parser-types)
+[workspace.dependencies]
+quick-xml = "0.38"
+regex = "1.11"
+xsd-parser-types = { version = "0.2", features = ["quick-xml"] }
+
+[workspace.lints.rust]
+warnings = "deny"
+future_incompatible = { level = "warn", priority = -1 }
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "BSD-3-Clause"
+rust-version = "1.86"
+authors = ["HPXML-RS Contributors"]
+keywords = ["hpxml", "xml", "parser", "xsd"]
+readme = "README.md"
+homepage = "https://github.com/AZX-PBC-OSS/hpxml-rs"
+repository = "https://github.com/AZX-PBC-OSS/hpxml-rs"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+
+[profile.dist]
+inherits = "release"
+codegen-units = 1
+debug = 0
+strip = "symbols"
+panic = "abort"

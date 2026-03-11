@@ -1,0 +1,18 @@
+[package]
+name = "hpxml-common"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+keywords.workspace = true
+homepage.workspace = true
+repository.workspace = true
+readme = "../../README.md"
+description = "Shared types and error definitions for the hpxml crate"
+categories = ["parser-implementations"]
+
+[lints]
+workspace = true
+
+[dependencies]

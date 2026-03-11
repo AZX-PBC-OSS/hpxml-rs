@@ -1,0 +1,31 @@
+[package]
+name = "hpxml"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+keywords.workspace = true
+homepage.workspace = true
+repository.workspace = true
+readme.workspace = true
+description = "Rust library for parsing HPXML (Home Performance XML) files"
+categories = ["parser-implementations", "encoding"]
+
+[dependencies]
+hpxml-core = { version = "0.1.0", path = "../hpxml-core" }
+
+[package.metadata.docs.rs]
+features = ["v4"]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = ["v4"]
+v2 = ["hpxml-core/v2"]
+v3 = ["hpxml-core/v3"]
+v4 = ["hpxml-core/v4"]
+v5 = ["hpxml-core/v5"]
+full = ["hpxml-core/full"]
+
+[lints]
+workspace = true

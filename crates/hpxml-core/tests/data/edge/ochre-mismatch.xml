@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- OCHRE pre-release mismatch: v3 namespace with v4 schemaVersion.
+     Per research/01-domain.md §Known problem. -->
+<HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="4.0">
+  <Building><BuildingID id="B1"/></Building>
+</HPXML>
