@@ -144,10 +144,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
+      # Tools intentionally floating: version pins here go stale silently
+      # (pinned cargo-audit 0.22.0 choked on the v4 Cargo.lock) and
+      # Dependabot cannot bump tool strings, only action tags. A breaking
+      # tool release fails this job loudly instead of rotting.
       - name: Install cargo-audit and cargo-deny
-        uses: taiki-e/install-action@d438492cf8a250514fa2d34b30bc3c37c65ff # v2
+        uses: taiki-e/install-action@d438492cf8a250514fa2d34b30bc3c0dc37c65ff # v2
         with:
-          tool: cargo-audit@0.22.0,cargo-deny@0.20.2
+          tool: cargo-audit,cargo-deny
 
       # Fails on new advisories. Known quick-xml 0.38 issues are documented
       # with justification in .cargo/audit.toml until upstream xsd-parser
