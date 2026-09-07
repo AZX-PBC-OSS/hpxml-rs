@@ -24,9 +24,9 @@ cargo test -p hpxml-core --features full
 ### Run examples
 
 ```bash
-cargo run -p hpxml-core --features v4 --example parse_file -- tests/data/v4/audit.xml
-cargo run -p hpxml-core --features full --example inspect_file -- tests/data/v4/audit.xml
-cargo run -p hpxml-core --features v4 --example roundtrip -- tests/data/v4/audit.xml
+cargo run -p hpxml-core --features v4 --example parse_file -- crates/hpxml-core/tests/data/v4/audit.xml
+cargo run -p hpxml-core --features full --example inspect_file -- crates/hpxml-core/tests/data/v4/audit.xml
+cargo run -p hpxml-core --features v4 --example roundtrip -- crates/hpxml-core/tests/data/v4/audit.xml
 ```
 
 ## Project structure
@@ -119,6 +119,13 @@ change further, contribute upstream to
 Please open an issue on [GitHub](https://github.com/AZX-PBC-OSS/hpxml-rs/issues).
 Include the HPXML schema version, a minimal XML reproducer if applicable, and the
 error message or unexpected behavior.
+
+Security vulnerabilities must be reported privately per
+[SECURITY.md](SECURITY.md), never via public issues.
+
+## Code of conduct
+
+Participation is governed by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

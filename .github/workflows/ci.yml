@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+# Cancel superseded runs on the same ref (e.g. rapid pushes to a PR branch).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -77,8 +83,13 @@ jobs:
       # Fails on new advisories. Known quick-xml 0.38 issues are documented
       # with justification in .cargo/audit.toml until upstream xsd-parser
       # publishes types built on quick-xml >= 0.41.
+      # Audit every lockfile: the workspace plus the two standalone
+      # manifests excluded from it (codegen-runner, compile-check example).
       - name: Audit
-        run: cargo audit --deny warnings
+        run: |
+          cargo audit --deny warnings
+          cargo audit --deny warnings --file scripts/codegen-runner/Cargo.lock
+          cargo audit --deny warnings --file examples/codegen-compile-check/Cargo.lock
 
   msrv:
     name: MSRV
@@ -88,11 +99,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          submodules: true
 
       - name: Install Rust 1.86
-        run: rustup override set 1.86.0
+        run: rustup toolchain install 1.86 --component clippy --profile minimal
 
       - name: Check
-        run: cargo check --workspace --all-features
+        run: cargo +1.86 check --workspace --all-features --locked

@@ -166,16 +166,16 @@ cargo test -p hpxml-core --features full
 
 ```bash
 # Parse a v4 file and print building info
-cargo run -p hpxml-core --features v4 --example parse_file -- tests/data/v4/audit.xml
+cargo run -p hpxml-core --features v4 --example parse_file -- crates/hpxml-core/tests/data/v4/audit.xml
 
 # Detect the version of any HPXML file, then parse it
-cargo run -p hpxml-core --features full --example inspect_file -- tests/data/v3/audit.xml
+cargo run -p hpxml-core --features full --example inspect_file -- crates/hpxml-core/tests/data/v3/audit.xml
 
 # Parse, modify, serialize, and verify round-trip equality
-cargo run -p hpxml-core --features v4 --example roundtrip -- tests/data/v4/audit.xml
+cargo run -p hpxml-core --features v4 --example roundtrip -- crates/hpxml-core/tests/data/v4/audit.xml
 
 # Parse with custom size limits and error handling
-cargo run -p hpxml-core --features v4 --example safe_parse -- tests/data/v4/audit.xml 1
+cargo run -p hpxml-core --features v4 --example safe_parse -- crates/hpxml-core/tests/data/v4/audit.xml 1
 ```
 
 ## Documentation
@@ -184,6 +184,8 @@ cargo run -p hpxml-core --features v4 --example safe_parse -- tests/data/v4/audi
 - [Code generation](docs/codegen.md): XSD codegen workflow and configuration
 - [Releasing](docs/releasing.md): publishing checklist, semver policy, CI
 - [Contributing](CONTRIBUTING.md): setup, workflow, PR guidelines
+- [Security](SECURITY.md): vulnerability reporting and supply-chain posture
+- [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## License
 
