@@ -3,6 +3,11 @@
 Types are generated from official HPXML XSD schemas using
 [xsd-parser](https://github.com/Bergmann89/xsd-parser) (v1.5.2, MIT).
 
+Pinned to crates.io releases: the workspace never tracks upstream git main,
+so published crates always build from registry sources. When upstream cuts a
+new release, bump `xsd-parser` / `xsd-parser-types`, re-run codegen, verify
+round-trips, and remove any `.cargo/audit.toml` ignores the release unblocks.
+
 ## Workflow
 
 ```bash

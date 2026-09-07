@@ -220,6 +220,23 @@ macro_rules! conformance_tests {
                 "DTD must be rejected, got: {result:?}"
             );
         }
+
+        #[test]
+        fn test_roundtrip_with_declaration() {
+            let xml = include_bytes!(concat!("../tests/data/", $dir, "/audit.xml"));
+            let doc1 = parse(xml).unwrap();
+            let opts = hpxml_common::SerializeOptions {
+                xml_declaration: true,
+            };
+            let bytes = doc1.to_xml_with_options(&opts).unwrap();
+            let text = String::from_utf8_lossy(&bytes);
+            assert!(
+                text.starts_with("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"),
+                "expected XML declaration"
+            );
+            let doc2 = parse(&bytes).unwrap();
+            assert_eq!(doc1, doc2);
+        }
     };
 }
 

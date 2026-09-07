@@ -58,6 +58,41 @@ jobs:
       - name: Test
         run: cargo test --workspace --all-features --locked
 
+  features:
+    # The main CI jobs only exercise --all-features, which hides breakage
+    # under any other combination (deny-warnings turns an unused import in
+    # one configuration into a failure). Every supported hpxml-core feature
+    # set is checked and tested here. The hpxml facade is excluded: without
+    # version features it is a deliberate compile_error, not a supported
+    # configuration.
+    name: Features
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - flags: --no-default-features
+          - flags: --no-default-features --features v2
+          - flags: --no-default-features --features v3
+          - flags: --no-default-features --features v4
+          - flags: --no-default-features --features v5
+          - flags: --features full
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Cache
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Check and test hpxml-core
+        run: |
+          cargo check -p hpxml-core ${{ matrix.flags }} --locked
+          cargo test -p hpxml-core ${{ matrix.flags }} --locked
+
   drift:
     name: Codegen drift and publish check
     runs-on: ubuntu-latest

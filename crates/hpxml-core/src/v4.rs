@@ -211,18 +211,6 @@ mod tests {
     }
 
     #[test]
-    fn test_roundtrip_with_declaration() {
-        let xml = include_bytes!("../tests/data/v4/minimal.xml");
-        let doc1 = parse(xml).unwrap();
-        let opts = hpxml_common::SerializeOptions {
-            xml_declaration: true,
-        };
-        let bytes = doc1.to_xml_with_options(&opts).unwrap();
-        let doc2 = parse(&bytes).unwrap();
-        assert_eq!(doc1, doc2);
-    }
-
-    #[test]
     fn test_default_options_no_declaration() {
         let xml = include_bytes!("../tests/data/v4/minimal.xml");
         let hpxml = parse(xml).unwrap();
