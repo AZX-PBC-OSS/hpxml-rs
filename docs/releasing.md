@@ -21,16 +21,22 @@ toolchain pinned in `rust-toolchain.toml` (currently 1.94).
 Publish in dependency order with ~30s waits for crates.io indexing:
 
 ```bash
+# 0. Bump the workspace version in the root Cargo.toml ([workspace.package]),
+#    commit, and tag (e.g. v0.2.0) once CI is green on the bump.
+
 # 1. Verify no codegen drift (matches CI, including untracked files)
 scripts/codegen.sh && git diff --exit-code && test -z "$(git status --porcelain crates/)"
 
 # 2. Run all tests
 cargo test --workspace --all-features --locked
 
-# 3. Publish leaf crate
+# 3. Publish leaf crates. hpxml-types-v{2,3,4,5} depend only on crates.io
+#    packages (not on hpxml-common), so common and the type crates are
+#    independent leaves and can publish in any order relative to each other.
 cargo publish -p hpxml-common
 
-# 4. Publish type crates (can be parallel after step 3)
+# 4. Publish type crates (independent of each other; each waits only on
+#    crates.io indexing of its own upload, ~30s between publishes)
 cargo publish -p hpxml-types-v2
 cargo publish -p hpxml-types-v3
 cargo publish -p hpxml-types-v4
@@ -41,6 +47,9 @@ cargo publish -p hpxml-core
 
 # 6. Publish facade (depends on core)
 cargo publish -p hpxml
+
+# 7. Push the version tag; attach release notes describing schema changes
+#    and any handwritten-API changes per the semver policy above.
 ```
 
 ## CI pipeline

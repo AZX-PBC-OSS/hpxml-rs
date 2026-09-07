@@ -32,6 +32,9 @@ crates.io release before public disclosure.
   entry names the upstream release that unblocks its removal.
 - Runtime XML hardening (`crates/hpxml-common/src/config.rs`): 50 MiB
   default size cap, 128-level depth cap, DTD/entity expansion rejected.
+  These limits are security-relevant: use [`ParseConfig::new`] (which rejects
+  zero and absurd values) and raise them above the defaults only for
+  trusted input.
 
 ## Scope notes
 

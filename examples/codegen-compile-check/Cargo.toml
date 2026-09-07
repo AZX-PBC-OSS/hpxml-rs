@@ -2,6 +2,9 @@
 name = "codegen-compile-check"
 version = "0.1.0"
 edition = "2024"
+license = "BSD-3-Clause"
+rust-version = "1.86"
+publish = false
 build = "build.rs"
 
 [features]

@@ -6,13 +6,13 @@ Types are generated from official HPXML XSD schemas using
 ## Workflow
 
 ```bash
-# Fetch schemas (requires curl)
-./scripts/fetch-schema.sh
+# Fetch schemas (requires curl and jq)
+./scripts/fetch-schema.sh v4.2
 
 # Generate all versions
 ./scripts/codegen.sh
 
-# Generate specific versions
+# Generate specific versions (comma-separated, single versions are fine)
 ./scripts/codegen.sh v4
 ```
 
@@ -40,9 +40,11 @@ Config::default()
 
 ## Generated output per version
 
-3 Rust modules matching the 3 XSD files: `hpxml.rs`, `hpxml_base_elements.rs`,
-`hpxml_data_types.rs`, plus `root.rs` (module declarations, namespace constants)
-and `xs.rs` (XML Schema support types).
+3 Rust modules matching the 3 XSD files: `hpxml.rs`, `hpxml_data_types.rs`, and
+the base-elements module — `hpxml_base_elements.rs` for v3/v4/v5,
+`base_elements.rs` for v2 (which ships `BaseElements.xsd` instead of
+`HPXMLBaseElements.xsd`) — plus `root.rs` (module declarations, namespace
+constants) and `xs.rs` (XML Schema support types).
 
 ## XSD construct mapping
 
@@ -58,8 +60,10 @@ and `xs.rs` (XML Schema support types).
 
 ## Drift check
 
-CI verifies committed code matches fresh codegen output:
+CI verifies committed code matches fresh codegen output, including a check
+for untracked files under `crates/`:
 
 ```bash
 scripts/codegen.sh && git diff --exit-code
+test -z "$(git status --porcelain crates/)"
 ```

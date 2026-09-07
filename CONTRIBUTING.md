@@ -36,10 +36,10 @@ crates/
   hpxml/              Public facade crate (cargo add hpxml)
   hpxml-core/         Core logic: inspect, parse, serialize, examples
   hpxml-common/       Shared types: errors, ParseConfig, HpxmlVersion
-  hpxml-types-v{N}/   Generated types per schema version (~440-525K LOC each)
+  hpxml-types-v{N}/   Generated types per schema version (~290-515K LOC each)
 scripts/
   fetch-schema.sh     Fetch XSD schemas from hpxmlwg/hpxml
-  codegen.sh          Run code generation
+  codegen.sh          Run code generation (comma-separated versions, e.g. `./scripts/codegen.sh v3,v4`)
   codegen-runner/     Standalone codegen binary (excluded from workspace, uses crates.io xsd-parser)
 crates/hpxml-core/tests/data/   Test fixtures (see crates/hpxml-core/tests/data/README.md)
 ```
@@ -92,7 +92,9 @@ CI runs all of these plus a `cargo doc` build and codegen drift check.
 Adding a version is mostly automated. See the existing `v2`/`v3`/`v4`/`v5` modules for
 the pattern:
 
-1. Add a schema tag mapping in `scripts/fetch-schema.sh`
+1. No schema-tag mapping exists: XSD files are auto-detected per tag via the
+   GitHub API. Verify `./scripts/fetch-schema.sh --list vN` lists the new
+   tag's XSDs.
 2. Create `crates/hpxml-types-vN/` with a minimal `Cargo.toml` and `src/lib.rs`
 3. Add the feature gate in `crates/hpxml-core/Cargo.toml` and `crates/hpxml/Cargo.toml`
 4. Register the version module in `crates/hpxml-core/src/` (~8 lines using `impl_version_module!`)

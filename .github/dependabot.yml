@@ -46,6 +46,13 @@ updates:
     directory: /examples/codegen-compile-check
     schedule:
       interval: weekly
+    groups:
+      patch-updates:
+        patterns: ["*"]
+        update-types: ["patch"]
+      minor-updates:
+        patterns: ["*"]
+        update-types: ["minor"]
     open-pull-requests-limit: 5
     labels:
       - dependencies

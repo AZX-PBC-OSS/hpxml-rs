@@ -22,9 +22,11 @@
 ignore = [
     # RUSTSEC-2026-0194: quadratic dup-attribute check. Blocked on upstream
     # xsd-parser-types release with quick-xml >= 0.41.
+    # REVIEW 2027-03-01: remove when `cargo tree -i quick-xml` shows >= 0.41.
     "RUSTSEC-2026-0194",
     # RUSTSEC-2026-0195: unbounded NsReader namespace allocation. Blocked on
     # upstream xsd-parser-types release with quick-xml >= 0.41; bounded by
     # ParseConfig::max_bytes.
+    # REVIEW 2027-03-01: remove when `cargo tree -i quick-xml` shows >= 0.41.
     "RUSTSEC-2026-0195",
 ]

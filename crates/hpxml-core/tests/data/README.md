@@ -25,6 +25,7 @@ License: Apache-2.0
 | `audit.xml` | Home energy audit scenario |
 | `bpi2101.xml` | BPI-2101 standard scenario; multiple buildings |
 | `upgrade.xml` | Upgrade package scenario; multiple buildings |
+| `invalid.xml` | Invalid `Transaction` enum value (for rejection tests) |
 
 ## `v3/` from [hpxmlwg/hpxml@v3.1](https://github.com/hpxmlwg/hpxml/tree/v3.1/examples)
 
@@ -35,6 +36,7 @@ License: Apache-2.0
 | `audit.xml` | Home energy audit scenario |
 | `bpi2101.xml` | BPI-2101 standard scenario; multiple buildings, extension elements |
 | `upgrade.xml` | Upgrade package scenario; multiple buildings |
+| `invalid.xml` | Invalid `Transaction` enum value (for rejection tests) |
 
 ## `v4/` official examples from [hpxmlwg/hpxml@v4.2](https://github.com/hpxmlwg/hpxml/tree/v4.2/examples)
 
@@ -113,8 +115,11 @@ License: BSD-3-Clause
 | Multiple items per collection | `openst-hvac-multiple`, `openst-dhw-multiple`, `openst-mechvent-multiple`, `openst-foundation-multiple`, `openst-zones-spaces-multiple` |
 | `extensionType` / `xs:any` | `openst-additional-properties`, `v4/bpi2101.xml`, most `openst-*` files |
 | Zones / Spaces (v4.2) | `openst-zones-spaces`, `openst-zones-spaces-multiple` |
-| Invalid input rejection | `v4/invalid.xml` |
+| Full round-trip (parse/serialize/re-parse) | every fixture above except `invalid.xml` (generated tests) |
+| Invalid input rejection | `v2/invalid.xml`, `v3/invalid.xml`, `v4/invalid.xml`, `v5/invalid.xml` |
 | Minimum required elements | `v4/minimal.xml` |
+| Predefined entity decoding | `edge/entity-refs.xml` |
+| BOM-prefixed input | `edge/bom-minimal.xml` |
 | High-coverage large fixture | `v4/maximal.xml` |
 | Schematron business-rule testing | `schematron/openstudio/EPvalidator.sch` |
 
@@ -142,12 +147,15 @@ License: BSD-3-Clause
 Direct source:
 - `xmlvalidator.rb`: https://raw.githubusercontent.com/NatLabRockies/OpenStudio-HPXML/master/HPXMLtoOpenStudio/resources/xmlvalidator.rb
 
-## Schema Sources (`schemas/v4/`)
+## Schema Sources (`schemas/v{N}/`)
 
-Current local schema files are stored under `schemas/v4/` and sourced from the HPXMLWG repo:
-- `HPXML.xsd`: https://raw.githubusercontent.com/hpxmlwg/hpxml/v4.2/schemas/HPXML.xsd
-- `HPXMLBaseElements.xsd`: https://raw.githubusercontent.com/hpxmlwg/hpxml/v4.2/schemas/HPXMLBaseElements.xsd
-- `HPXMLDataTypes.xsd`: https://raw.githubusercontent.com/hpxmlwg/hpxml/v4.2/schemas/HPXMLDataTypes.xsd
+Current local schema files are stored under `schemas/v2/`, `schemas/v3/`,
+`schemas/v4/`, `schemas/v5/` and sourced from the HPXMLWG repo
+(`schemas/vN/HPXML.xsd` carries `version="2.3"` / `"3.1"` / `"4.2"` / `"5.0"`):
+- v2: https://raw.githubusercontent.com/hpxmlwg/hpxml/v2.3/schemas/ (HPXML.xsd, BaseElements.xsd, HPXMLDataTypes.xsd)
+- v3: https://raw.githubusercontent.com/hpxmlwg/hpxml/v3.1/schemas/ (HPXML.xsd, HPXMLBaseElements.xsd, HPXMLDataTypes.xsd)
+- v4: https://raw.githubusercontent.com/hpxmlwg/hpxml/v4.2/schemas/ (HPXML.xsd, HPXMLBaseElements.xsd, HPXMLDataTypes.xsd)
+- v5: https://raw.githubusercontent.com/hpxmlwg/hpxml/v5.0-rc1/schemas/ (HPXML.xsd, HPXMLBaseElements.xsd, HPXMLDataTypes.xsd)
 
 ## `schematron/examples/` local planning profiles (non-official)
 
@@ -165,7 +173,8 @@ official downloadable `.sch` files for Toolbox profile names
 
 ## Refreshing
 
-To re-download all upstream files, run from the repo root:
+To re-download all upstream files, run from `crates/hpxml-core/`
+(the paths below are relative to that directory):
 
 ```sh
 BASE2="https://raw.githubusercontent.com/hpxmlwg/hpxml/v2.3/examples"

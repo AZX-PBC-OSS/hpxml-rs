@@ -1,10 +1,10 @@
 # codegen-compile-check
 
-Small standalone project that generates full HPXML bindings (v3/v4/v5) with `xsd-parser` and compiles them.
+Small standalone project that generates full HPXML bindings (v2/v3/v4/v5) with `xsd-parser` and compiles them.
 
 ## What it checks
 
-- `xsd-parser` config from `research/05-xsd-codegen.md` compiles full generated modules.
+- `xsd-parser` config from `docs/codegen.md` compiles full generated modules.
 - Optional strict mode (`deny-warnings`) to check warning posture.
 
 ## Run

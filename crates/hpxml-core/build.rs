@@ -87,7 +87,7 @@ fn main() {
             writeln!(roundtrip_code, "    fn roundtrip_{test_name}() {{").unwrap();
             writeln!(
                 roundtrip_code,
-                "        let bytes = include_bytes!(concat!(env!(\"CARGO_MANIFEST_DIR\"), \"/tests/data/{rel_path}\"));"
+                "        let bytes = fixture!(\"{rel_path}\");"
             )
             .unwrap();
             writeln!(

@@ -1,6 +1,11 @@
 #![cfg_attr(feature = "deny-warnings", deny(warnings))]
 
 #[allow(dead_code)]
+mod generated_v2 {
+    include!(concat!(env!("OUT_DIR"), "/generated_v2/root.rs"));
+}
+
+#[allow(dead_code)]
 mod generated_v3 {
     include!(concat!(env!("OUT_DIR"), "/generated_v3/root.rs"));
 }
@@ -16,7 +21,7 @@ mod generated_v5 {
 }
 
 fn main() {
-    println!("Generated + compiled modules: v3, v4, v5");
+    println!("Generated + compiled modules: v2, v3, v4, v5");
 }
 
 #[cfg(test)]

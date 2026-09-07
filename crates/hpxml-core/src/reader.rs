@@ -468,8 +468,8 @@ mod integration_tests {
             result.is_err(),
             "Expected error due to depth limit on minimal.xml"
         );
-        let err2 = result2.unwrap_err();
-        assert_depth_limit_error(&err2, 2);
+        let err = result.unwrap_err();
+        assert_depth_limit_error(&err, 2);
     }
 
     #[test]

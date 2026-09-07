@@ -44,6 +44,12 @@ fn rustfmt(code: &str) -> String {
 fn run_for_version(version: &str, repo_root: &Path) -> Result<(), Box<dyn Error + Send + Sync>> {
     let schema_path = repo_root.join("schemas").join(version).join("HPXML.xsd");
     if !schema_path.exists() {
+        // Failing closed in CI keeps the drift gate from passing vacuously
+        // when a schema fetch failed; locally, skipping lets developers
+        // regenerate one version without fetching the rest.
+        if env::var("CI").is_ok() {
+            return Err(format!("schema not found for {version}: failing closed in CI").into());
+        }
         eprintln!("Warning: schema not found for {}, skipping", version);
         return Ok(());
     }

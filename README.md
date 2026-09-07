@@ -86,7 +86,7 @@ use hpxml::{v4, ParseConfig};
 
 let bytes = std::fs::read("audit.xml")?;
 let config = ParseConfig {
-    max_bytes: 10_000_000,  // 10 MB limit
+    max_bytes: 10_485_760,  // 10 MiB limit
     max_depth: 64,          // XML nesting depth limit
     ..Default::default()
 };
@@ -128,12 +128,12 @@ Three error types cover the full API:
 
 ## Schema versions
 
-| Feature | HPXML Version | Schema Versions |
-|---------|--------------|-----------------|
-| `v2`    | 2.x          | 2.0 - 2.3.1    |
-| `v3`    | 3.x          | 3.0 - 3.1      |
-| `v4`    | 4.x          | 4.0 - 4.2      |
-| `v5`    | 5.x          | 5.0rc1+        |
+| Feature | HPXML Version | Tested schema |
+|---------|--------------|---------------|
+| `v2`    | 2.x          | 2.3           |
+| `v3`    | 3.x          | 3.1           |
+| `v4`    | 4.x          | 4.2           |
+| `v5`    | 5.x          | 5.0-rc1       |
 
 ## Development
 
