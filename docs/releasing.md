@@ -13,8 +13,13 @@ Bump to 1.0 after first real consumer integration.
 
 ## MSRV
 
-All crates declare `rust-version = "1.86"` (Edition 2024 floor). CI builds with the
-toolchain pinned in `rust-toolchain.toml` (currently 1.94).
+All crates declare `rust-version = "1.86"` (Edition 2024 floor). Day-to-day CI
+uses the toolchain pinned in `rust-toolchain.toml` (currently 1.94); the
+`msrv` job enforces `rust-version = "1.86"` with `check` + `test`.
+
+`[profile.dist]` sets `panic = "abort"`: never run tests or benches under
+`--profile dist`, and note that downstream `catch_unwind` around hpxml calls
+would abort instead of unwinding in dist-profile binaries.
 
 ## Publishing checklist
 

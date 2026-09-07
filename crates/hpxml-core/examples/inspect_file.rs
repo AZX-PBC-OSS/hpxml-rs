@@ -6,12 +6,7 @@
 //! Example:
 //!   cargo run -p hpxml-core --features full --example inspect_file -- crates/hpxml-core/tests/data/v4/audit.xml
 
-#[cfg(any(
-    feature = "v2",
-    feature = "v3",
-    feature = "v4",
-    feature = "v5"
-))]
+#[cfg(any(feature = "v2", feature = "v3", feature = "v4", feature = "v5"))]
 fn main() {
     if let Err(e) = run() {
         eprintln!("error: {e}");
@@ -19,23 +14,13 @@ fn main() {
     }
 }
 
-#[cfg(not(any(
-    feature = "v2",
-    feature = "v3",
-    feature = "v4",
-    feature = "v5"
-)))]
+#[cfg(not(any(feature = "v2", feature = "v3", feature = "v4", feature = "v5")))]
 fn main() {
     eprintln!("This example requires a version feature: --features v4 (or full)");
     std::process::exit(1);
 }
 
-#[cfg(any(
-    feature = "v2",
-    feature = "v3",
-    feature = "v4",
-    feature = "v5"
-))]
+#[cfg(any(feature = "v2", feature = "v3", feature = "v4", feature = "v5"))]
 fn run() -> Result<(), Box<dyn std::error::Error>> {
     let path = std::env::args()
         .nth(1)

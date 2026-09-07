@@ -5,8 +5,8 @@
 ## Checklist
 
 - [ ] `cargo fmt --check` clean
-- [ ] `cargo clippy --workspace --all-features` clean
-- [ ] `cargo test --workspace --all-features` passes
+- [ ] `cargo clippy --workspace --all-features --locked -- -D warnings` clean
+- [ ] `cargo test --workspace --all-features --locked` passes
 - [ ] No hand edits under `crates/hpxml-types-vN/` (regenerate via `scripts/codegen.sh`; CI drift check must pass)
 - [ ] Docs updated (`README.md`, `docs/`, or crate rustdoc as appropriate)
 - [ ] `cargo audit` clean (or new `.cargo/audit.toml` entry with upstream unblock noted)
