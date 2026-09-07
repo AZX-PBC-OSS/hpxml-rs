@@ -1,0 +1,59 @@
+name: Bug report
+description: Something parses, serializes, or round-trips incorrectly
+title: "fix: "
+labels: [bug]
+body:
+  - type: dropdown
+    id: crate
+    attributes:
+      label: Affected crate
+      options:
+        - hpxml (facade)
+        - hpxml-core
+        - hpxml-common
+        - hpxml-types-v2
+        - hpxml-types-v3
+        - hpxml-types-v4
+        - hpxml-types-v5
+        - codegen / CI
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: HPXML schema version
+      options:
+        - v2
+        - v3
+        - v4
+        - v5
+        - not version-specific
+    validations:
+      required: true
+  - type: input
+    id: crate-version
+    attributes:
+      label: Crate version
+      description: Output of `cargo tree -p hpxml` or the crates.io version
+      placeholder: 0.1.0
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Minimal reproducer
+      description: Smallest XML snippet (or Rust code) that triggers the bug
+      render: xml
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I tested against the current `feat/initial-implementation` head
+        - label: This is not a codegen-output issue that belongs upstream (Bergmann89/xsd-parser)

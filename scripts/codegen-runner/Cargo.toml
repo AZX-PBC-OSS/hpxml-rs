@@ -1,0 +1,22 @@
+[package]
+name = "codegen-runner"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+proc-macro2 = "1"
+quote = "1"
+# Codegen-only dependency on the maintained upstream release.
+# Contains all 4 fixes previously carried in vendor/xsd-parser.
+xsd-parser = "1.5.2"
+
+[workspace]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+debug = 0
+strip = "symbols"
+panic = "abort"

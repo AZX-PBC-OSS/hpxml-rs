@@ -1,0 +1,29 @@
+[package]
+name = "codegen-compile-check"
+version = "0.1.0"
+edition = "2024"
+build = "build.rs"
+
+[features]
+default = []
+deny-warnings = []
+
+[dependencies]
+quick-xml = "0.38"
+regex = "1"
+xsd-parser-types = { version = "0.2.1", features = ["quick-xml"] }
+
+[profile.dev]
+debug = 0
+codegen-units = 256
+
+[profile.test]
+debug = 0
+codegen-units = 256
+
+[workspace]
+
+[build-dependencies]
+proc-macro2 = "1"
+quote = "1"
+xsd-parser = "1.5.2"

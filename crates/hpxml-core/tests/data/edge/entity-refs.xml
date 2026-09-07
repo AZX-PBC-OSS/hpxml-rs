@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Valid v4 HPXML with XML entity references for Event::GeneralRef testing.
+     Per TODO.md Phase 0. -->
+<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.0">
+  <XMLTransactionHeaderInformation>
+    <XMLType>HPXML</XMLType>
+    <XMLGeneratedBy>test</XMLGeneratedBy>
+    <CreatedDateAndTime>2024-01-01T00:00:00-00:00</CreatedDateAndTime>
+    <Transaction>create</Transaction>
+  </XMLTransactionHeaderInformation>
+  <SoftwareInfo/>
+  <Building>
+    <BuildingID id="B1"/>
+    <ProjectStatus>
+      <EventType>audit</EventType>
+      <Note>Test &amp; ampersand &lt; less-than</Note>
+    </ProjectStatus>
+  </Building>
+</HPXML>

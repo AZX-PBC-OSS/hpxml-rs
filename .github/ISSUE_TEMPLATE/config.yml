@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/AZX-PBC-OSS/hpxml-rs/tree/main/docs
+    about: Architecture, codegen, and release docs
+  - name: Security report
+    url: https://github.com/AZX-PBC-OSS/hpxml-rs/security/advisories/new
+    about: Please report vulnerabilities privately instead of filing an issue

@@ -1,0 +1,36 @@
+name: Feature request
+description: New capability, version support, or API improvement
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What can't you do today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API
+      description: Sketch the API (function signatures, feature flags, version modules)
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - new HPXML version module
+        - handwritten API (inspect/parse/serialize)
+        - safety limits / hardening
+        - codegen configuration
+        - docs / examples
+        - CI / release automation
+        - other
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: I understand generated code in `crates/hpxml-types-vN/` is never hand-edited

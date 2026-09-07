@@ -1,0 +1,25 @@
+# cargo-audit configuration: https://rustsec.org/
+#
+# The two ignores below are HIGH-severity DoS advisories in quick-xml 0.38,
+# fixed upstream in quick-xml >= 0.41.0. We cannot upgrade yet: crates.io
+# xsd-parser-types 0.2.1 (which generates our API types) requires
+# quick-xml ^0.38, and upstream xsd-parser has not cut a release containing
+# its 0.41 bump (commit eb356b2, Jul 2026).
+#
+# Tracked for removal once upstream publishes xsd-parser-types > 0.2.1:
+# https://github.com/Bergmann89/xsd-parser
+#
+# Mitigations in the meantime (see crates/hpxml-common/src/config.rs):
+# - ParseConfig::max_bytes defaults to 50 MiB (bounds NsReader allocation)
+# - DepthLimitedReader defaults to 128 levels (bounds recursion/stack)
+# - DTD/entity expansion is rejected before parsing
+[advisories]
+ignore = [
+    # RUSTSEC-2026-0194: quadratic dup-attribute check. Blocked on upstream
+    # xsd-parser-types release with quick-xml >= 0.41.
+    "RUSTSEC-2026-0194",
+    # RUSTSEC-2026-0195: unbounded NsReader namespace allocation. Blocked on
+    # upstream xsd-parser-types release with quick-xml >= 0.41; bounded by
+    # ParseConfig::max_bytes.
+    "RUSTSEC-2026-0195",
+]
