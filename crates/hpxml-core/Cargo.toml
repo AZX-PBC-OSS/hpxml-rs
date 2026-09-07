@@ -13,12 +13,12 @@ description = "Core parsing and serialization logic for HPXML (Home Performance 
 categories = ["parser-implementations", "encoding"]
 
 [dependencies]
-hpxml-common = { version = "0.1.0", path = "../hpxml-common" }
+hpxml-common = { workspace = true }
 quick-xml = { workspace = true }
-hpxml-types-v2 = { version = "0.1.0", path = "../hpxml-types-v2", optional = true }
-hpxml-types-v3 = { version = "0.1.0", path = "../hpxml-types-v3", optional = true }
-hpxml-types-v4 = { version = "0.1.0", path = "../hpxml-types-v4", optional = true }
-hpxml-types-v5 = { version = "0.1.0", path = "../hpxml-types-v5", optional = true }
+hpxml-types-v2 = { workspace = true, optional = true }
+hpxml-types-v3 = { workspace = true, optional = true }
+hpxml-types-v4 = { workspace = true, optional = true }
+hpxml-types-v5 = { workspace = true, optional = true }
 xsd-parser-types = { workspace = true, optional = true }
 
 [package.metadata.docs.rs]

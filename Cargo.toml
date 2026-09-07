@@ -11,6 +11,15 @@ quick-xml = "0.38"
 regex = "1.11"
 xsd-parser-types = { version = "0.2.1", features = ["quick-xml"] }
 
+# Intra-workspace deps live here so a version bump touches one block, not
+# every member manifest. Members declare these with `{ workspace = true }`.
+hpxml-common = { version = "0.2.0", path = "crates/hpxml-common" }
+hpxml-core = { version = "0.2.0", path = "crates/hpxml-core" }
+hpxml-types-v2 = { version = "0.2.0", path = "crates/hpxml-types-v2" }
+hpxml-types-v3 = { version = "0.2.0", path = "crates/hpxml-types-v3" }
+hpxml-types-v4 = { version = "0.2.0", path = "crates/hpxml-types-v4" }
+hpxml-types-v5 = { version = "0.2.0", path = "crates/hpxml-types-v5" }
+
 [workspace.lints.rust]
 warnings = "deny"
 future_incompatible = { level = "warn", priority = -1 }
@@ -19,7 +28,7 @@ future_incompatible = { level = "warn", priority = -1 }
 all = { level = "deny", priority = -1 }
 
 [workspace.package]
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 license = "BSD-3-Clause"
 rust-version = "1.86"
