@@ -1,7 +1,7 @@
 # Code Generation
 
 Types are generated from official HPXML XSD schemas using
-[xsd-parser](https://github.com/Bergmann89/xsd-parser) (v1.5.0, MIT).
+[xsd-parser](https://github.com/Bergmann89/xsd-parser) (v1.5.2, MIT).
 
 ## Workflow
 

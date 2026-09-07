@@ -875,14 +875,6 @@ pub mod quick_xml_serialize {
                             ),
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
-                        helper.begin_ns_scope();
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         bytes.extend_attributes(self.value.any_attribute.attributes());
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
@@ -904,7 +896,6 @@ pub mod quick_xml_serialize {
                     },
                     AnyTypeSerializerState::End__ => {
                         *self.state = AnyTypeSerializerState::Done__;
-                        helper.end_ns_scope();
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::End(
                             ::xsd_parser_types::quick_xml::BytesEnd::new(self.name),
                         )));

@@ -1,12 +1,63 @@
 version: 2
 
 updates:
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: weekly
-
+  # Main workspace: runtime deps (xsd-parser-types, quick-xml, regex).
   - package-ecosystem: cargo
     directory: /
     schedule:
       interval: weekly
+    # Group non-breaking updates to reduce PR noise; major bumps (e.g. a
+    # future xsd-parser-types with quick-xml >= 0.41) get their own PR since
+    # they require codegen re-runs and round-trip verification.
+    groups:
+      patch-updates:
+        patterns: ["*"]
+        update-types: ["patch"]
+      minor-updates:
+        patterns: ["*"]
+        update-types: ["minor"]
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+    commit-message:
+      prefix: chore
+
+  # Standalone codegen runner (excluded from workspace, build-time only).
+  - package-ecosystem: cargo
+    directory: /scripts/codegen-runner
+    schedule:
+      interval: weekly
+    groups:
+      patch-updates:
+        patterns: ["*"]
+        update-types: ["patch"]
+      minor-updates:
+        patterns: ["*"]
+        update-types: ["minor"]
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - codegen
+    commit-message:
+      prefix: chore
+
+  # Standalone compile-check example (excluded from workspace).
+  - package-ecosystem: cargo
+    directory: /examples/codegen-compile-check
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: chore
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: ci

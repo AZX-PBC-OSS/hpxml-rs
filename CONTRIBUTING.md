@@ -10,15 +10,9 @@
 ### Clone and build
 
 ```bash
-git clone --recurse-submodules https://github.com/AZX-PBC-OSS/hpxml-rs.git
+git clone https://github.com/AZX-PBC-OSS/hpxml-rs.git
 cd hpxml-rs
 cargo check --workspace --all-features
-```
-
-If you already cloned without `--recurse-submodules`:
-
-```bash
-git submodule update --init
 ```
 
 ### Run tests
@@ -46,9 +40,8 @@ crates/
 scripts/
   fetch-schema.sh     Fetch XSD schemas from hpxmlwg/hpxml
   codegen.sh          Run code generation
-  codegen-runner/     Standalone codegen binary (excluded from workspace)
+  codegen-runner/     Standalone codegen binary (excluded from workspace, uses crates.io xsd-parser)
 tests/data/           Test fixtures (see tests/data/README.md)
-vendor/xsd-parser/    Git submodule, patched xsd-parser (temporary, until upstream publishes fixes)
 ```
 
 See [docs/architecture.md](docs/architecture.md) for design rationale and crate dependencies.
@@ -107,18 +100,19 @@ the pattern:
 6. Run `./scripts/codegen.sh vN`
 7. Add test fixtures in `tests/data/vN/`
 
-## The vendor/xsd-parser submodule
+## Upstream xsd-parser fixes
 
-The `vendor/xsd-parser/` submodule provides a patched version of
-[xsd-parser](https://github.com/Bergmann89/xsd-parser) with fixes not yet published
-to crates.io. It is used in two ways:
+All fixes we previously carried in a vendored `xsd-parser` fork are merged
+upstream and released in `xsd-parser 1.5.2` / `xsd-parser-types 0.2.1`:
 
-- **Build time**: `scripts/codegen-runner/` links against it to run code generation
-- **Runtime**: `[patch.crates-io]` in the workspace `Cargo.toml` overrides
-  `xsd-parser-types` with the vendored copy
+- missing comma separator between multiple `xs:pattern` facets
+- multiple `xs:pattern` facets using AND instead of OR semantics
+- group ref with `maxOccurs="unbounded"` rejecting the following element
+- `ElementSerializer` emitting invalid `xmlns:=` / duplicate namespaces
 
-This is temporary. Once upstream publishes the fixes, the submodule and patch will be
-removed, and the workspace will depend on the crates.io version directly.
+The workspace depends on crates.io directly. If codegen output needs to
+change further, contribute upstream to
+[xsd-parser](https://github.com/Bergmann89/xsd-parser).
 
 ## Reporting issues
 

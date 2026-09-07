@@ -9651,69 +9651,12 @@ impl ::xsd_parser_types::quick_xml::WithDeserializer for HpwhOperatingMode {
     type Deserializer = quick_xml_deserialize::HpwhOperatingModeDeserializer;
 }
 #[derive(Clone, Debug, PartialEq)]
-pub struct HpwhOperatingModeTypeSimple(pub ::std::string::String);
-impl HpwhOperatingModeTypeSimple {
-    pub fn new(
-        inner: ::std::string::String,
-    ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::ValidateError> {
-        Ok(Self(inner))
-    }
-    #[must_use]
-    pub fn into_inner(self) -> ::std::string::String {
-        self.0
-    }
-    pub fn validate_str(
-        s: &str,
-    ) -> ::core::result::Result<(), ::xsd_parser_types::quick_xml::ValidateError> {
-        static PATTERNS: ::std::sync::LazyLock<
-            [(&::core::primitive::str, ::regex::Regex); 5usize],
-        > = ::std::sync::LazyLock::new(|| {
-            [
-                (
-                    "hybrid/auto",
-                    ::regex::Regex::new("^(?:hybrid/auto)$").unwrap(),
-                ),
-                (
-                    "heat pump only",
-                    ::regex::Regex::new("^(?:heat pump only)$").unwrap(),
-                ),
-                (
-                    "electric heater only",
-                    ::regex::Regex::new("^(?:electric heater only)$").unwrap(),
-                ),
-                (
-                    "high demand/recovery",
-                    ::regex::Regex::new("^(?:high demand/recovery)$").unwrap(),
-                ),
-                ("other", ::regex::Regex::new("^(?:other)$").unwrap()),
-            ]
-        });
-        if !PATTERNS.iter().any(|(_, regex)| regex.is_match(s)) {
-            return Err(::xsd_parser_types::quick_xml::ValidateError::Pattern(
-                PATTERNS[0usize].0,
-            ));
-        }
-        Ok(())
-    }
-}
-impl ::core::convert::From<HpwhOperatingModeTypeSimple> for ::std::string::String {
-    fn from(value: HpwhOperatingModeTypeSimple) -> ::std::string::String {
-        value.0
-    }
-}
-impl ::core::convert::TryFrom<::std::string::String> for HpwhOperatingModeTypeSimple {
-    type Error = ::xsd_parser_types::quick_xml::ValidateError;
-    fn try_from(
-        value: ::std::string::String,
-    ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::ValidateError> {
-        Self::new(value)
-    }
-}
-impl ::core::ops::Deref for HpwhOperatingModeTypeSimple {
-    type Target = ::std::string::String;
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub enum HpwhOperatingModeTypeSimple {
+    HybridAuto,
+    HeatPumpOnly,
+    ElectricHeaterOnly,
+    HighDemandRecovery,
+    Other,
 }
 impl ::xsd_parser_types::quick_xml::SerializeBytes for HpwhOperatingModeTypeSimple {
     fn serialize_bytes(
@@ -9723,7 +9666,17 @@ impl ::xsd_parser_types::quick_xml::SerializeBytes for HpwhOperatingModeTypeSimp
         ::core::option::Option<::std::borrow::Cow<'_, ::core::primitive::str>>,
         ::xsd_parser_types::quick_xml::Error,
     > {
-        self.0.serialize_bytes(helper)
+        match self {
+            Self::HybridAuto => Ok(Some(::std::borrow::Cow::Borrowed("hybrid/auto"))),
+            Self::HeatPumpOnly => Ok(Some(::std::borrow::Cow::Borrowed("heat pump only"))),
+            Self::ElectricHeaterOnly => {
+                Ok(Some(::std::borrow::Cow::Borrowed("electric heater only")))
+            }
+            Self::HighDemandRecovery => {
+                Ok(Some(::std::borrow::Cow::Borrowed("high demand/recovery")))
+            }
+            Self::Other => Ok(Some(::std::borrow::Cow::Borrowed("other"))),
+        }
     }
 }
 impl xsd_parser_types::quick_xml::WithSerializeToBytes for HpwhOperatingModeTypeSimple {}
@@ -9732,11 +9685,18 @@ impl ::xsd_parser_types::quick_xml::DeserializeBytes for HpwhOperatingModeTypeSi
         helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
         bytes: &[::core::primitive::u8],
     ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::Error> {
-        let s =
-            ::core::str::from_utf8(bytes).map_err(::xsd_parser_types::quick_xml::Error::from)?;
-        Self::validate_str(s).map_err(|error| (bytes, error))?;
-        let inner = ::std::string::String::deserialize_str(helper, s)?;
-        Ok(Self::new(inner).map_err(|error| (bytes, error))?)
+        match bytes {
+            b"hybrid/auto" => Ok(Self::HybridAuto),
+            b"heat pump only" => Ok(Self::HeatPumpOnly),
+            b"electric heater only" => Ok(Self::ElectricHeaterOnly),
+            b"high demand/recovery" => Ok(Self::HighDemandRecovery),
+            b"other" => Ok(Self::Other),
+            x => Err(::xsd_parser_types::quick_xml::Error::from(
+                ::xsd_parser_types::quick_xml::ErrorKind::UnknownOrInvalidValue(
+                    ::xsd_parser_types::quick_xml::RawByteStr::from_slice(x),
+                ),
+            )),
+        }
     }
 }
 impl xsd_parser_types::quick_xml::WithDeserializerFromBytes for HpwhOperatingModeTypeSimple {}
@@ -9764,63 +9724,12 @@ impl ::xsd_parser_types::quick_xml::WithDeserializer for HpwhVoltage {
     type Deserializer = quick_xml_deserialize::HpwhVoltageDeserializer;
 }
 #[derive(Clone, Debug, PartialEq)]
-pub struct HpwhVoltageSimple(pub ::std::string::String);
-impl HpwhVoltageSimple {
-    pub fn new(
-        inner: ::std::string::String,
-    ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::ValidateError> {
-        Ok(Self(inner))
-    }
-    #[must_use]
-    pub fn into_inner(self) -> ::std::string::String {
-        self.0
-    }
-    pub fn validate_str(
-        s: &str,
-    ) -> ::core::result::Result<(), ::xsd_parser_types::quick_xml::ValidateError> {
-        static PATTERNS: ::std::sync::LazyLock<
-            [(&::core::primitive::str, ::regex::Regex); 5usize],
-        > = ::std::sync::LazyLock::new(|| {
-            [
-                ("240V", ::regex::Regex::new("^(?:240V)$").unwrap()),
-                ("120V", ::regex::Regex::new("^(?:120V)$").unwrap()),
-                (
-                    "120V dedicated circuit",
-                    ::regex::Regex::new("^(?:120V dedicated circuit)$").unwrap(),
-                ),
-                (
-                    "120V shared circuit",
-                    ::regex::Regex::new("^(?:120V shared circuit)$").unwrap(),
-                ),
-                ("other", ::regex::Regex::new("^(?:other)$").unwrap()),
-            ]
-        });
-        if !PATTERNS.iter().any(|(_, regex)| regex.is_match(s)) {
-            return Err(::xsd_parser_types::quick_xml::ValidateError::Pattern(
-                PATTERNS[0usize].0,
-            ));
-        }
-        Ok(())
-    }
-}
-impl ::core::convert::From<HpwhVoltageSimple> for ::std::string::String {
-    fn from(value: HpwhVoltageSimple) -> ::std::string::String {
-        value.0
-    }
-}
-impl ::core::convert::TryFrom<::std::string::String> for HpwhVoltageSimple {
-    type Error = ::xsd_parser_types::quick_xml::ValidateError;
-    fn try_from(
-        value: ::std::string::String,
-    ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::ValidateError> {
-        Self::new(value)
-    }
-}
-impl ::core::ops::Deref for HpwhVoltageSimple {
-    type Target = ::std::string::String;
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub enum HpwhVoltageSimple {
+    _240V,
+    _120V,
+    _120VDedicatedCircuit,
+    _120VSharedCircuit,
+    Other,
 }
 impl ::xsd_parser_types::quick_xml::SerializeBytes for HpwhVoltageSimple {
     fn serialize_bytes(
@@ -9830,7 +9739,17 @@ impl ::xsd_parser_types::quick_xml::SerializeBytes for HpwhVoltageSimple {
         ::core::option::Option<::std::borrow::Cow<'_, ::core::primitive::str>>,
         ::xsd_parser_types::quick_xml::Error,
     > {
-        self.0.serialize_bytes(helper)
+        match self {
+            Self::_240V => Ok(Some(::std::borrow::Cow::Borrowed("240V"))),
+            Self::_120V => Ok(Some(::std::borrow::Cow::Borrowed("120V"))),
+            Self::_120VDedicatedCircuit => {
+                Ok(Some(::std::borrow::Cow::Borrowed("120V dedicated circuit")))
+            }
+            Self::_120VSharedCircuit => {
+                Ok(Some(::std::borrow::Cow::Borrowed("120V shared circuit")))
+            }
+            Self::Other => Ok(Some(::std::borrow::Cow::Borrowed("other"))),
+        }
     }
 }
 impl xsd_parser_types::quick_xml::WithSerializeToBytes for HpwhVoltageSimple {}
@@ -9839,11 +9758,18 @@ impl ::xsd_parser_types::quick_xml::DeserializeBytes for HpwhVoltageSimple {
         helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
         bytes: &[::core::primitive::u8],
     ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::Error> {
-        let s =
-            ::core::str::from_utf8(bytes).map_err(::xsd_parser_types::quick_xml::Error::from)?;
-        Self::validate_str(s).map_err(|error| (bytes, error))?;
-        let inner = ::std::string::String::deserialize_str(helper, s)?;
-        Ok(Self::new(inner).map_err(|error| (bytes, error))?)
+        match bytes {
+            b"240V" => Ok(Self::_240V),
+            b"120V" => Ok(Self::_120V),
+            b"120V dedicated circuit" => Ok(Self::_120VDedicatedCircuit),
+            b"120V shared circuit" => Ok(Self::_120VSharedCircuit),
+            b"other" => Ok(Self::Other),
+            x => Err(::xsd_parser_types::quick_xml::Error::from(
+                ::xsd_parser_types::quick_xml::ErrorKind::UnknownOrInvalidValue(
+                    ::xsd_parser_types::quick_xml::RawByteStr::from_slice(x),
+                ),
+            )),
+        }
     }
 }
 impl xsd_parser_types::quick_xml::WithDeserializerFromBytes for HpwhVoltageSimple {}
@@ -18476,7 +18402,6 @@ pub enum RoofTypeSimple {
     ExpandedPolystyreneSheathing,
     PlasticRubberSyntheticSheeting,
     Concrete,
-    CoolRoof,
     GreenRoof,
     NoOneMajorType,
     Other,
@@ -18508,7 +18433,6 @@ impl ::xsd_parser_types::quick_xml::SerializeBytes for RoofTypeSimple {
                 "plastic/rubber/synthetic sheeting",
             ))),
             Self::Concrete => Ok(Some(::std::borrow::Cow::Borrowed("concrete"))),
-            Self::CoolRoof => Ok(Some(::std::borrow::Cow::Borrowed("cool roof"))),
             Self::GreenRoof => Ok(Some(::std::borrow::Cow::Borrowed("green roof"))),
             Self::NoOneMajorType => Ok(Some(::std::borrow::Cow::Borrowed("no one major type"))),
             Self::Other => Ok(Some(::std::borrow::Cow::Borrowed("other"))),
@@ -18530,7 +18454,6 @@ impl ::xsd_parser_types::quick_xml::DeserializeBytes for RoofTypeSimple {
             b"expanded polystyrene sheathing" => Ok(Self::ExpandedPolystyreneSheathing),
             b"plastic/rubber/synthetic sheeting" => Ok(Self::PlasticRubberSyntheticSheeting),
             b"concrete" => Ok(Self::Concrete),
-            b"cool roof" => Ok(Self::CoolRoof),
             b"green roof" => Ok(Self::GreenRoof),
             b"no one major type" => Ok(Self::NoOneMajorType),
             b"other" => Ok(Self::Other),
@@ -23599,6 +23522,7 @@ impl ::xsd_parser_types::quick_xml::WithDeserializer for WallAndRoofColor {
 }
 #[derive(Clone, Debug, PartialEq)]
 pub enum WallAndRoofColorSimple {
+    White,
     Light,
     MediumLight,
     Medium,
@@ -23615,6 +23539,7 @@ impl ::xsd_parser_types::quick_xml::SerializeBytes for WallAndRoofColorSimple {
         ::xsd_parser_types::quick_xml::Error,
     > {
         match self {
+            Self::White => Ok(Some(::std::borrow::Cow::Borrowed("white"))),
             Self::Light => Ok(Some(::std::borrow::Cow::Borrowed("light"))),
             Self::MediumLight => Ok(Some(::std::borrow::Cow::Borrowed("medium light"))),
             Self::Medium => Ok(Some(::std::borrow::Cow::Borrowed("medium"))),
@@ -23631,6 +23556,7 @@ impl ::xsd_parser_types::quick_xml::DeserializeBytes for WallAndRoofColorSimple 
         bytes: &[::core::primitive::u8],
     ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::Error> {
         match bytes {
+            b"white" => Ok(Self::White),
             b"light" => Ok(Self::Light),
             b"medium light" => Ok(Self::MediumLight),
             b"medium" => Ok(Self::Medium),
@@ -23646,6 +23572,83 @@ impl ::xsd_parser_types::quick_xml::DeserializeBytes for WallAndRoofColorSimple 
     }
 }
 impl xsd_parser_types::quick_xml::WithDeserializerFromBytes for WallAndRoofColorSimple {}
+#[derive(Clone, Debug, PartialEq)]
+pub struct WaterFixtureLocation {
+    pub data_source: ::core::option::Option<DataSource>,
+    pub content: WaterFixtureLocationSimple,
+}
+impl ::xsd_parser_types::quick_xml::WithSerializer for WaterFixtureLocation {
+    type Serializer<'x> = quick_xml_serialize::WaterFixtureLocationSerializer<'x>;
+    fn serializer<'ser>(
+        &'ser self,
+        name: ::core::option::Option<&'ser ::core::primitive::str>,
+        is_root: ::core::primitive::bool,
+    ) -> ::core::result::Result<Self::Serializer<'ser>, ::xsd_parser_types::quick_xml::Error> {
+        Ok(quick_xml_serialize::WaterFixtureLocationSerializer {
+            value: self,
+            state: ::std::boxed::Box::new(
+                quick_xml_serialize::WaterFixtureLocationSerializerState::Init__,
+            ),
+            name: name.unwrap_or("WaterFixtureLocation"),
+            is_root,
+        })
+    }
+}
+impl ::xsd_parser_types::quick_xml::WithDeserializer for WaterFixtureLocation {
+    type Deserializer = quick_xml_deserialize::WaterFixtureLocationDeserializer;
+}
+#[derive(Clone, Debug, PartialEq)]
+pub enum WaterFixtureLocationSimple {
+    Bathroom,
+    Kitchen,
+    Garage,
+    Basement,
+    LaundryRoom,
+    Outside,
+    Other,
+}
+impl ::xsd_parser_types::quick_xml::SerializeBytes for WaterFixtureLocationSimple {
+    fn serialize_bytes(
+        &self,
+        helper: &mut ::xsd_parser_types::quick_xml::SerializeHelper,
+    ) -> ::core::result::Result<
+        ::core::option::Option<::std::borrow::Cow<'_, ::core::primitive::str>>,
+        ::xsd_parser_types::quick_xml::Error,
+    > {
+        match self {
+            Self::Bathroom => Ok(Some(::std::borrow::Cow::Borrowed("bathroom"))),
+            Self::Kitchen => Ok(Some(::std::borrow::Cow::Borrowed("kitchen"))),
+            Self::Garage => Ok(Some(::std::borrow::Cow::Borrowed("garage"))),
+            Self::Basement => Ok(Some(::std::borrow::Cow::Borrowed("basement"))),
+            Self::LaundryRoom => Ok(Some(::std::borrow::Cow::Borrowed("laundry room"))),
+            Self::Outside => Ok(Some(::std::borrow::Cow::Borrowed("outside"))),
+            Self::Other => Ok(Some(::std::borrow::Cow::Borrowed("other"))),
+        }
+    }
+}
+impl xsd_parser_types::quick_xml::WithSerializeToBytes for WaterFixtureLocationSimple {}
+impl ::xsd_parser_types::quick_xml::DeserializeBytes for WaterFixtureLocationSimple {
+    fn deserialize_bytes(
+        helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
+        bytes: &[::core::primitive::u8],
+    ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::Error> {
+        match bytes {
+            b"bathroom" => Ok(Self::Bathroom),
+            b"kitchen" => Ok(Self::Kitchen),
+            b"garage" => Ok(Self::Garage),
+            b"basement" => Ok(Self::Basement),
+            b"laundry room" => Ok(Self::LaundryRoom),
+            b"outside" => Ok(Self::Outside),
+            b"other" => Ok(Self::Other),
+            x => Err(::xsd_parser_types::quick_xml::Error::from(
+                ::xsd_parser_types::quick_xml::ErrorKind::UnknownOrInvalidValue(
+                    ::xsd_parser_types::quick_xml::RawByteStr::from_slice(x),
+                ),
+            )),
+        }
+    }
+}
+impl xsd_parser_types::quick_xml::WithDeserializerFromBytes for WaterFixtureLocationSimple {}
 #[derive(Clone, Debug, PartialEq)]
 pub struct WaterFixtureThirdPartyCertification {
     pub data_source: ::core::option::Option<DataSource>,
@@ -23765,6 +23768,7 @@ impl ::xsd_parser_types::quick_xml::WithDeserializer for WaterFixtureType {
 pub enum WaterFixtureTypeSimple {
     Faucet,
     ShowerHead,
+    Toilet,
     Other,
 }
 impl ::xsd_parser_types::quick_xml::SerializeBytes for WaterFixtureTypeSimple {
@@ -23778,6 +23782,7 @@ impl ::xsd_parser_types::quick_xml::SerializeBytes for WaterFixtureTypeSimple {
         match self {
             Self::Faucet => Ok(Some(::std::borrow::Cow::Borrowed("faucet"))),
             Self::ShowerHead => Ok(Some(::std::borrow::Cow::Borrowed("shower head"))),
+            Self::Toilet => Ok(Some(::std::borrow::Cow::Borrowed("toilet"))),
             Self::Other => Ok(Some(::std::borrow::Cow::Borrowed("other"))),
         }
     }
@@ -23791,6 +23796,7 @@ impl ::xsd_parser_types::quick_xml::DeserializeBytes for WaterFixtureTypeSimple 
         match bytes {
             b"faucet" => Ok(Self::Faucet),
             b"shower head" => Ok(Self::ShowerHead),
+            b"toilet" => Ok(Self::Toilet),
             b"other" => Ok(Self::Other),
             x => Err(::xsd_parser_types::quick_xml::Error::from(
                 ::xsd_parser_types::quick_xml::ErrorKind::UnknownOrInvalidValue(
@@ -76430,6 +76436,158 @@ pub mod quick_xml_deserialize {
         }
     }
     #[derive(Debug)]
+    pub struct WaterFixtureLocationDeserializer {
+        data_source: ::core::option::Option<super::DataSource>,
+        content: ::core::option::Option<super::WaterFixtureLocationSimple>,
+        state__: ::std::boxed::Box<WaterFixtureLocationDeserializerState>,
+    }
+    #[derive(Debug)]
+    enum WaterFixtureLocationDeserializerState {
+        Init__ , Content__ (< super :: WaterFixtureLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer) , Unknown__ , }
+    impl WaterFixtureLocationDeserializer {
+        fn from_bytes_start(
+            helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
+            bytes_start: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> ::core::result::Result<Self, ::xsd_parser_types::quick_xml::Error> {
+            let mut data_source: ::core::option::Option<super::DataSource> = None;
+            for attrib in helper.filter_xmlns_attributes(bytes_start) {
+                let attrib = attrib?;
+                if matches!(
+                    helper.resolve_local_name(attrib.key, &super::super::NS_UNNAMED_5),
+                    Some(b"dataSource")
+                ) {
+                    helper.read_attrib(&mut data_source, b"dataSource", &attrib.value)?;
+                } else {
+                    helper.raise_unexpected_attrib_checked(&attrib)?;
+                }
+            }
+            Ok(Self {
+                data_source: data_source,
+                content: None,
+                state__: ::std::boxed::Box::new(WaterFixtureLocationDeserializerState::Init__),
+            })
+        }
+        fn finish_state(
+            &mut self,
+            helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
+            state: WaterFixtureLocationDeserializerState,
+        ) -> ::core::result::Result<(), ::xsd_parser_types::quick_xml::Error> {
+            if let WaterFixtureLocationDeserializerState::Content__(deserializer) = state {
+                self.store_content(deserializer.finish(helper)?)?;
+            }
+            Ok(())
+        }
+        fn store_content(
+            &mut self,
+            value: super::WaterFixtureLocationSimple,
+        ) -> ::core::result::Result<(), ::xsd_parser_types::quick_xml::Error> {
+            if self.content.is_some() {
+                Err(::xsd_parser_types::quick_xml::ErrorKind::DuplicateContent)?;
+            }
+            self.content = Some(value);
+            Ok(())
+        }
+        fn handle_content<'de>(
+            mut self,
+            helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
+            output: ::xsd_parser_types::quick_xml::DeserializerOutput<
+                'de,
+                super::WaterFixtureLocationSimple,
+            >,
+        ) -> ::xsd_parser_types::quick_xml::DeserializerResult<'de, super::WaterFixtureLocation>
+        {
+            use WaterFixtureLocationDeserializerState as S;
+            let ::xsd_parser_types::quick_xml::DeserializerOutput {
+                artifact,
+                event,
+                allow_any,
+            } = output;
+            match artifact {
+                ::xsd_parser_types::quick_xml::DeserializerArtifact::None => {
+                    Ok(::xsd_parser_types::quick_xml::DeserializerOutput {
+                        artifact: ::xsd_parser_types::quick_xml::DeserializerArtifact::None,
+                        event,
+                        allow_any,
+                    })
+                }
+                ::xsd_parser_types::quick_xml::DeserializerArtifact::Data(data) => {
+                    self.store_content(data)?;
+                    let data = self.finish(helper)?;
+                    Ok(::xsd_parser_types::quick_xml::DeserializerOutput {
+                        artifact: ::xsd_parser_types::quick_xml::DeserializerArtifact::Data(data),
+                        event,
+                        allow_any,
+                    })
+                }
+                ::xsd_parser_types::quick_xml::DeserializerArtifact::Deserializer(deserializer) => {
+                    *self.state__ = S::Content__(deserializer);
+                    Ok(::xsd_parser_types::quick_xml::DeserializerOutput {
+                        artifact: ::xsd_parser_types::quick_xml::DeserializerArtifact::Deserializer(
+                            self,
+                        ),
+                        event,
+                        allow_any,
+                    })
+                }
+            }
+        }
+    }
+    impl<'de> ::xsd_parser_types::quick_xml::Deserializer<'de, super::WaterFixtureLocation>
+        for WaterFixtureLocationDeserializer
+    {
+        fn init(
+            helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
+            event: ::xsd_parser_types::quick_xml::Event<'de>,
+        ) -> ::xsd_parser_types::quick_xml::DeserializerResult<'de, super::WaterFixtureLocation>
+        {
+            let (::xsd_parser_types::quick_xml::Event::Start(x)
+            | ::xsd_parser_types::quick_xml::Event::Empty(x)) = &event
+            else {
+                return Ok(::xsd_parser_types::quick_xml::DeserializerOutput {
+                    artifact: ::xsd_parser_types::quick_xml::DeserializerArtifact::None,
+                    event: ::xsd_parser_types::quick_xml::DeserializerEvent::Break(event),
+                    allow_any: false,
+                });
+            };
+            Self::from_bytes_start(helper, x)?.next(helper, event)
+        }
+        fn next(
+            mut self,
+            helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
+            event: ::xsd_parser_types::quick_xml::Event<'de>,
+        ) -> ::xsd_parser_types::quick_xml::DeserializerResult<'de, super::WaterFixtureLocation>
+        {
+            use WaterFixtureLocationDeserializerState as S;
+            match ::core::mem::replace(&mut *self.state__, S::Unknown__) {
+                S::Unknown__ => unreachable!(),
+                S::Init__ => {
+                    let output =
+                        ::xsd_parser_types::quick_xml::ContentDeserializer::init(helper, event)?;
+                    self.handle_content(helper, output)
+                }
+                S::Content__(deserializer) => {
+                    let output = deserializer.next(helper, event)?;
+                    self.handle_content(helper, output)
+                }
+            }
+        }
+        fn finish(
+            mut self,
+            helper: &mut ::xsd_parser_types::quick_xml::DeserializeHelper,
+        ) -> ::core::result::Result<super::WaterFixtureLocation, ::xsd_parser_types::quick_xml::Error>
+        {
+            let state = ::core::mem::replace(
+                &mut *self.state__,
+                WaterFixtureLocationDeserializerState::Unknown__,
+            );
+            self.finish_state(helper, state)?;
+            Ok(super::WaterFixtureLocation {
+                data_source: self.data_source,
+                content: helper.finish_content(self.content)?,
+            })
+        }
+    }
+    #[derive(Debug)]
     pub struct WaterFixtureThirdPartyCertificationDeserializer {
         data_source: ::core::option::Option<super::DataSource>,
         content: ::core::option::Option<super::WaterFixtureThirdPartyCertificationSimple>,
@@ -80241,13 +80399,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80328,13 +80479,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80421,13 +80565,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80503,13 +80640,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80587,13 +80717,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80673,13 +80796,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80766,13 +80882,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80850,13 +80959,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80941,13 +81043,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81027,13 +81122,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81111,13 +81199,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81197,13 +81278,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81279,13 +81353,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81368,13 +81435,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81461,13 +81521,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81545,13 +81598,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81631,13 +81677,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81717,13 +81756,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81801,13 +81833,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81883,13 +81908,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81976,13 +81994,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82058,13 +82069,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82142,13 +82146,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82228,13 +82225,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82312,13 +82302,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82398,13 +82381,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82482,13 +82458,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82568,13 +82537,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82654,13 +82616,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82738,13 +82693,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82833,13 +82781,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82915,13 +82856,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83008,13 +82942,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83090,13 +83017,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83174,13 +83094,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83258,13 +83171,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83342,13 +83248,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83426,13 +83325,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83512,13 +83404,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83598,13 +83483,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83682,13 +83560,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83766,13 +83637,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83853,13 +83717,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83939,13 +83796,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84023,13 +83873,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84109,13 +83952,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84195,13 +84031,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84286,13 +84115,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84370,13 +84192,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84454,13 +84269,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84540,13 +84348,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84631,13 +84432,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84713,13 +84507,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84806,13 +84593,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84888,13 +84668,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84974,13 +84747,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85060,13 +84826,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85155,13 +84914,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85246,13 +84998,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85328,13 +85073,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85412,13 +85150,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85499,13 +85230,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85583,13 +85307,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85667,13 +85384,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85753,13 +85463,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85837,13 +85540,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85921,13 +85617,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86017,13 +85706,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86101,13 +85783,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86195,13 +85870,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86281,13 +85949,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86367,13 +86028,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86454,13 +86108,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86540,13 +86187,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86624,13 +86264,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86717,13 +86350,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86808,13 +86434,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86890,13 +86509,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86974,13 +86586,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87058,13 +86663,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87142,13 +86740,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87226,13 +86817,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87310,13 +86894,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87403,13 +86980,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87485,13 +87055,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87571,13 +87134,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87657,13 +87213,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87743,13 +87292,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87827,13 +87369,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87911,13 +87446,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87995,13 +87523,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88088,13 +87609,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88170,13 +87684,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88254,13 +87761,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88347,13 +87847,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88431,13 +87924,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88525,13 +88011,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88609,13 +88088,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88695,13 +88167,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88777,13 +88242,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88868,13 +88326,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88950,13 +88401,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89034,13 +88478,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89127,13 +88564,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89209,13 +88639,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89293,13 +88716,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89379,13 +88795,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89463,13 +88872,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89547,13 +88949,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89633,13 +89028,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89726,13 +89114,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89808,13 +89189,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89894,13 +89268,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89980,13 +89347,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90062,13 +89422,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90146,13 +89499,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90228,13 +89574,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90312,13 +89651,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90398,13 +89730,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
                     FuelLoadTypeSerializerState::Content__(x) => {
@@ -90477,13 +89802,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
                     FuelLoadUnitsSerializerState::Content__(x) => {
@@ -90565,13 +89883,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90647,13 +89958,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90731,13 +90035,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90815,13 +90112,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90908,13 +90198,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90990,13 +90273,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91081,13 +90357,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91163,13 +90432,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91247,13 +90509,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91334,13 +90589,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91421,13 +90669,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91517,13 +90758,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91599,13 +90833,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91685,13 +90912,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91769,13 +90989,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91853,13 +91066,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91935,13 +91141,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92028,13 +91227,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92110,13 +91302,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92194,13 +91379,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92278,13 +91456,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92361,13 +91532,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92452,13 +91616,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92538,13 +91695,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92622,13 +91772,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92704,13 +91847,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92790,13 +91926,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92876,13 +92005,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92960,13 +92082,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93046,13 +92161,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93130,13 +92238,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93214,13 +92315,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93300,13 +92394,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93393,13 +92480,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93475,13 +92555,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93557,13 +92630,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93641,13 +92707,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93725,13 +92784,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93820,13 +92872,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93902,13 +92947,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93988,13 +93026,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94074,13 +93105,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94158,13 +93182,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94242,13 +93259,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94326,13 +93336,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94410,13 +93413,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94494,13 +93490,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94578,13 +93567,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94662,13 +93644,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94748,13 +93723,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94832,13 +93800,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94918,13 +93879,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95005,13 +93959,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95091,13 +94038,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95177,13 +94117,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95270,13 +94203,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95354,13 +94280,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95438,13 +94357,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95531,13 +94443,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95613,13 +94518,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95706,13 +94604,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95788,13 +94679,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95874,13 +94758,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95965,13 +94842,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96049,13 +94919,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96135,13 +94998,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96219,13 +95075,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96305,13 +95154,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96398,13 +95240,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96485,13 +95320,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96572,13 +95400,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96663,13 +95484,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96745,13 +95559,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96838,13 +95645,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96927,13 +95727,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97010,13 +95803,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97101,13 +95887,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97187,13 +95966,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97271,13 +96043,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97353,13 +96118,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97437,13 +96195,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97521,13 +96272,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97605,13 +96349,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97689,13 +96426,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97775,13 +96505,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97866,13 +96589,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97948,13 +96664,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98037,13 +96746,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98119,13 +96821,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98203,13 +96898,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98294,13 +96982,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98376,13 +97057,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98469,13 +97143,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98551,13 +97218,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98646,13 +97306,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98728,13 +97381,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98821,13 +97467,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98903,13 +97542,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98987,13 +97619,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99071,13 +97696,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99155,13 +97773,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99248,13 +97859,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99339,13 +97943,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99421,13 +98018,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99503,13 +98093,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99594,13 +98177,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99676,13 +98252,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99760,13 +98329,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99844,13 +98406,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99928,13 +98483,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100012,13 +98560,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100096,13 +98637,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100180,13 +98714,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
                     PoolHeaterUnitsSerializerState::Content__(x) => {
@@ -100259,13 +98786,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100346,13 +98866,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100432,13 +98945,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100525,13 +99031,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100607,13 +99106,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100700,13 +99192,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100791,13 +99276,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100873,13 +99351,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100955,13 +99426,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101039,13 +99503,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101130,13 +99587,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101221,13 +99671,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101303,13 +99746,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101389,13 +99825,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101475,13 +99904,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101559,13 +99981,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101652,13 +100067,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101734,13 +100142,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101818,13 +100219,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101904,13 +100298,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101991,13 +100378,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102078,13 +100458,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102164,13 +100537,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102248,13 +100614,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102332,13 +100691,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102418,13 +100770,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102502,13 +100847,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102588,13 +100926,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102674,13 +101005,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102767,13 +101091,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102849,13 +101166,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102940,13 +101250,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103022,13 +101325,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103115,13 +101411,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103197,13 +101486,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103283,13 +101565,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103370,13 +101645,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103456,13 +101724,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103542,13 +101803,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103626,13 +101880,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103719,13 +101966,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103810,13 +102050,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103892,13 +102125,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103976,13 +102202,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104060,13 +102279,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104144,13 +102356,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104239,13 +102444,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104321,13 +102519,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104405,13 +102596,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104489,13 +102673,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104576,13 +102753,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104662,13 +102832,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104749,13 +102912,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104835,13 +102991,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104926,13 +103075,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105008,13 +103150,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105094,13 +103229,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105180,13 +103308,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105273,13 +103394,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105364,13 +103478,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105446,13 +103553,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105532,13 +103632,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105625,13 +103718,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105707,13 +103793,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105800,13 +103879,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105891,13 +103963,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105973,13 +104038,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106055,13 +104113,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106139,13 +104190,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106223,13 +104267,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106307,13 +104344,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106391,13 +104421,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106473,13 +104496,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106559,13 +104575,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106641,13 +104650,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106725,13 +104727,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106809,13 +104804,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106900,13 +104888,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -106989,13 +104970,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107071,13 +105045,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107158,13 +105125,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107244,13 +105204,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107328,13 +105281,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107414,13 +105360,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107500,13 +105439,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107596,13 +105528,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107678,13 +105603,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107769,13 +105687,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107851,13 +105762,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -107944,13 +105848,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108026,13 +105923,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108112,13 +106002,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108196,13 +106079,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108280,13 +106156,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108373,13 +106242,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108455,13 +106317,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108543,13 +106398,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108636,13 +106484,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108720,13 +106561,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108806,13 +106640,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108890,13 +106717,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -108985,13 +106805,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109076,13 +106889,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109158,13 +106964,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109212,6 +107011,85 @@ pub mod quick_xml_serialize {
         }
     }
     #[derive(Debug)]
+    pub struct WaterFixtureLocationSerializer<'ser> {
+        pub(super) value: &'ser super::WaterFixtureLocation,
+        pub(super) state: ::std::boxed::Box<WaterFixtureLocationSerializerState<'ser>>,
+        pub(super) name: &'ser ::core::primitive::str,
+        pub(super) is_root: ::core::primitive::bool,
+    }
+    #[derive(Debug)]
+    pub(super) enum WaterFixtureLocationSerializerState<'ser> {
+        Init__ , Content__ (< super :: WaterFixtureLocationSimple as :: xsd_parser_types :: quick_xml :: WithSerializer > :: Serializer < 'ser >) , End__ , Done__ , Phantom__ (& 'ser ()) , }
+    impl<'ser> WaterFixtureLocationSerializer<'ser> {
+        fn next_event(
+            &mut self,
+            helper: &mut ::xsd_parser_types::quick_xml::SerializeHelper,
+        ) -> ::core::result::Result<
+            ::core::option::Option<::xsd_parser_types::quick_xml::Event<'ser>>,
+            ::xsd_parser_types::quick_xml::Error,
+        > {
+            loop {
+                match &mut *self.state {
+                    WaterFixtureLocationSerializerState::Init__ => {
+                        *self.state = WaterFixtureLocationSerializerState::Content__(
+                            ::xsd_parser_types::quick_xml::WithSerializer::serializer(
+                                &self.value.content,
+                                None,
+                                false,
+                            )?,
+                        );
+                        let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
+                        helper.begin_ns_scope();
+                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_attrib_opt(
+                            &mut bytes,
+                            "dataSource",
+                            &self.value.data_source,
+                        )?;
+                        return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
+                    }
+                    WaterFixtureLocationSerializerState::Content__(x) => {
+                        match x.next(helper).transpose()? {
+                            Some(event) => return Ok(Some(event)),
+                            None => *self.state = WaterFixtureLocationSerializerState::End__,
+                        }
+                    }
+                    WaterFixtureLocationSerializerState::End__ => {
+                        *self.state = WaterFixtureLocationSerializerState::Done__;
+                        helper.end_ns_scope();
+                        return Ok(Some(::xsd_parser_types::quick_xml::Event::End(
+                            ::xsd_parser_types::quick_xml::BytesEnd::new(self.name),
+                        )));
+                    }
+                    WaterFixtureLocationSerializerState::Done__ => return Ok(None),
+                    WaterFixtureLocationSerializerState::Phantom__(_) => unreachable!(),
+                }
+            }
+        }
+    }
+    impl<'ser> ::xsd_parser_types::quick_xml::Serializer<'ser>
+        for WaterFixtureLocationSerializer<'ser>
+    {
+        fn next(
+            &mut self,
+            helper: &mut ::xsd_parser_types::quick_xml::SerializeHelper,
+        ) -> ::core::option::Option<
+            ::core::result::Result<
+                ::xsd_parser_types::quick_xml::Event<'ser>,
+                ::xsd_parser_types::quick_xml::Error,
+            >,
+        > {
+            match self.next_event(helper) {
+                Ok(Some(event)) => Some(Ok(event)),
+                Ok(None) => None,
+                Err(error) => {
+                    *self.state = WaterFixtureLocationSerializerState::Done__;
+                    Some(Err(error))
+                }
+            }
+        }
+    }
+    #[derive(Debug)]
     pub struct WaterFixtureThirdPartyCertificationSerializer<'ser> {
         pub(super) value: &'ser super::WaterFixtureThirdPartyCertification,
         pub(super) state:
@@ -109243,13 +107121,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109334,13 +107205,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109418,13 +107282,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109511,13 +107368,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109593,13 +107443,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109679,13 +107522,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109763,13 +107599,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109849,13 +107678,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -109942,13 +107764,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110026,13 +107841,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110112,13 +107920,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110196,13 +107997,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110280,13 +108074,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110364,13 +108151,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110460,13 +108240,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110542,13 +108315,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110635,13 +108401,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110724,13 +108483,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110815,13 +108567,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110906,13 +108651,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -110988,13 +108726,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -111072,13 +108803,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -111165,13 +108889,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -111247,13 +108964,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -111331,13 +109041,6 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
-                        if self.is_root {
-                            helper.write_xmlns(
-                                &mut bytes,
-                                Some(&super::super::PREFIX_XSI),
-                                &super::super::NS_XSI,
-                            );
-                        }
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",

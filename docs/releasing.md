@@ -53,12 +53,13 @@ Workflow: `.github/workflows/ci.yml`
 3. `cargo test --workspace --all-features`
 4. Codegen drift check
 5. Publish dry-run for leaf crates (`hpxml-common`, `hpxml-types-v{2,3,4,5}`)
+6. `cargo audit` (security job; known quick-xml advisories documented in `.cargo/audit.toml`)
 
 Release-tag automation (publish + multi-platform matrix) is not yet implemented.
 Publishing is currently manual per the checklist above.
 
 ## CI notes
 
-- `submodules: true` required in checkout; `vendor/xsd-parser/` is a git submodule
 - `codegen-runner` is excluded from workspace so `cargo test --workspace` doesn't compile xsd-parser
+- `codegen-runner` and `examples/codegen-compile-check` depend on crates.io `xsd-parser 1.5.2`
 - Cargo.lock is committed for reproducibility

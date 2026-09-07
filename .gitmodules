@@ -1,3 +1,0 @@
-[submodule "vendor/xsd-parser"]
-	path = vendor/xsd-parser
-	url = https://github.com/AZX-PBC-OSS/xsd-parser.git

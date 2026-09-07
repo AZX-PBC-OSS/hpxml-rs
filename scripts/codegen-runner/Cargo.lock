@@ -545,7 +545,9 @@ checksum = "9edde0db4769d2dc68579893f2306b26c6ecfbe0ef499b013d731b7b9247e0b9"
 
 [[package]]
 name = "xsd-parser"
-version = "1.5.0"
+version = "1.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7ef11cbaf49b451df4fcac1991609a53f5f3ac351ea39598e4f437e908153eea"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -568,7 +570,9 @@ dependencies = [
 
 [[package]]
 name = "xsd-parser-types"
-version = "0.2.0"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "982977ebb49137e23fa29c8754c66d191b74c1221ae71bc71059704fc6d62ff5"
 dependencies = [
  "encoding_rs",
  "indexmap",

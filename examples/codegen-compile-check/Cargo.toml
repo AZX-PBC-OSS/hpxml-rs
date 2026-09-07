@@ -11,7 +11,7 @@ deny-warnings = []
 [dependencies]
 quick-xml = "0.38"
 regex = "1"
-xsd-parser-types = { path = "../../vendor/xsd-parser/xsd-parser-types", features = ["quick-xml"] }
+xsd-parser-types = { version = "0.2.1", features = ["quick-xml"] }
 
 [profile.dev]
 debug = 0
@@ -26,4 +26,4 @@ codegen-units = 256
 [build-dependencies]
 proc-macro2 = "1"
 quote = "1"
-xsd-parser = { path = "../../vendor/xsd-parser/xsd-parser" }
+xsd-parser = "1.5.2"

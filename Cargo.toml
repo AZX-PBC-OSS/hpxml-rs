@@ -3,15 +3,13 @@ members = ["crates/*"]
 exclude = ["scripts/codegen-runner", "examples/*"]
 resolver = "2"
 
-# Use local vendor version of xsd-parser-types (has namespace fix)
-[patch.crates-io]
-xsd-parser-types = { path = "vendor/xsd-parser/xsd-parser-types" }
-
-# Workspace dependencies (for patched xsd-parser-types)
+# Workspace dependencies (upstream crates.io releases).
+# Our 4 xsd-parser fixes are all merged upstream and contained in
+# xsd-parser 1.5.2 / xsd-parser-types 0.2.1, so no vendor fork is needed.
 [workspace.dependencies]
 quick-xml = "0.38"
 regex = "1.11"
-xsd-parser-types = { version = "0.2", features = ["quick-xml"] }
+xsd-parser-types = { version = "0.2.1", features = ["quick-xml"] }
 
 [workspace.lints.rust]
 warnings = "deny"
