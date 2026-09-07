@@ -4,7 +4,7 @@ use std::error::Error;
 use std::fmt;
 
 /// Error type for HPXML document inspection (pre-parsing validation).
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 #[non_exhaustive]
 pub enum InspectError {
     /// The namespace and schema version do not match.
@@ -84,10 +84,34 @@ impl fmt::Display for InspectError {
     }
 }
 
+impl InspectError {
+    /// Stable machine-readable discriminator for this error.
+    ///
+    /// The enum is `#[non_exhaustive]`, so matching on variants can break
+    /// across versions; match on this instead.
+    pub fn kind(&self) -> &'static str {
+        match self {
+            InspectError::NamespaceVersionMismatch { .. } => "namespace-version-mismatch",
+            InspectError::UnknownNamespace(_) => "unknown-namespace",
+            InspectError::MissingNamespace => "missing-namespace",
+            InspectError::MissingSchemaVersion => "missing-schema-version",
+            InspectError::MalformedXml(_) => "malformed-xml",
+            InspectError::DocumentTooLarge { .. } => "document-too-large",
+            InspectError::NotHpxml { .. } => "not-hpxml",
+            InspectError::DtdNotAllowed => "dtd-not-allowed",
+        }
+    }
+
+    /// Returns `true` if the document was rejected for a DTD declaration.
+    pub fn is_dtd(&self) -> bool {
+        matches!(self, InspectError::DtdNotAllowed)
+    }
+}
+
 impl Error for InspectError {}
 
 /// Error type for HPXML document parsing.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 #[non_exhaustive]
 pub enum ParseError {
     /// The document exceeds the configured size limit.
@@ -139,6 +163,26 @@ impl fmt::Display for ParseError {
                 }
             }
         }
+    }
+}
+
+impl ParseError {
+    /// Stable machine-readable discriminator for this error.
+    ///
+    /// The enum is `#[non_exhaustive]`, so matching on variants can break
+    /// across versions; match on this instead.
+    pub fn kind(&self) -> &'static str {
+        match self {
+            ParseError::DocumentTooLarge { .. } => "document-too-large",
+            ParseError::DepthLimitExceeded { .. } => "depth-limit-exceeded",
+            ParseError::DtdNotAllowed => "dtd-not-allowed",
+            ParseError::Xml { .. } => "xml",
+        }
+    }
+
+    /// Returns `true` if the document was rejected for a DTD declaration.
+    pub fn is_dtd(&self) -> bool {
+        matches!(self, ParseError::DtdNotAllowed)
     }
 }
 

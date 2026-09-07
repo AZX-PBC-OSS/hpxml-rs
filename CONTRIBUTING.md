@@ -5,7 +5,7 @@
 ### Prerequisites
 
 - Rust 1.86+ (the [rust-toolchain.toml](rust-toolchain.toml) pins 1.94 for development)
-- `curl` (for fetching XSD schemas)
+- `curl` and `jq` (for fetching XSD schemas)
 
 ### Clone and build
 
@@ -41,7 +41,7 @@ scripts/
   fetch-schema.sh     Fetch XSD schemas from hpxmlwg/hpxml
   codegen.sh          Run code generation
   codegen-runner/     Standalone codegen binary (excluded from workspace, uses crates.io xsd-parser)
-tests/data/           Test fixtures (see tests/data/README.md)
+crates/hpxml-core/tests/data/   Test fixtures (see crates/hpxml-core/tests/data/README.md)
 ```
 
 See [docs/architecture.md](docs/architecture.md) for design rationale and crate dependencies.
@@ -73,8 +73,8 @@ See [docs/codegen.md](docs/codegen.md) for configuration details and XSD-to-Rust
 
 ```bash
 cargo fmt --check
-cargo clippy --workspace --all-features
-cargo test --workspace --all-features
+cargo clippy --workspace --all-features --locked -- -D warnings
+cargo test --workspace --all-features --locked
 ```
 
 CI runs all of these plus a `cargo doc` build and codegen drift check.

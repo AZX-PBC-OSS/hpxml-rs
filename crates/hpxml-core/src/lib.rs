@@ -1,4 +1,9 @@
-pub use hpxml_common::*;
+#[doc(hidden)]
+pub use hpxml_common::version_from_namespace;
+pub use hpxml_common::{
+    HpxmlFileInfo, HpxmlVersion, InspectError, ParseConfig, ParseError, SerializeError,
+    SerializeOptions,
+};
 
 pub(crate) mod dtd_guard;
 pub mod inspect;
@@ -8,7 +13,6 @@ mod test_helpers;
 pub mod traits;
 
 #[cfg(any(feature = "v2", feature = "v3", feature = "v4", feature = "v5"))]
-#[allow(dead_code)]
 pub(crate) mod reader;
 
 pub use traits::HpxmlSerialize;
@@ -31,8 +35,10 @@ pub mod v5;
 /// Returns the HPXML versions available in this build.
 ///
 /// The result depends on which cargo features are enabled.
-/// With default features, this returns `[V4]`.
-/// With `features = ["full"]`, this returns all versions.
+/// `hpxml-core` has no default features, so a bare
+/// `cargo test -p hpxml-core` build returns an empty slice.
+/// The `hpxml` facade defaults to `v4`; with `features = ["full"]`
+/// this returns all versions.
 pub fn available_versions() -> &'static [HpxmlVersion] {
     &[
         #[cfg(feature = "v2")]
@@ -51,13 +57,25 @@ mod available_versions_tests {
     use super::*;
 
     #[test]
+    #[cfg(any(feature = "v2", feature = "v3", feature = "v4", feature = "v5"))]
     fn returns_nonempty() {
         assert!(!available_versions().is_empty());
     }
 
     #[test]
-    fn contains_v4_with_default_features() {
+    #[cfg(not(any(feature = "v2", feature = "v3", feature = "v4", feature = "v5")))]
+    fn returns_empty_with_no_features() {
+        assert!(available_versions().is_empty());
+    }
+
+    #[test]
+    fn contains_v4_iff_enabled() {
+        // The hpxml facade enables v4 by default; bare hpxml-core has no
+        // default features, so an empty slice is correct there.
+        #[cfg(feature = "v4")]
         assert!(available_versions().contains(&HpxmlVersion::V4));
+        #[cfg(not(feature = "v4"))]
+        assert!(!available_versions().contains(&HpxmlVersion::V4));
     }
 
     #[test]

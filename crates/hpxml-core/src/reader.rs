@@ -28,11 +28,13 @@ impl<'a> DepthLimitedReader<'a> {
     }
 
     /// Creates a new `DepthLimitedReader` from a string (convenience method).
+    #[cfg(test)]
     pub fn from_str(s: &'a str, config: ParseConfig) -> Self {
         Self::new(s.as_bytes(), config)
     }
 
     /// Returns the current nesting depth.
+    #[cfg(test)]
     pub fn current_depth(&self) -> usize {
         self.current_depth
     }
@@ -75,10 +77,17 @@ impl<'a> XmlReaderSync<'a> for DepthLimitedReader<'a> {
                 self.current_depth -= 1;
             }
             Event::End(_) => {
-                // Ensure we don't underflow (malformed XML could have mismatched tags)
-                if self.current_depth > 0 {
-                    self.current_depth -= 1;
+                // A well-formed document never closes more elements than it
+                // opened. Failing on underflow keeps depth tracking exact so
+                // stray closes cannot cancel real nesting and bypass the limit.
+                if self.current_depth == 0 {
+                    let parse_error = hpxml_common::ParseError::Xml {
+                        message: "unmatched end tag".to_string(),
+                        position: self.inner.buffer_position().try_into().ok(),
+                    };
+                    return Err(XmlError::custom(parse_error));
                 }
+                self.current_depth -= 1;
             }
             _ => {}
         }
@@ -356,8 +365,6 @@ mod integration_tests {
     use hpxml_types_v4::HpxmlType;
     use xsd_parser_types::quick_xml::DeserializeSync;
 
-    /// Integration test: verify DepthLimitedReader can deserialize minimal.xml
-    /// This proves the wrapper approach works with xsd-parser's generated types.
     #[test]
     fn test_deserialize_minimal_xml() {
         let xml = include_bytes!("../tests/data/v4/minimal.xml");
@@ -375,11 +382,33 @@ mod integration_tests {
         );
     }
 
-    /// Integration test: verify depth limit is enforced during deserialization
+    fn drain_until_depth_error(reader: &mut DepthLimitedReader<'_>, limit: usize) {
+        loop {
+            match reader.read_event() {
+                Ok(quick_xml::events::Event::Eof) => panic!("expected depth limit error"),
+                Ok(_) => {}
+                Err(e) => {
+                    assert_depth_limit_error(&e, limit);
+                    break;
+                }
+            }
+        }
+    }
+
+    #[test]
+    fn test_depth_limit_rejects_deep_synthetic_xml() {
+        let deep_xml = "<a><b><c><d><e></e></d></c></b></a>";
+        let config = ParseConfig {
+            max_depth: 3,
+            ..ParseConfig::default()
+        };
+        let mut reader = DepthLimitedReader::new(deep_xml.as_bytes(), config);
+        drain_until_depth_error(&mut reader, 3);
+    }
+
     #[test]
     fn test_depth_limit_enforced_during_deserialize() {
-        // Create deeply nested HPXML that exceeds the depth limit
-        // Use a simple nested structure within a valid HPXML wrapper
+        // Deeply nested HPXML that exceeds a depth limit of 3.
         let xml = r#"<?xml version='1.0' encoding='UTF-8'?>
 <HPXML xmlns='http://hpxmlonline.com/2023/09' schemaVersion='4.2'>
   <XMLTransactionHeaderInformation>
@@ -412,55 +441,37 @@ mod integration_tests {
 </HPXML>"#;
 
         let config = ParseConfig {
-            max_depth: 3, // This XML has depth ~7-8, this should fail
-            ..ParseConfig::default()
-        };
-
-        // First verify the reader itself rejects deep XML - test with a clearly deep XML
-        let deep_xml = "<a><b><c><d><e></e></d></c></b></a>";
-        let config_for_test = ParseConfig {
             max_depth: 3,
             ..ParseConfig::default()
         };
-        let mut reader = DepthLimitedReader::new(deep_xml.as_bytes(), config_for_test);
-        loop {
-            match reader.read_event() {
-                Ok(quick_xml::events::Event::Eof) => panic!("expected depth limit error"),
-                Ok(_) => {}
-                Err(e) => {
-                    assert_depth_limit_error(&e, 3);
-                    break;
-                }
-            }
-        }
 
-        // Now verify the valid HPXML with low depth limit fails
-        let mut reader2 = DepthLimitedReader::new(xml.as_bytes(), config);
-        let result = HpxmlType::deserialize(&mut reader2);
+        let mut reader = DepthLimitedReader::new(xml.as_bytes(), config);
+        let result = HpxmlType::deserialize(&mut reader);
 
         assert!(result.is_err(), "Expected error due to depth limit");
         let err = result.unwrap_err();
         assert_depth_limit_error(&err, 3);
+    }
 
-        // Now verify minimal.xml also fails with a very low limit
+    #[test]
+    fn test_depth_limit_rejects_minimal_xml_at_depth_two() {
         let minimal_xml = include_bytes!("../tests/data/v4/minimal.xml");
-        let very_low_config = ParseConfig {
-            max_depth: 2, // minimal.xml has depth ~7-8, this should definitely fail
+        let config = ParseConfig {
+            max_depth: 2,
             ..ParseConfig::default()
         };
 
-        let mut reader3 = DepthLimitedReader::new(minimal_xml, very_low_config);
-        let result2 = HpxmlType::deserialize(&mut reader3);
+        let mut reader = DepthLimitedReader::new(minimal_xml, config);
+        let result = HpxmlType::deserialize(&mut reader);
 
         assert!(
-            result2.is_err(),
+            result.is_err(),
             "Expected error due to depth limit on minimal.xml"
         );
         let err2 = result2.unwrap_err();
         assert_depth_limit_error(&err2, 2);
     }
 
-    /// Integration test: verify self-closing tags are handled correctly
     #[test]
     fn test_self_closing_tags_depth_limit() {
         // Self-closing tags at deep nesting should also trigger depth limit
@@ -473,16 +484,7 @@ mod integration_tests {
         let mut reader = DepthLimitedReader::new(xml.as_bytes(), config);
 
         // Depth 4 should fail (a=1, b=2, c=3, d=4 via self-closing)
-        loop {
-            match reader.read_event() {
-                Ok(quick_xml::events::Event::Eof) => panic!("expected depth limit error"),
-                Ok(_) => {}
-                Err(e) => {
-                    assert_depth_limit_error(&e, 3);
-                    break;
-                }
-            }
-        }
+        drain_until_depth_error(&mut reader, 3);
 
         // But with limit 4, it should work
         let config_ok = ParseConfig {

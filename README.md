@@ -88,6 +88,7 @@ let bytes = std::fs::read("audit.xml")?;
 let config = ParseConfig {
     max_bytes: 10_000_000,  // 10 MB limit
     max_depth: 64,          // XML nesting depth limit
+    ..Default::default()
 };
 let doc = v4::parse_with_config(&bytes, &config)?;
 ```
@@ -100,7 +101,7 @@ All operations return typed errors that can be matched for specific failure mode
 use hpxml::{v4, ParseError, ParseConfig};
 
 let bytes = std::fs::read("audit.xml")?;
-let config = ParseConfig { max_bytes: 1_000, max_depth: 64 };
+let config = ParseConfig { max_bytes: 1_000, max_depth: 64, ..Default::default() };
 
 match v4::parse_with_config(&bytes, &config) {
     Ok(doc) => println!("Parsed {} buildings", doc.building.len()),
@@ -140,6 +141,7 @@ Three error types cover the full API:
 
 - Rust 1.86+ (see `rust-toolchain.toml`)
 - `rustfmt` (included with Rust)
+- `curl` and `jq` (only for fetching XSD schemas via `./scripts/codegen.sh`)
 
 ### Code generation
 
@@ -159,6 +161,8 @@ Generated code lives in `crates/hpxml-types-v{N}/src/`.
 
 ```bash
 cargo check --workspace --all-features
+cargo test --workspace --all-features
+# Fast loop on the core crate:
 cargo test -p hpxml-core --features full
 ```
 

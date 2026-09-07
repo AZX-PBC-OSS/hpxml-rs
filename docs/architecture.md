@@ -56,7 +56,10 @@ type safety.
 
 ## Safety
 
-- **DTD/XXE**: Non-issue; quick-xml doesn't implement DTD/entity expansion
+- **DTD/XXE**: rejected pre-parse by the `has_doctype` byte scan over the full
+  input (bounded by `max_bytes`). quick-xml emits `DocType` without expanding
+  entities, so the guard short-circuits billion-laughs/XXE/internal-subset
+  before parsing.
 - **Depth limit**: `DepthLimitedReader` wraps `NsReader`, tracks Start/End events (default: 128)
 - **Size limit**: Pre-parse `bytes.len()` check (default: 50 MiB)
 - **Unknown elements**: Silently skipped (structural in generated deserializer)

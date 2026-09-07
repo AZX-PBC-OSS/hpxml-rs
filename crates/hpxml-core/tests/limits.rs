@@ -7,6 +7,11 @@
 //! - SerializeError::Io (via to_xml_into with a writer that fails on flush)
 //!
 //! Uses `include_bytes!` with `CARGO_MANIFEST_DIR` for robust path resolution.
+//!
+//! All cases target v4 fixtures, so the whole target requires the v4
+//! feature (and still compiles to empty otherwise).
+
+#![cfg(feature = "v4")]
 
 use hpxml_core::{HpxmlSerialize, ParseConfig, ParseError};
 
@@ -239,6 +244,149 @@ mod xml_error {
 }
 
 // ============================================================================
+// DTD Rejection Tests (a late declaration must not slip past the guard)
+// ============================================================================
+
+#[cfg(feature = "v4")]
+mod dtd_limits {
+    use super::*;
+    use hpxml_core::InspectError;
+
+    fn late_doctype_doc() -> Vec<u8> {
+        let mut xml = b"<?xml version=\"1.0\"?>".to_vec();
+        xml.extend(std::iter::repeat_n(b' ', 8192));
+        xml.extend_from_slice(
+            b"<!DOCTYPE HPXML [<!ENTITY x \"x\">]><HPXML xmlns=\"http://hpxmlonline.com/2023/09\" schemaVersion=\"4.2\"/>",
+        );
+        xml
+    }
+
+    #[test]
+    fn test_parse_rejects_late_doctype() {
+        let xml = late_doctype_doc();
+        let result = hpxml_core::v4::parse(&xml);
+        assert!(
+            matches!(result, Err(ParseError::DtdNotAllowed)),
+            "late DTD must be rejected, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_inspect_rejects_late_doctype() {
+        let xml = late_doctype_doc();
+        let result = hpxml_core::inspect::inspect(&xml);
+        assert!(
+            matches!(result, Err(InspectError::DtdNotAllowed)),
+            "late DTD must be rejected, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_lowercase_doctype_is_not_a_dtd() {
+        let minimal = fixture!("v4/minimal.xml");
+        let text = String::from_utf8_lossy(minimal);
+        let (decl, rest) = text
+            .split_once("?>")
+            .expect("minimal.xml has an XML declaration");
+        let xml = format!("{decl}?><!doctype HPXML []>{rest}");
+        let result = hpxml_core::v4::parse(xml.as_bytes());
+        assert!(
+            result.is_ok(),
+            "lowercase doctype must not trigger DTD rejection, got: {result:?}"
+        );
+    }
+}
+
+// ============================================================================
+// Malformed and Edge Input Tests (parse-level error taxonomy)
+// ============================================================================
+
+#[cfg(feature = "v4")]
+mod parse_errors {
+    use super::*;
+
+    #[test]
+    fn test_parse_empty_is_xml_error() {
+        let result = hpxml_core::v4::parse(b"");
+        assert!(
+            matches!(result, Err(ParseError::Xml { .. })),
+            "empty input must be an XML error, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_parse_malformed_fixture_is_xml_error() {
+        let result = hpxml_core::v4::parse(fixture!("negative/malformed.xml"));
+        assert!(
+            matches!(result, Err(ParseError::Xml { .. })),
+            "malformed fixture must be an XML error, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_parse_unknown_namespace_fixture_is_xml_error() {
+        let result = hpxml_core::v4::parse(fixture!("negative/unknown-namespace.xml"));
+        assert!(
+            matches!(result, Err(ParseError::Xml { .. })),
+            "unknown namespace must fail parsing, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_parse_missing_namespace_fixture_is_xml_error() {
+        let result = hpxml_core::v4::parse(fixture!("negative/missing-namespace.xml"));
+        assert!(
+            matches!(result, Err(ParseError::Xml { .. })),
+            "missing namespace must fail parsing, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_parse_ochre_mismatch_fixture_is_xml_error() {
+        let result = hpxml_core::v4::parse(fixture!("edge/ochre-mismatch.xml"));
+        assert!(
+            matches!(result, Err(ParseError::Xml { .. })),
+            "namespace-foreign fixture must fail parsing, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_parse_zero_depth_limit() {
+        let config = ParseConfig {
+            max_depth: 0,
+            ..ParseConfig::default()
+        };
+        let result = hpxml_core::v4::parse_with_config(fixture!("v4/minimal.xml"), &config);
+        assert!(
+            matches!(
+                result,
+                Err(ParseError::DepthLimitExceeded { depth: 1, limit: 0 })
+            ),
+            "zero depth limit must reject the root element, got: {result:?}"
+        );
+    }
+
+    #[test]
+    fn test_parse_bom_fixture() {
+        let doc = hpxml_core::v4::parse(fixture!("edge/bom-minimal.xml"))
+            .expect("BOM-prefixed fixture must parse");
+        assert!(!doc.building.is_empty());
+    }
+
+    #[test]
+    fn test_parse_entity_refs_decoded() {
+        let doc = hpxml_core::v4::parse(fixture!("edge/entity-refs.xml"))
+            .expect("entity-refs fixture must parse");
+        assert_eq!(
+            doc.xml_transaction_header_information
+                .xml_generated_by
+                .content,
+            "Test & ampersand <less-than>"
+        );
+    }
+}
+
+// ============================================================================
 // Serialization Error Tests
 // ============================================================================
 
@@ -252,20 +400,7 @@ mod serialize_limits {
         let xml = fixture!("v4/minimal.xml");
         let hpxml = hpxml_core::v4::parse(xml).unwrap();
 
-        struct FailingWriter;
-        impl std::io::Write for FailingWriter {
-            fn write(&mut self, _buf: &[u8]) -> std::io::Result<usize> {
-                Err(std::io::Error::new(
-                    std::io::ErrorKind::Other,
-                    "write failed",
-                ))
-            }
-            fn flush(&mut self) -> std::io::Result<()> {
-                Ok(())
-            }
-        }
-
-        let mut writer = FailingWriter;
+        let mut writer = common::io_fail::FailingWriter;
         let result = hpxml.to_xml_into(&mut writer);
         assert!(matches!(result, Err(hpxml_core::SerializeError::Xml(_))));
     }
@@ -276,23 +411,7 @@ mod serialize_limits {
         let xml = fixture!("v4/minimal.xml");
         let hpxml = hpxml_core::v4::parse(xml).unwrap();
 
-        struct FailingFlusher {
-            buf: Vec<u8>,
-        }
-        impl std::io::Write for FailingFlusher {
-            fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
-                self.buf.extend_from_slice(data);
-                Ok(data.len())
-            }
-            fn flush(&mut self) -> std::io::Result<()> {
-                Err(std::io::Error::new(
-                    std::io::ErrorKind::Other,
-                    "flush failed",
-                ))
-            }
-        }
-
-        let mut writer = FailingFlusher { buf: Vec::new() };
+        let mut writer = common::io_fail::FailingFlusher { buf: Vec::new() };
         let result = hpxml.to_xml_into(&mut writer);
         assert!(matches!(result, Err(hpxml_core::SerializeError::Io(_))));
     }

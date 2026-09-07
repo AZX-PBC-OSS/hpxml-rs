@@ -36,13 +36,13 @@ jobs:
         run: cargo fmt --check
 
       - name: Clippy
-        run: cargo clippy --workspace --all-features
+        run: cargo clippy --workspace --all-features --locked -- -D warnings
 
       - name: Doc build
-        run: RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps
+        run: RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps --locked
 
       - name: Test
-        run: cargo test --workspace --all-features
+        run: cargo test --workspace --all-features --locked
 
       - name: Codegen drift check
         env:
@@ -82,7 +82,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Install cargo-audit
-        uses: taiki-e/install-action@v2
+        uses: taiki-e/install-action@d438492cf8a250514fa2d34b30bc3c0dc37c65ff # v2
         with:
           tool: cargo-audit
 
@@ -111,3 +111,40 @@ jobs:
 
       - name: Check
         run: cargo +1.86 check --workspace --all-features --locked
+
+  features:
+    # The main CI job only exercises --all-features, which hides breakage
+    # under any other combination (deny-warnings turns an unused import in
+    # one configuration into a failure). Every supported combination is
+    # checked and tested here.
+    name: Features
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - flags: --no-default-features
+          - flags: --no-default-features --features v2
+          - flags: --no-default-features --features v3
+          - flags: --no-default-features --features v4
+          - flags: --no-default-features --features v5
+          - flags: --features full
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Cache
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Check and test hpxml-core
+        run: |
+          cargo check -p hpxml-core ${{ matrix.flags }} --locked
+          cargo test -p hpxml-core ${{ matrix.flags }} --locked
+
+      - name: Check hpxml facade without defaults
+        if: ${{ matrix.flags == '--no-default-features' }}
+        run: cargo check -p hpxml --no-default-features --locked
