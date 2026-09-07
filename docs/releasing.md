@@ -23,11 +23,15 @@ would abort instead of unwinding in dist-profile binaries.
 
 ## Publishing checklist
 
-Publish in dependency order with ~30s waits for crates.io indexing:
+Publishing goes through `.github/workflows/release.yml` (Trusted Publishing,
+OIDC — no tokens), which follows the same pattern as `publish-crate` in
+AZX-PBC-OSS/tors. One-time setup per crate on crates.io (Settings → Trusted
+Publishers): owner `AZX-PBC-OSS`, repo `hpxml-rs`, workflow `release.yml`,
+environment `crates-io`.
 
 ```bash
-# 0. Bump the workspace version in the root Cargo.toml ([workspace.package]),
-#    commit, and tag (e.g. v0.2.0) once CI is green on the bump.
+# 0. Bump the workspace version in the root Cargo.toml ([workspace.package])
+#    and refresh Cargo.lock, commit, and tag (e.g. v0.2.0) once CI is green.
 
 # 1. Verify no codegen drift (matches CI, including untracked files)
 scripts/codegen.sh && git diff --exit-code && test -z "$(git status --porcelain crates/)"
@@ -35,27 +39,21 @@ scripts/codegen.sh && git diff --exit-code && test -z "$(git status --porcelain 
 # 2. Run all tests
 cargo test --workspace --all-features --locked
 
-# 3. Publish leaf crates. hpxml-types-v{2,3,4,5} depend only on crates.io
-#    packages (not on hpxml-common), so common and the type crates are
-#    independent leaves and can publish in any order relative to each other.
-cargo publish -p hpxml-common
+# 3. Dry-run the release workflow (Actions → Release → Run workflow,
+#    dry_run checked) and confirm the OIDC handshake succeeds.
 
-# 4. Publish type crates (independent of each other; each waits only on
-#    crates.io indexing of its own upload, ~30s between publishes)
-cargo publish -p hpxml-types-v2
-cargo publish -p hpxml-types-v3
-cargo publish -p hpxml-types-v4
-cargo publish -p hpxml-types-v5
+# 4. Push the version tag (e.g. v0.2.0). The tag run publishes for real in
+#    dependency order with index waits: hpxml-common → hpxml-types-v{2,3,4,5}
+#    → hpxml-core → hpxml.
 
-# 5. Publish core (depends on common + type crates)
-cargo publish -p hpxml-core
-
-# 6. Publish facade (depends on core)
-cargo publish -p hpxml
-
-# 7. Push the version tag; attach release notes describing schema changes
-#    and any handwritten-API changes per the semver policy above.
+# 5. Attach release notes to the tag describing schema changes and any
+#    handwritten-API changes per the semver policy above.
 ```
+
+If the workflow ever needs to be bypassed, the manual fallback is the same
+order with `cargo publish -p <crate>` and ~30-60s waits between crates for
+indexing. Note hpxml-types-v{2,3,4,5} depend only on crates.io packages (not
+on hpxml-common), so common and the type crates are independent leaves.
 
 ## CI pipeline
 
@@ -65,7 +63,7 @@ Workflow: `.github/workflows/ci.yml`
 1. `cargo fmt --check`
 2. `cargo clippy --workspace --all-features --locked -- -D warnings` (handwritten crates deny warnings via `[lints] workspace = true`; generated type crates carry `#![allow(warnings)]` and are covered by the drift check, not clippy)
 3. `cargo test --workspace --all-features --locked`
-4. Feature matrix (`features` job): check + test `hpxml-core` under no-defaults, each single version, and `full`, plus the `hpxml` facade without defaults
+4. Feature matrix (`features` job): check + test `hpxml-core` under no-defaults, each single version, and `full` (the `hpxml` facade without version features is a deliberate `compile_error`, not a supported configuration)
 5. Conventional-commit PR title (`commitlint` job; squash-merge feeds release automation)
 6. Codegen drift check
 7. Publish dry-run for leaf crates (`hpxml-common`, `hpxml-types-v{2,3,4,5}`) plus `cargo package --list` for `hpxml-core`/`hpxml` (their `cargo publish` dry-run only passes once siblings are on the index, so it runs at release time in checklist order)
