@@ -52,7 +52,7 @@ Workflow: `.github/workflows/ci.yml`
 2. `cargo clippy --workspace --all-features` (handwritten crates deny warnings via `[lints] workspace = true`; generated type crates allow only `clippy::never_loop`)
 3. `cargo test --workspace --all-features`
 4. Codegen drift check
-5. Publish dry-run for leaf crates (`hpxml-common`, `hpxml-types-v{2,3,4,5}`)
+5. Publish dry-run for leaf crates (`hpxml-common`, `hpxml-types-v{2,3,4,5}`) plus `cargo package --list` for `hpxml-core`/`hpxml` (their `cargo publish` dry-run only passes once siblings are on the index, so it runs at release time in checklist order)
 6. `cargo audit` (security job; known quick-xml advisories documented in `.cargo/audit.toml`)
 
 Release-tag automation (publish + multi-platform matrix) is not yet implemented.

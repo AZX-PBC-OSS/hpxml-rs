@@ -56,6 +56,12 @@ jobs:
             exit 1
           fi
 
+      # Dry-run publish for crates whose dependencies are all on crates.io.
+      # hpxml-core and hpxml depend on workspace siblings, so `cargo publish`
+      # for them only succeeds once those siblings are actually published;
+      # at release time run the same commands in dependency order
+      # (see docs/releasing.md). Here we additionally verify their package
+      # file lists, which needs no index access.
       - name: Publish dry-run (leaf crates)
         run: |
           cargo publish --dry-run --allow-dirty --package hpxml-common
@@ -63,8 +69,8 @@ jobs:
           cargo publish --dry-run --allow-dirty --package hpxml-types-v3
           cargo publish --dry-run --allow-dirty --package hpxml-types-v4
           cargo publish --dry-run --allow-dirty --package hpxml-types-v5
-          cargo publish --dry-run --allow-dirty --no-verify --package hpxml-core
-          cargo publish --dry-run --allow-dirty --no-verify --package hpxml
+          cargo package --allow-dirty --list --package hpxml-core > /dev/null
+          cargo package --allow-dirty --list --package hpxml > /dev/null
 
   security:
     name: Security audit
