@@ -42,7 +42,7 @@ fn rustfmt(code: &str) -> String {
 
 fn main() -> Result<(), Box<dyn Error>> {
     let out_dir = PathBuf::from(env::var("OUT_DIR")?);
-    let versions = env::var("HPXML_CODEGEN_VERSIONS").unwrap_or_else(|_| "v3,v4,v5".to_string());
+    let versions = env::var("HPXML_CODEGEN_VERSIONS").unwrap_or_else(|_| "v2,v3,v4,v5".to_string());
     let versions: Vec<&str> = versions
         .split(',')
         .map(str::trim)
@@ -50,7 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .collect();
 
     let repo_root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
-    let all_versions = ["v3", "v4", "v5"];
+    let all_versions = ["v2", "v3", "v4", "v5"];
 
     // Write stub files for skipped versions
     for version in all_versions {

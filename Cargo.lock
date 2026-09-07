@@ -40,18 +40,18 @@ checksum = "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
 
 [[package]]
 name = "hpxml"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "hpxml-core",
 ]
 
 [[package]]
 name = "hpxml-common"
-version = "0.1.0"
+version = "0.2.0"
 
 [[package]]
 name = "hpxml-core"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "hpxml-common",
  "hpxml-types-v2",
@@ -64,7 +64,7 @@ dependencies = [
 
 [[package]]
 name = "hpxml-types-v2"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "quick-xml",
  "regex",
@@ -73,7 +73,7 @@ dependencies = [
 
 [[package]]
 name = "hpxml-types-v3"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "quick-xml",
  "regex",
@@ -82,7 +82,7 @@ dependencies = [
 
 [[package]]
 name = "hpxml-types-v4"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "quick-xml",
  "regex",
@@ -91,7 +91,7 @@ dependencies = [
 
 [[package]]
 name = "hpxml-types-v5"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "quick-xml",
  "regex",

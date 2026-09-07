@@ -27,6 +27,10 @@
 
 set -euo pipefail
 
+command -v jq >/dev/null || { echo "ERROR: jq is required (see CONTRIBUTING.md)" >&2; exit 1; }
+
+CURL_RETRY=(--retry 3 --retry-delay 2 --retry-all-errors)
+
 GITHUB_TAGS_URL="https://api.github.com/repos/hpxmlwg/hpxml/tags?per_page=100"
 GITHUB_API_URL="https://api.github.com/repos/hpxmlwg/hpxml/contents/schemas"
 
@@ -63,7 +67,8 @@ if [[ "$STRIPPED" =~ ^[0-9]+$ ]]; then
   MAJOR="$STRIPPED"
   echo "Resolving latest stable v${MAJOR}.x tag via GitHub API..."
   # || true prevents grep's exit code 1 (no match) from triggering set -e.
-  TAG="$(curl -fsSL "${CURL_AUTH[@]}" "$GITHUB_TAGS_URL" \
+  # sort -V needs GNU coreutils (Linux CI); on macOS install coreutils first.
+  TAG="$(curl "${CURL_RETRY[@]}" -fsSL "${CURL_AUTH[@]}" "$GITHUB_TAGS_URL" \
     | jq -r '.[].name' \
     | grep -E "^v${MAJOR}\.[0-9]+(\.[0-9]+)?$" || true)"
   TAG="$(printf '%s\n' "$TAG" | sort -V | tail -1)"
@@ -81,7 +86,7 @@ fi
 
 # Auto-detect XSD files by listing the schemas directory via GitHub API
 echo "Detecting XSD files for ${TAG}..."
-XSD_FILES_JSON=$(curl -fsSL "${CURL_AUTH[@]}" "${GITHUB_API_URL}?ref=${TAG}" || echo "[]")
+XSD_FILES_JSON=$(curl "${CURL_RETRY[@]}" -fsSL "${CURL_AUTH[@]}" "${GITHUB_API_URL}?ref=${TAG}")
 
 # Extract .xsd file names (skip directories)
 XSD_FILES=()
@@ -120,7 +125,7 @@ for xsd in "${XSD_FILES[@]}"; do
   url="${BASE_URL}/${xsd}"
   dest="${TMP_DIR}/${xsd}"
   echo "  ${url}"
-  if ! curl -fsSL "$url" -o "$dest"; then
+  if ! curl "${CURL_RETRY[@]}" -fsSL "$url" -o "$dest"; then
     echo "ERROR: failed to fetch $url" >&2
     echo "Check that the tag '${TAG}' exists: https://github.com/hpxmlwg/hpxml/tags" >&2
     exit 1
@@ -129,14 +134,22 @@ done
 
 # Sanity check all files before touching the output directory.
 for xsd in "${XSD_FILES[@]}"; do
-  if ! grep -q "xs:schema" "${TMP_DIR}/${xsd}"; then
-    echo "ERROR: ${xsd} does not look like a valid XSD (missing xs:schema)" >&2
+  if ! grep -q "<xs:schema[ >]" "${TMP_DIR}/${xsd}"; then
+    echo "ERROR: ${xsd} does not look like a valid XSD (missing <xs:schema>)" >&2
     exit 1
   fi
 done
 
-mkdir -p -- "$OUT_DIR"
-cp "${TMP_DIR}"/*.xsd "$OUT_DIR/"
+# Install atomically: stage into a sibling directory, then swap it into place
+# so an interrupted run can never leave a mixed schema set behind. schemas/
+# is a re-fetchable local cache (gitignored) and codegen fails closed in CI
+# when a schema is missing, so replacing the directory is safe.
+mkdir -p -- "$(dirname "$OUT_DIR")"
+rm -rf -- "${OUT_DIR}.new"
+mkdir -p -- "${OUT_DIR}.new"
+cp "${TMP_DIR}"/*.xsd "${OUT_DIR}.new/"
+rm -rf -- "$OUT_DIR"
+mv "${OUT_DIR}.new" "$OUT_DIR"
 
 # Extract namespace and version from the xs:schema opening element.
 # Use -A5 because the element spans multiple lines (version= is on a continuation line).

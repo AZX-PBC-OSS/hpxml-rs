@@ -208,6 +208,27 @@ mod negative_inspect {
         // Malformed XML without namespace returns MissingNamespace first
         assert!(matches!(result, Err(InspectError::MissingNamespace)));
     }
+
+    #[test]
+    fn inspect_rejects_billion_laughs() {
+        let xml = fixture!("negative/billion-laughs.xml");
+        let result = hpxml_core::inspect::inspect(xml);
+        assert!(matches!(result, Err(InspectError::DtdNotAllowed)));
+    }
+
+    #[test]
+    fn inspect_rejects_xxe() {
+        let xml = fixture!("negative/xxe.xml");
+        let result = hpxml_core::inspect::inspect(xml);
+        assert!(matches!(result, Err(InspectError::DtdNotAllowed)));
+    }
+
+    #[test]
+    fn inspect_rejects_dtd_internal() {
+        let xml = fixture!("negative/dtd-internal.xml");
+        let result = hpxml_core::inspect::inspect(xml);
+        assert!(matches!(result, Err(InspectError::DtdNotAllowed)));
+    }
 }
 
 // ============================================================================

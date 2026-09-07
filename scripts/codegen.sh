@@ -20,8 +20,19 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SCHEMAS_DIR="$REPO_ROOT/schemas"
 
-# Parse version list (default: v2,v3,v4,v5)
-IFS=',' read -ra VERSIONS <<< "${1:-v2,v3,v4,v5}"
+# Parse version list (default: v2,v3,v4,v5). All arguments are joined so both
+# `./scripts/codegen.sh v4` and `./scripts/codegen.sh v3 v4` work; whitespace
+# is stripped so `./scripts/codegen.sh "v3, v4"` behaves identically.
+INPUT="${*:-v2,v3,v4,v5}"
+INPUT="$(printf '%s' "$INPUT" | tr -d '[:space:]')"
+IFS=',' read -ra VERSIONS <<< "$INPUT"
+
+for ver in "${VERSIONS[@]}"; do
+    if [[ ! "$ver" =~ ^v[0-9]+$ ]]; then
+        echo "ERROR: bad version '$ver' (expected e.g. v4)" >&2
+        exit 1
+    fi
+done
 
 # Fetch any missing schemas
 NEED_FETCH=()
@@ -44,6 +55,6 @@ fi
 # Run codegen-runner
 echo "Running codegen..."
 cd "$REPO_ROOT"
-cargo run --release --manifest-path scripts/codegen-runner/Cargo.toml -- "$@"
+cargo run --locked --release --manifest-path scripts/codegen-runner/Cargo.toml -- "$(IFS=,; echo "${VERSIONS[*]}")"
 
 exit 0

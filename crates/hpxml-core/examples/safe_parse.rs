@@ -1,30 +1,40 @@
 //! Parse an HPXML v4 file with custom safety limits and demonstrate error handling.
 //!
 //! Usage:
-//!   cargo run -p hpxml-core --features v4 --example safe_parse -- <path> [max_mb]
+//!   cargo run -p hpxml-core --features v4 --example safe_parse -- <path> [max_mib]
 //!
 //! Example:
 //!   cargo run -p hpxml-core --features v4 --example safe_parse -- crates/hpxml-core/tests/data/v4/audit.xml 1
 
 #[cfg(feature = "v4")]
 fn main() {
+    if let Err(e) = run() {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    }
+}
+
+#[cfg(feature = "v4")]
+fn run() -> Result<(), Box<dyn std::error::Error>> {
     use hpxml_core::{ParseConfig, ParseError};
 
     let path = std::env::args()
         .nth(1)
-        .unwrap_or_else(|| panic!("Usage: safe_parse <path> [max_mb]"));
+        .ok_or("usage: safe_parse <path> [max_mib]")?;
 
-    let max_mb: usize = std::env::args()
+    let max_mib: usize = std::env::args()
         .nth(2)
-        .and_then(|s| s.parse().ok())
+        .map(|s| s.parse().map_err(|_| format!("invalid max_mib: {s:?}")))
+        .transpose()?
         .unwrap_or(10);
 
-    let bytes = std::fs::read(&path).unwrap_or_else(|e| panic!("Failed to read {path}: {e}"));
+    let bytes = std::fs::read(&path).map_err(|e| format!("failed to read {path}: {e}"))?;
     println!("File size: {} bytes", bytes.len());
 
     let config = ParseConfig {
-        max_bytes: max_mb * 1_000_000,
+        max_bytes: max_mib.saturating_mul(1024 * 1024),
         max_depth: 64,
+        ..ParseConfig::default()
     };
     println!(
         "Limits: max_bytes={}, max_depth={}",
@@ -34,31 +44,25 @@ fn main() {
     match hpxml_core::v4::parse_with_config(&bytes, &config) {
         Ok(doc) => {
             println!("Parsed successfully: {} buildings", doc.building.len());
+            Ok(())
         }
         Err(ParseError::DocumentTooLarge { size, limit }) => {
-            eprintln!("Rejected: document is {size} bytes, limit is {limit} bytes");
-            std::process::exit(1);
+            Err(format!("rejected: document is {size} bytes, limit is {limit} bytes").into())
         }
         Err(ParseError::DepthLimitExceeded { depth, limit }) => {
-            eprintln!("Rejected: XML depth {depth} exceeds limit {limit}");
-            std::process::exit(1);
+            Err(format!("rejected: XML depth {depth} exceeds limit {limit}").into())
         }
         Err(ParseError::DtdNotAllowed) => {
-            eprintln!("Rejected: document contains a DTD declaration");
-            std::process::exit(1);
+            Err("rejected: document contains a DTD declaration".into())
         }
         Err(ParseError::Xml { message, position }) => {
             if let Some(pos) = position {
-                eprintln!("XML error at byte {pos}: {message}");
+                Err(format!("XML error at byte {pos}: {message}").into())
             } else {
-                eprintln!("XML error: {message}");
+                Err(format!("XML error: {message}").into())
             }
-            std::process::exit(1);
         }
-        Err(e) => {
-            eprintln!("Parse error: {e}");
-            std::process::exit(1);
-        }
+        Err(e) => Err(format!("parse error: {e}").into()),
     }
 }
 

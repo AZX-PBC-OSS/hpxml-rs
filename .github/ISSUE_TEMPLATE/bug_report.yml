@@ -55,5 +55,5 @@ body:
     attributes:
       label: Checks
       options:
-        - label: I tested against the current `feat/initial-implementation` head
+        - label: I tested against the current `main` head
         - label: This is not a codegen-output issue that belongs upstream (Bergmann89/xsd-parser)

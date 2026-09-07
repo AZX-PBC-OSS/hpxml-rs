@@ -8,6 +8,11 @@
 #
 # Tracked for removal once upstream publishes xsd-parser-types > 0.2.1:
 # https://github.com/Bergmann89/xsd-parser
+# That release arrives via the existing Dependabot cargo coverage (grouped
+# patch/minor for the workspace, codegen-runner, and example manifests);
+# removing an entry here is part of landing that bump. Unreleased upstream
+# fixes also tracked there: default-value simpleContent, shared
+# content-type boxing, group-traversal need_box.
 #
 # Mitigations in the meantime (see crates/hpxml-common/src/config.rs):
 # - ParseConfig::max_bytes defaults to 50 MiB (bounds NsReader allocation)
@@ -17,9 +22,11 @@
 ignore = [
     # RUSTSEC-2026-0194: quadratic dup-attribute check. Blocked on upstream
     # xsd-parser-types release with quick-xml >= 0.41.
+    # REVIEW 2027-03-01: remove when `cargo tree -i quick-xml` shows >= 0.41.
     "RUSTSEC-2026-0194",
     # RUSTSEC-2026-0195: unbounded NsReader namespace allocation. Blocked on
     # upstream xsd-parser-types release with quick-xml >= 0.41; bounded by
     # ParseConfig::max_bytes.
+    # REVIEW 2027-03-01: remove when `cargo tree -i quick-xml` shows >= 0.41.
     "RUSTSEC-2026-0195",
 ]

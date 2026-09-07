@@ -8,16 +8,24 @@
 
 #[cfg(feature = "v4")]
 fn main() {
+    if let Err(e) = run() {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    }
+}
+
+#[cfg(feature = "v4")]
+fn run() -> Result<(), Box<dyn std::error::Error>> {
     use hpxml_core::HpxmlSerialize;
 
     let path = std::env::args()
         .nth(1)
-        .unwrap_or_else(|| panic!("Usage: roundtrip <path-to-hpxml-v4.xml>"));
+        .ok_or("usage: roundtrip <path-to-hpxml-v4.xml>")?;
 
-    let bytes = std::fs::read(&path).unwrap_or_else(|e| panic!("Failed to read {path}: {e}"));
+    let bytes = std::fs::read(&path).map_err(|e| format!("failed to read {path}: {e}"))?;
 
     // Parse
-    let mut doc = hpxml_core::v4::parse(&bytes).unwrap_or_else(|e| panic!("Parse error: {e}"));
+    let mut doc = hpxml_core::v4::parse(&bytes).map_err(|e| format!("parse error: {e}"))?;
     println!("Parsed: {} buildings", doc.building.len());
 
     // Modify: strip optional sections from the first building
@@ -33,20 +41,17 @@ fn main() {
     }
 
     // Serialize to XML bytes
-    let xml_bytes = doc
-        .to_xml()
-        .unwrap_or_else(|e| panic!("Serialize error: {e}"));
+    let xml_bytes = doc.to_xml().map_err(|e| format!("serialize error: {e}"))?;
     println!("Serialized: {} bytes", xml_bytes.len());
 
     // Re-parse and verify structural equality
-    let reparsed =
-        hpxml_core::v4::parse(&xml_bytes).unwrap_or_else(|e| panic!("Re-parse error: {e}"));
+    let reparsed = hpxml_core::v4::parse(&xml_bytes).map_err(|e| format!("re-parse error: {e}"))?;
 
     if doc == reparsed {
         println!("Round-trip OK: documents are structurally equal");
+        Ok(())
     } else {
-        eprintln!("Round-trip FAILED: documents differ after re-parse");
-        std::process::exit(1);
+        Err("round-trip FAILED: documents differ after re-parse".into())
     }
 }
 

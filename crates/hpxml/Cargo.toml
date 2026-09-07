@@ -13,7 +13,7 @@ description = "Rust library for parsing HPXML (Home Performance XML) files"
 categories = ["parser-implementations", "encoding"]
 
 [dependencies]
-hpxml-core = { version = "0.1.0", path = "../hpxml-core" }
+hpxml-core = { workspace = true }
 
 [package.metadata.docs.rs]
 features = ["v4"]

@@ -10,15 +10,19 @@
 /// - `parse_with_config(bytes: &[u8], config: &ParseConfig)` - Parse with custom config
 /// - `impl HpxmlSerialize for $root_type` - Serialization implementation
 ///
+/// Parse failures surface as the crate's `ParseError`; serialization failures
+/// as `SerializeError` (see `hpxml_common`).
+///
 /// # Arguments
 ///
-/// - `$version`: The version module identifier (e.g., `v4`)
-/// - `$root_type`: The root type from the generated code (e.g., `HpxmlType`)
+/// - `$version`: version tag interpolated into the generated items' docs
+///   (e.g. `v4`)
+/// - `$root_type`: the version's generated root type (e.g. `HpxmlType`)
 #[doc(hidden)]
 #[macro_export]
 macro_rules! impl_version_module {
     ($version:ident, $root_type:ident) => {
-        /// Parse an HPXML document with default configuration.
+        #[doc = concat!("Parse an HPXML ", stringify!($version), " document with default configuration.")]
         ///
         /// # Errors
         ///
@@ -27,7 +31,7 @@ macro_rules! impl_version_module {
             parse_with_config(bytes, &$crate::ParseConfig::default())
         }
 
-        /// Parse an HPXML document with custom configuration.
+        #[doc = concat!("Parse an HPXML ", stringify!($version), " document with custom configuration.")]
         ///
         /// # Errors
         ///

@@ -5,6 +5,7 @@
 
 use quick_xml::NsReader;
 use quick_xml::events::Event;
+use quick_xml::name::ResolveResult;
 
 use crate::{HpxmlFileInfo, InspectError, ParseConfig, dtd_guard, version_from_namespace};
 
@@ -45,7 +46,7 @@ pub fn inspect_with_config(
     bytes: &[u8],
     config: &ParseConfig,
 ) -> Result<HpxmlFileInfo, InspectError> {
-    // Step 1: Check document size
+    // Size gate.
     if bytes.len() > config.max_bytes {
         return Err(InspectError::DocumentTooLarge {
             size: bytes.len(),
@@ -53,19 +54,19 @@ pub fn inspect_with_config(
         });
     }
 
-    // Step 2: Reject DTD declarations before any XML parsing
+    // DTD gate: reject before any XML parsing.
     if dtd_guard::has_doctype(bytes) {
         return Err(InspectError::DtdNotAllowed);
     }
 
-    // Step 3: Create XML reader (no depth limit needed: we stop after the root element)
+    // Lightweight reader: we stop after the root element, so no depth limit.
     let mut reader = NsReader::from_reader(bytes);
     reader.config_mut().trim_text(true);
 
     // Buffer for reading events
     let mut buf = Vec::new();
 
-    // Step 4: Read events until we find the root element
+    // Read events until the root element.
     let mut root_namespace: Option<String> = None;
     let mut root_schema_version: Option<String> = None;
 
@@ -73,17 +74,30 @@ pub fn inspect_with_config(
         buf.clear();
         match reader.read_event_into(&mut buf) {
             Ok(Event::Start(e)) | Ok(Event::Empty(e)) => {
-                // Step 5: Check if root element is HPXML
-                let local_name = e.local_name();
-                let local_name_str = String::from_utf8_lossy(local_name.as_ref()).to_string();
+                // Resolve the element name against in-scope namespace
+                // declarations (NsReader already pushed this element's own
+                // xmlns attributes). This accepts the default-namespace form
+                // `<HPXML xmlns="...">` and prefixed forms like
+                // `<h:HPXML xmlns:h="...">` identically.
+                let (ns_result, local) = reader.resolver().resolve_element(e.name());
+                let local_name_str = String::from_utf8_lossy(local.into_inner()).into_owned();
 
-                if local_name.as_ref() != b"HPXML" {
+                // Root element must be HPXML.
+                if local_name_str != "HPXML" {
                     return Err(InspectError::NotHpxml {
                         found_element: local_name_str,
                     });
                 }
 
-                // Step 6: Extract xmlns attribute (default namespace) and schemaVersion
+                // Record the resolved namespace. Unbound (no declaration in
+                // scope) and Unknown (undeclared prefix) both surface
+                // downstream as MissingNamespace: the document declares no
+                // usable HPXML namespace.
+                if let ResolveResult::Bound(ns) = ns_result {
+                    root_namespace = Some(String::from_utf8_lossy(ns.into_inner()).into_owned());
+                }
+
+                // Extract schemaVersion (unaffected by the element's prefix).
                 for attr in e.attributes() {
                     let attr = attr.map_err(|e| InspectError::MalformedXml(e.to_string()))?;
                     let value = attr
@@ -91,14 +105,12 @@ pub fn inspect_with_config(
                         .map_err(|e| InspectError::MalformedXml(e.to_string()))?
                         .into_owned();
 
-                    if attr.key.as_ref() == b"xmlns" {
-                        root_namespace = Some(value);
-                    } else if attr.key.as_ref() == b"schemaVersion" {
+                    if attr.key.as_ref() == b"schemaVersion" {
                         root_schema_version = Some(value);
                     }
                 }
 
-                // We've found the root element, no need to read more
+                // Root element found; nothing further to read.
                 break;
             }
             Ok(Event::Eof) => {
@@ -113,36 +125,56 @@ pub fn inspect_with_config(
         }
     }
 
-    // Step 7: Check namespace is present
+    // Namespace must be present and recognized.
     let namespace = root_namespace.ok_or(InspectError::MissingNamespace)?;
 
-    // Step 8: Look up version from namespace
+    // Look up version from namespace.
     let version = version_from_namespace(&namespace)
         .ok_or_else(|| InspectError::UnknownNamespace(namespace.clone()))?;
 
-    // Step 9: Extract and validate schemaVersion
+    // schemaVersion must be present.
     let schema_version = root_schema_version.ok_or(InspectError::MissingSchemaVersion)?;
 
-    // Empty schemaVersion is treated as missing
-    if schema_version.is_empty() {
+    // Whitespace-only counts as missing; surrounding whitespace or a BOM
+    // around a real value is tolerated.
+    if schema_version.trim().trim_matches('\u{FEFF}').is_empty() {
         return Err(InspectError::MissingSchemaVersion);
     }
 
-    // Step 10: Cross-check namespace implies version range
-    let schema_version_major = schema_version
-        .split('.')
-        .next()
-        .and_then(|s| s.parse::<u32>().ok())
-        .unwrap_or(0);
+    // Require a numeric `major.minor` shape. Anything else is malformed
+    // input, not a namespace/version mismatch.
+    let major: u32 = {
+        let value = schema_version.trim().trim_matches('\u{FEFF}');
+        let mut parts = value.split('.');
+        let shaped = match (parts.next(), parts.next()) {
+            (Some(major), Some(minor))
+                if !major.is_empty()
+                    && major.bytes().all(|b| b.is_ascii_digit())
+                    && minor.bytes().next().is_some_and(|b| b.is_ascii_digit()) =>
+            {
+                major.parse::<u32>().ok()
+            }
+            _ => None,
+        };
+        match shaped {
+            Some(major) => major,
+            None => {
+                return Err(InspectError::MalformedXml(format!(
+                    "bad schemaVersion {schema_version:?}"
+                )));
+            }
+        }
+    };
 
-    if schema_version_major != version.major() {
+    // Cross-check: namespace major version must match schemaVersion major.
+    if major != version.major() {
         return Err(InspectError::NamespaceVersionMismatch {
             schema_version,
             namespace,
         });
     }
 
-    // Step 11: Return HpxmlFileInfo
+    // Return HpxmlFileInfo
     Ok(HpxmlFileInfo {
         version,
         schema_version,
@@ -216,6 +248,45 @@ mod tests {
     }
 
     #[test]
+    fn test_inspect_prefixed_namespace() {
+        let xml = br#"<?xml version="1.0"?>
+<h:HPXML xmlns:h="http://hpxmlonline.com/2023/09" schemaVersion="4.0"></h:HPXML>"#;
+        let info = inspect(xml).unwrap();
+        assert_eq!(info.version, HpxmlVersion::V4);
+        assert_eq!(info.schema_version, "4.0");
+        assert_eq!(info.namespace, "http://hpxmlonline.com/2023/09");
+    }
+
+    #[test]
+    fn test_inspect_prefixed_empty_root() {
+        let xml = br#"<?xml version="1.0"?>
+<h:HPXML xmlns:h="http://hpxmlonline.com/2019/10" schemaVersion="3.1"/>"#;
+        let info = inspect(xml).unwrap();
+        assert_eq!(info.version, HpxmlVersion::V3);
+    }
+
+    #[test]
+    fn test_inspect_undeclared_prefix_is_missing_namespace() {
+        let xml = br#"<?xml version="1.0"?>
+<h:HPXML schemaVersion="4.0"></h:HPXML>"#;
+        let result = inspect(xml);
+        assert!(matches!(result, Err(InspectError::MissingNamespace)));
+    }
+
+    #[test]
+    fn test_inspect_prefixed_not_hpxml_reports_local_name() {
+        let xml = br#"<?xml version="1.0"?>
+<h:Root xmlns:h="http://example.com/"></h:Root>"#;
+        let result = inspect(xml);
+        assert!(matches!(
+            result,
+            Err(InspectError::NotHpxml {
+                found_element,
+            }) if found_element == "Root"
+        ));
+    }
+
+    #[test]
     fn test_inspect_missing_schema_version() {
         let xml = br#"<?xml version="1.0"?>
 <HPXML xmlns="http://hpxmlonline.com/2019/10"></HPXML>"#;
@@ -244,14 +315,27 @@ mod tests {
     }
 
     #[test]
-    fn test_inspect_non_numeric_schema_version_mismatch() {
+    fn test_inspect_non_numeric_schema_version_is_malformed() {
         let xml = br#"<?xml version="1.0"?>
 <HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="x.y"></HPXML>"#;
         let result = inspect(xml);
-        assert!(matches!(
-            result,
-            Err(InspectError::NamespaceVersionMismatch { .. })
-        ));
+        assert!(matches!(result, Err(InspectError::MalformedXml(_))));
+    }
+
+    #[test]
+    fn test_inspect_bare_major_schema_version_is_malformed() {
+        let xml = br#"<?xml version="1.0"?>
+<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4"></HPXML>"#;
+        let result = inspect(xml);
+        assert!(matches!(result, Err(InspectError::MalformedXml(_))));
+    }
+
+    #[test]
+    fn test_inspect_whitespace_schema_version_is_missing() {
+        let xml = br#"<?xml version="1.0"?>
+<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="   "></HPXML>"#;
+        let result = inspect(xml);
+        assert!(matches!(result, Err(InspectError::MissingSchemaVersion)));
     }
 
     #[test]
@@ -269,117 +353,29 @@ mod tests {
     }
 
     #[test]
+    fn test_inspect_with_config_size_limit() {
+        let xml = include_bytes!("../tests/data/v4/minimal.xml");
+        let config = ParseConfig {
+            max_bytes: 10,
+            ..ParseConfig::default()
+        };
+        let result = inspect_with_config(xml, &config);
+        assert!(
+            matches!(result, Err(InspectError::DocumentTooLarge { .. })),
+            "undersized limit must be rejected, got: {result:?}"
+        );
+        let ok_config = ParseConfig {
+            max_bytes: xml.len(),
+            ..ParseConfig::default()
+        };
+        assert!(inspect_with_config(xml, &ok_config).is_ok());
+    }
+
+    #[test]
     fn test_inspect_empty_element() {
         let xml = br#"<?xml version="1.0"?>
 <HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="3.0"/>"#;
         let info = inspect(xml).unwrap();
         assert_eq!(info.version, HpxmlVersion::V3);
-    }
-
-    // Integration tests using actual test files from tests/data
-
-    #[test]
-    fn test_inspect_v2_file() {
-        let xml = include_bytes!("../tests/data/v2/audit.xml");
-        let info = inspect(xml).unwrap();
-        assert_eq!(info.version, HpxmlVersion::V2);
-        assert!(info.schema_version.starts_with("2."));
-    }
-
-    #[test]
-    fn test_inspect_v3_file() {
-        let xml = include_bytes!("../tests/data/v3/audit.xml");
-        let info = inspect(xml).unwrap();
-        assert_eq!(info.version, HpxmlVersion::V3);
-        assert!(info.schema_version.starts_with("3."));
-    }
-
-    #[test]
-    fn test_inspect_v4_file() {
-        let xml = include_bytes!("../tests/data/v4/minimal.xml");
-        let info = inspect(xml).unwrap();
-        assert_eq!(info.version, HpxmlVersion::V4);
-        assert!(info.schema_version.starts_with("4."));
-    }
-
-    #[test]
-    fn test_inspect_v5_file() {
-        let xml = include_bytes!("../tests/data/v5/audit.xml");
-        let info = inspect(xml).unwrap();
-        assert_eq!(info.version, HpxmlVersion::V5);
-        assert!(info.schema_version.starts_with("5."));
-    }
-
-    #[test]
-    fn test_inspect_negative_not_hpxml_file() {
-        let xml = include_bytes!("../tests/data/negative/not-hpxml.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::NotHpxml { .. })));
-    }
-
-    #[test]
-    fn test_inspect_negative_unknown_namespace_file() {
-        let xml = include_bytes!("../tests/data/negative/unknown-namespace.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::UnknownNamespace(_))));
-    }
-
-    #[test]
-    fn test_inspect_negative_missing_namespace_file() {
-        let xml = include_bytes!("../tests/data/negative/missing-namespace.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::MissingNamespace)));
-    }
-
-    #[test]
-    fn test_inspect_negative_missing_schema_version_file() {
-        let xml = include_bytes!("../tests/data/negative/missing-schema-version.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::MissingSchemaVersion)));
-    }
-
-    #[test]
-    fn test_inspect_negative_bad_schema_version_file() {
-        let xml = include_bytes!("../tests/data/negative/bad-schema-version.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::MissingSchemaVersion)));
-    }
-
-    #[test]
-    fn test_inspect_negative_malformed_file() {
-        let xml = include_bytes!("../tests/data/negative/malformed.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::MissingNamespace)));
-    }
-
-    #[test]
-    fn test_inspect_edge_ochre_mismatch_file() {
-        let xml = include_bytes!("../tests/data/edge/ochre-mismatch.xml");
-        let result = inspect(xml);
-        assert!(matches!(
-            result,
-            Err(InspectError::NamespaceVersionMismatch { .. })
-        ));
-    }
-
-    #[test]
-    fn test_inspect_rejects_billion_laughs() {
-        let xml = include_bytes!("../tests/data/negative/billion-laughs.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::DtdNotAllowed)));
-    }
-
-    #[test]
-    fn test_inspect_rejects_xxe() {
-        let xml = include_bytes!("../tests/data/negative/xxe.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::DtdNotAllowed)));
-    }
-
-    #[test]
-    fn test_inspect_rejects_dtd_internal() {
-        let xml = include_bytes!("../tests/data/negative/dtd-internal.xml");
-        let result = inspect(xml);
-        assert!(matches!(result, Err(InspectError::DtdNotAllowed)));
     }
 }

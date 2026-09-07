@@ -8,12 +8,20 @@
 
 #[cfg(feature = "v4")]
 fn main() {
+    if let Err(e) = run() {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    }
+}
+
+#[cfg(feature = "v4")]
+fn run() -> Result<(), Box<dyn std::error::Error>> {
     let path = std::env::args()
         .nth(1)
-        .unwrap_or_else(|| panic!("Usage: parse_file <path-to-hpxml-v4.xml>"));
+        .ok_or("usage: parse_file <path-to-hpxml-v4.xml>")?;
 
-    let bytes = std::fs::read(&path).unwrap_or_else(|e| panic!("Failed to read {path}: {e}"));
-    let doc = hpxml_core::v4::parse(&bytes).unwrap_or_else(|e| panic!("Parse error: {e}"));
+    let bytes = std::fs::read(&path).map_err(|e| format!("failed to read {path}: {e}"))?;
+    let doc = hpxml_core::v4::parse(&bytes).map_err(|e| format!("parse error: {e}"))?;
 
     println!("Schema version: {:?}", doc.schema_version);
     println!("Buildings: {}", doc.building.len());
@@ -47,6 +55,7 @@ fn main() {
     if !doc.contractor.is_empty() {
         println!("Contractors: {}", doc.contractor.len());
     }
+    Ok(())
 }
 
 #[cfg(not(feature = "v4"))]

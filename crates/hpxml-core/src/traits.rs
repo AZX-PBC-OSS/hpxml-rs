@@ -10,15 +10,20 @@ use hpxml_common::{SerializeError, SerializeOptions};
 ///
 /// # Example
 ///
-/// ```ignore
-/// use hpxml_core::HpxmlSerialize;
+/// ```no_run
+/// # #![allow(unused_imports)]
+/// use hpxml_core::{HpxmlSerialize, SerializeOptions};
 ///
+/// # #[cfg(feature = "v4")]
+/// # fn demo(doc: hpxml_core::v4::HpxmlType) -> Result<(), hpxml_core::SerializeError> {
 /// let xml_bytes = doc.to_xml()?;
 /// doc.to_xml_into(&mut std::io::Cursor::new(Vec::new()))?;
 ///
 /// // With XML declaration
-/// let opts = hpxml_core::SerializeOptions { xml_declaration: true };
-/// let xml_bytes = doc.to_xml_with_options(&opts)?;
+/// let opts = SerializeOptions { xml_declaration: true };
+/// let declared = doc.to_xml_with_options(&opts)?;
+/// # Ok(())
+/// # }
 /// ```
 pub trait HpxmlSerialize {
     /// Serializes the HPXML document to a byte vector.

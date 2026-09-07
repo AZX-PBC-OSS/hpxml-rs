@@ -18,10 +18,10 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  ci:
-    name: CI
+  lint:
+    name: Format, clippy, docs
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -36,13 +36,76 @@ jobs:
         run: cargo fmt --check
 
       - name: Clippy
-        run: cargo clippy --workspace --all-features
+        run: cargo clippy --workspace --all-features --locked -- -D warnings
 
       - name: Doc build
-        run: RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps
+        run: RUSTDOCFLAGS="-D warnings" cargo doc --workspace --all-features --no-deps --locked
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Cache
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Test
-        run: cargo test --workspace --all-features
+        run: cargo test --workspace --all-features --locked
+
+  features:
+    # The main CI jobs only exercise --all-features, which hides breakage
+    # under any other combination (deny-warnings turns an unused import in
+    # one configuration into a failure). Every supported hpxml-core feature
+    # set is checked and tested here. The hpxml facade is excluded: without
+    # version features it is a deliberate compile_error, not a supported
+    # configuration.
+    name: Features
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - flags: --no-default-features
+          - flags: --no-default-features --features v2
+          - flags: --no-default-features --features v3
+          - flags: --no-default-features --features v4
+          - flags: --no-default-features --features v5
+          - flags: --features full
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Cache
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Check and test hpxml-core
+        run: |
+          cargo check -p hpxml-core ${{ matrix.flags }} --locked
+          cargo test -p hpxml-core ${{ matrix.flags }} --locked
+
+  drift:
+    name: Codegen drift and publish check
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Cache
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Codegen drift check
         env:
@@ -81,10 +144,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Install cargo-audit
-        uses: taiki-e/install-action@v2
+      # Tools intentionally floating: version pins here go stale silently
+      # (pinned cargo-audit 0.22.0 choked on the v4 Cargo.lock) and
+      # Dependabot cannot bump tool strings, only action tags. A breaking
+      # tool release fails this job loudly instead of rotting.
+      - name: Install cargo-audit and cargo-deny
+        uses: taiki-e/install-action@d438492cf8a250514fa2d34b30bc3c0dc37c65ff # v2
         with:
-          tool: cargo-audit
+          tool: cargo-audit,cargo-deny
 
       # Fails on new advisories. Known quick-xml 0.38 issues are documented
       # with justification in .cargo/audit.toml until upstream xsd-parser
@@ -97,6 +164,16 @@ jobs:
           cargo audit --deny warnings --file scripts/codegen-runner/Cargo.lock
           cargo audit --deny warnings --file examples/codegen-compile-check/Cargo.lock
 
+      - name: License and ban check
+        # The workspace (shipped library) gets the full policy. The standalone
+        # codegen manifests are build-time tools whose duplicate transitive
+        # deps (e.g. syn 2/3 via xsd-parser's url stack) never ship, so bans
+        # are scoped to licenses+sources there.
+        run: |
+          cargo deny check licenses bans sources
+          cargo deny --manifest-path scripts/codegen-runner/Cargo.toml check licenses sources
+          cargo deny --manifest-path examples/codegen-compile-check/Cargo.toml check licenses sources
+
   msrv:
     name: MSRV
     runs-on: ubuntu-latest
@@ -107,7 +184,18 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Install Rust 1.86
-        run: rustup toolchain install 1.86 --component clippy --profile minimal
+        uses: dtolnay/rust-toolchain@1.86
+        with:
+          toolchain: "1.86"
+          components: clippy
+
+      - name: Cache
+        uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Check
-        run: cargo +1.86 check --workspace --all-features --locked
+        run: cargo check --workspace --all-features --locked
+
+      - name: Test
+        run: cargo test --workspace --all-features --locked

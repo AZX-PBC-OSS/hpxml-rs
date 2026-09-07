@@ -1,0 +1,26 @@
+# cargo-deny configuration: https://embarkstudios.github.io/cargo-deny/
+#
+# Every runtime dependency must be under a permissive license compatible
+# with the workspace BSD-3-Clause. The current tree (quick-xml, regex,
+# xsd-parser-types and their transitive deps) uses only MIT / Apache-2.0 /
+# BSD-3-Clause / Unicode-3.0 / Unlicense.
+
+[licenses]
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "Unicode-3.0",
+    "Unlicense",
+]
+confidence-threshold = 0.8
+exceptions = []
+
+[bans]
+multiple-versions = "deny"
+wildcards = "deny"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"

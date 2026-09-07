@@ -10,20 +10,26 @@
 //! - XXE (external entity references)
 //! - Inline DTD subset (element/attribute declarations)
 //!
-//! The scan is intentionally case-sensitive. The XML 1.0 spec requires `DOCTYPE`
-//! in upper-case, so a lower-case variant is malformed XML regardless.
+//! The scan is case-sensitive: the XML 1.0 spec requires `DOCTYPE` in
+//! upper-case, so only the upper-case marker declares a DTD. A lower-case
+//! variant is skipped by the parser and never produces `Event::DocType`;
+//! `lowercase_doctype_is_not_a_dtd` pins that behavior.
 
-/// Scan up to the first 4 KiB of `bytes` for a `<!DOCTYPE` marker.
+/// Scan the full input for a `<!DOCTYPE` marker.
 ///
 /// Returns `true` if a DTD declaration is present, `false` otherwise.
-/// The scan stops as soon as the marker is found or the window is exhausted.
+/// The input is already bounded by `ParseConfig::max_bytes`, so a full
+/// scan stays O(n) relative to work parsing would do anyway. A fixed
+/// window would let an attacker pad the prolog with comments/PIs/
+/// whitespace (all legal before DOCTYPE per XML 1.0 §2.8) to push the
+/// declaration past the window.
 pub(crate) fn has_doctype(bytes: &[u8]) -> bool {
-    const WINDOW: usize = 4096;
     const MARKER: &[u8] = b"<!DOCTYPE";
 
-    let window = &bytes[..bytes.len().min(WINDOW)];
-    // Use a simple sub-slice search; the window is at most 4 KiB so this is O(n).
-    window.windows(MARKER.len()).any(|chunk| chunk == MARKER)
+    if bytes.len() < MARKER.len() {
+        return false;
+    }
+    bytes.windows(MARKER.len()).any(|chunk| chunk == MARKER)
 }
 
 #[cfg(test)]
@@ -56,32 +62,29 @@ mod tests {
     }
 
     #[test]
-    fn doctype_in_comment_is_not_detected() {
-        // A DOCTYPE-like string inside a comment is within the first 4 KiB, but
-        // that is acceptable: a real XML comment cannot precede the root element
-        // in a position that would hide a real DTD, and the false-positive rate
-        // for legitimate HPXML documents is zero (HPXML files never have comments
-        // before the root element mentioning DOCTYPE).
-        //
-        // This test documents the known behaviour: the guard is a byte scan and
-        // does not understand XML comment boundaries.
+    fn doctype_marker_in_comment_is_rejected_conservatively() {
+        // The guard is a byte scan without XML comment awareness, so a marker
+        // inside a comment is still rejected. No legitimate HPXML document
+        // mentions DOCTYPE in a pre-root comment, so the false-positive rate
+        // on real inputs is zero.
         let xml = br#"<?xml version="1.0"?>
 <!-- <!DOCTYPE fake> -->
 <HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.0"/>"#;
-        // The guard does flag this; that is the intentional conservative choice.
         assert!(has_doctype(xml));
     }
 
     #[test]
-    fn doctype_beyond_window_is_not_detected() {
-        // Construct a document where <!DOCTYPE appears after the 4 KiB boundary.
-        // The guard only scans the first 4 KiB, so this slips through intentionally.
-        // In practice HPXML files always have the DTD (if present) within the
-        // first few hundred bytes; this edge case only matters for crafted inputs.
+    fn doctype_after_long_prolog_is_detected() {
         let padding = vec![b' '; 4096];
         let mut xml = b"<?xml version=\"1.0\"?>".to_vec();
         xml.extend_from_slice(&padding);
         xml.extend_from_slice(b"<!DOCTYPE late []>");
-        assert!(!has_doctype(&xml));
+        assert!(has_doctype(&xml));
+    }
+
+    #[test]
+    fn lowercase_doctype_is_not_a_dtd() {
+        let xml = b"<?xml version=\"1.0\"?><!doctype HPXML []>";
+        assert!(!has_doctype(xml));
     }
 }
