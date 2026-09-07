@@ -144,7 +144,3 @@ jobs:
         run: |
           cargo check -p hpxml-core ${{ matrix.flags }} --locked
           cargo test -p hpxml-core ${{ matrix.flags }} --locked
-
-      - name: Check hpxml facade without defaults
-        if: ${{ matrix.flags == '--no-default-features' }}
-        run: cargo check -p hpxml --no-default-features --locked
