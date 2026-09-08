@@ -69,8 +69,11 @@ Workflow: `.github/workflows/ci.yml`
 7. Publish dry-run for leaf crates (`hpxml-common`, `hpxml-types-v{2,3,4,5}`) plus `cargo package --list` for `hpxml-core`/`hpxml` (their `cargo publish` dry-run only passes once siblings are on the index, so it runs at release time in checklist order)
 8. `cargo audit` (security job; known quick-xml advisories documented in `.cargo/audit.toml`)
 
-Release-tag automation (publish + multi-platform matrix) is not yet implemented.
-Publishing is currently manual per the checklist above.
+Release automation: `.github/workflows/release.yml` publishes to crates.io via
+Trusted Publishing on version tags (`vX.Y.Z`), in dependency order with index
+waits. Reruns are idempotent — crates already on the index are skipped so a
+partial publish can be retried safely. The manual fallback in the checklist
+above uses the same order.
 
 ## CI notes
 

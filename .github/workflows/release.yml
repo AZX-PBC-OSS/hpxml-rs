@@ -55,7 +55,21 @@ jobs:
           publish() {
             echo "--- publishing $1 ---"
             # shellcheck disable=SC2086
-            cargo publish $FLAGS --package "$1"
+            set +e
+            output=$(cargo publish $FLAGS --package "$1" 2>&1)
+            status=$?
+            set -e
+            echo "$output"
+            if [ $status -ne 0 ]; then
+              # Idempotent reruns: a tag workflow rerun (or a prior manual
+              # `cargo publish`) leaves the version on the index. Treat
+              # "already exists" as success so remaining crates still publish.
+              if echo "$output" | grep -q "already exists on"; then
+                echo "--- $1 already on crates.io, skipping ---"
+                return 0
+              fi
+              return $status
+            fi
           }
           wait_for_index() {
             echo "waiting $1s for crates.io indexing..."
