@@ -39,7 +39,13 @@ const V4_ENVELOPE_V3_SITE: &str = r#"<HPXML xmlns='http://hpxmlonline.com/2023/0
   </Building>
 </HPXML>"#;
 
+// These tests reference both `hpxml::v3` and `hpxml::v4`, which only exist
+// when the corresponding version feature is enabled. The crate's default
+// feature set is `v4` alone, so gate each test on the feature it needs to
+// keep `cargo test --workspace` (default features) compilable.
+
 #[test]
+#[cfg(feature = "v4")]
 fn v4_parse_skips_v3_shaped_site_children() {
     let doc = hpxml::v4::parse(V4_ENVELOPE_V3_SITE.as_bytes())
         .expect("v4 parse must skip unknown Site children");
@@ -57,6 +63,7 @@ fn v4_parse_skips_v3_shaped_site_children() {
 }
 
 #[test]
+#[cfg(feature = "v3")]
 fn v3_parse_accepts_v3_shaped_site() {
     // Same content under the v3 namespace/schemaVersion. Note: in v3,
     // `Site/SiteID` is schema-valid, but v3 keeps latitude/longitude under
@@ -81,6 +88,7 @@ fn v3_parse_accepts_v3_shaped_site() {
 }
 
 #[test]
+#[cfg(feature = "v3")]
 fn v3_preserves_geolocation_latitude() {
     // Positive control for the fix: latitude under its schema-valid v3 path
     // (`Site/GeoLocation/Latitude`) is part of the content model and must
