@@ -164,7 +164,7 @@ impl ::xsd_parser_types::quick_xml::WithDeserializer for AnyType {
     type Deserializer = quick_xml_deserialize::AnyTypeDeserializer;
 }
 pub type AnyUri = ::std::string::String;
-pub type Base64Binary = ::std::string::String;
+pub type Base64Binary = ::xsd_parser_types::xml::Base64String;
 pub type Boolean = ::core::primitive::bool;
 pub type Byte = ::core::primitive::i8;
 pub type Date = ::std::string::String;
@@ -178,7 +178,7 @@ pub type GMonth = ::std::string::String;
 pub type GMonthDay = ::std::string::String;
 pub type GYear = ::std::string::String;
 pub type GYearMonth = ::std::string::String;
-pub type HexBinary = ::std::string::String;
+pub type HexBinary = ::xsd_parser_types::xml::HexString;
 pub type Int = ::core::primitive::i32;
 pub type Integer = ::core::primitive::i32;
 pub type Language = ::std::string::String;
@@ -405,6 +405,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: Content1 as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AnyTypeDeserializer {
@@ -588,6 +596,12 @@ pub mod quick_xml_deserialize {
             let mut allow_any_element = false;
             let mut is_any_retry = false;
             let mut any_fallback = None;
+            let entry_state__ = match &*self.state__ {
+                S::Init__ => Some(S::Init__),
+                S::TextBefore(None) => Some(S::TextBefore(None)),
+                S::Any(None) => Some(S::Any(None)),
+                _ => None,
+            };
             let (event, allow_any) = loop {
                 let state = ::core::mem::replace(&mut *self.state__, S::Unknown__);
                 event = match (state, event) {
@@ -718,6 +732,13 @@ pub mod quick_xml_deserialize {
             };
             if let Some(fallback) = fallback {
                 *self.state__ = fallback;
+            } else if !matches!(
+                event,
+                ::xsd_parser_types::quick_xml::DeserializerEvent::None
+            ) {
+                if let Some(entry_state) = entry_state__ {
+                    *self.state__ = entry_state;
+                }
             }
             Ok(::xsd_parser_types::quick_xml::DeserializerOutput {
                 artifact: ::xsd_parser_types::quick_xml::DeserializerArtifact::Deserializer(self),
@@ -780,6 +801,7 @@ pub mod quick_xml_serialize {
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
                         if self.is_root {
+                            helper.write_xmlns_for_tag(&mut bytes, self.name, &super::super::NS_XS);
                             helper.write_xmlns(
                                 &mut bytes,
                                 Some(&super::super::PREFIX_XSI),
@@ -875,6 +897,10 @@ pub mod quick_xml_serialize {
                             ),
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
+                        helper.begin_ns_scope();
+                        if self.is_root {
+                            helper.write_xmlns_for_tag(&mut bytes, self.name, &super::super::NS_XS);
+                        }
                         bytes.extend_attributes(self.value.any_attribute.attributes());
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
@@ -896,6 +922,7 @@ pub mod quick_xml_serialize {
                     },
                     AnyTypeSerializerState::End__ => {
                         *self.state = AnyTypeSerializerState::Done__;
+                        helper.end_ns_scope();
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::End(
                             ::xsd_parser_types::quick_xml::BytesEnd::new(self.name),
                         )));

@@ -648,6 +648,20 @@ pub mod quick_xml_deserialize {
             let mut event = event;
             let mut fallback = None;
             let mut allow_any_element = false;
+            let entry_state__ = match &*self.state__ {
+                S::Init__ => Some(S::Init__),
+                S::XmlTransactionHeaderInformation(None) => {
+                    Some(S::XmlTransactionHeaderInformation(None))
+                }
+                S::SoftwareInfo(None) => Some(S::SoftwareInfo(None)),
+                S::Contractor(None) => Some(S::Contractor(None)),
+                S::Customer(None) => Some(S::Customer(None)),
+                S::Building(None) => Some(S::Building(None)),
+                S::Project(None) => Some(S::Project(None)),
+                S::Utility(None) => Some(S::Utility(None)),
+                S::Consumption(None) => Some(S::Consumption(None)),
+                _ => None,
+            };
             let (event, allow_any) = loop {
                 let state = ::core::mem::replace(&mut *self.state__, S::Unknown__);
                 event = match (state, event) {
@@ -1023,6 +1037,13 @@ pub mod quick_xml_deserialize {
             };
             if let Some(fallback) = fallback {
                 *self.state__ = fallback;
+            } else if !matches!(
+                event,
+                ::xsd_parser_types::quick_xml::DeserializerEvent::None
+            ) {
+                if let Some(entry_state) = entry_state__ {
+                    *self.state__ = entry_state;
+                }
             }
             Ok(::xsd_parser_types::quick_xml::DeserializerOutput {
                 artifact: ::xsd_parser_types::quick_xml::DeserializerArtifact::Deserializer(self),
@@ -1054,6 +1075,61 @@ pub mod quick_xml_deserialize {
                 utility: self.utility,
                 consumption: self.consumption,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"XMLTransactionHeaderInformation")
+            ) {
+                return true;
+            }
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"SoftwareInfo")
+            ) {
+                return true;
+            }
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"Contractor")
+            ) {
+                return true;
+            }
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"Customer")
+            ) {
+                return true;
+            }
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"Building")
+            ) {
+                return true;
+            }
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"Project")
+            ) {
+                return true;
+            }
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"Utility")
+            ) {
+                return true;
+            }
+            if matches!(
+                helper.resolve_local_name(x.name(), &super::super::NS_UNNAMED_5),
+                Some(b"Consumption")
+            ) {
+                return true;
+            }
+            false
         }
     }
 }
@@ -1090,7 +1166,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         if self.is_root {
                             helper.write_xmlns(
                                 &mut bytes,

@@ -24648,6 +24648,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AdditionalRuntimeOperatingModeTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AddressTypeCodeDeserializer {
@@ -24800,6 +24808,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AddressTypeCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AdjacentToDeserializer {
@@ -24943,6 +24959,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AdjacentToSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -25096,6 +25120,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AirDistributionTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AirHandlerMotorTypeDeserializer {
@@ -25247,6 +25279,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AirHandlerMotorTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -25416,6 +25456,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AirHandlerStaticPressureMeasurementLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AnnualAmountDeserializer {
@@ -25562,6 +25610,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AnnualAmountSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -25728,6 +25784,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ApplianceThirdPartyCertificationsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AtticComponentsAirSealedDeserializer {
@@ -25882,6 +25946,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AtticComponentsAirSealedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AtticWallTypeDeserializer {
@@ -26030,6 +26102,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AtticWallTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -26183,6 +26263,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AuditorQualificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct AzimuthTypeDeserializer {
@@ -26329,6 +26417,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: AzimuthTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -26493,6 +26589,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: Bpi2400CalibrationQualificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -26661,6 +26765,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BasementCrawlspaceComponentsAirSealedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BatteryCapacityDeserializer {
@@ -26813,6 +26925,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BatteryCapacitySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BatteryCapacityUnitsDeserializer {
@@ -26964,6 +27084,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BatteryCapacityUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -27119,6 +27247,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BatteryCoolingStrategySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BatteryLocationDeserializer {
@@ -27271,6 +27407,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BatteryLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BatteryTypeDeserializer {
@@ -27417,6 +27561,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BatteryTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -27570,6 +27722,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BlindsClosedOrOpenSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BoilerTypeDeserializer {
@@ -27713,6 +27873,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BoilerTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -27862,6 +28030,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BooleanWithNaSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -28025,6 +28201,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BranchCircuitOccupiedSpacesSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BuildingAirLeakageDeserializer {
@@ -28176,6 +28360,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BuildingAirLeakageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -28331,6 +28523,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BuildingAirLeakageUnitSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BuildingLeakinessDeserializer {
@@ -28482,6 +28682,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BuildingLeakinessSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -28637,6 +28845,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BusinessCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BusinessSpecializationDeserializer {
@@ -28791,6 +29007,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BusinessSpecializationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct BusinessTypeDeserializer {
@@ -28937,6 +29161,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: BusinessTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -29092,6 +29324,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CazDepressurizationLimitSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CoReadingDeserializer {
@@ -29235,6 +29475,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CoReadingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -29388,6 +29636,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CambiumRegionGeAsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CapacityDeserializer {
@@ -29530,6 +29786,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CapacitySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -29683,6 +29947,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CapacityDescriptionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ClimateZoneDoeDeserializer {
@@ -29831,6 +30103,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ClimateZoneDoeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -29983,6 +30263,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ClimateZoneIeccSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -30138,6 +30426,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ClothesDryerControlTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ClothesDryerDryingMethodDeserializer {
@@ -30292,6 +30588,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ClothesDryerDryingMethodSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ClothesDryerTypeDeserializer {
@@ -30444,6 +30748,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ClothesDryerTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ClothesWasherTypeDeserializer {
@@ -30595,6 +30907,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ClothesWasherTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -30760,6 +31080,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CollectorRatedOpticalEfficiencySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CollectorRatedThermalLossesDeserializer {
@@ -30922,6 +31250,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CollectorRatedThermalLossesSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CompleteDateActualDeserializer {
@@ -31073,6 +31409,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CompleteDateActualSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -31228,6 +31572,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CompleteDateEstimatedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CompressorTypeDeserializer {
@@ -31376,6 +31728,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CompressorTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -31544,6 +31904,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ConnectedDeviceCommunicationProtocolSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ConsumptionTypeDeserializer {
@@ -31695,6 +32063,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ConsumptionTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -31850,6 +32226,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CoolingEfficiencyUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CoolingSystemTypeDeserializer {
@@ -32002,6 +32386,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CoolingSystemTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CostDeserializer {
@@ -32146,6 +32538,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CostSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -32299,6 +32699,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CreatedDateAndTimeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct CurrentDeserializer {
@@ -32444,6 +32852,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: CurrentSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -32599,6 +33015,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DhwControllerTechnologySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DhwTemperatureControlDeserializer {
@@ -32752,6 +33176,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DhwTemperatureControlSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -32909,6 +33341,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DhwThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DayOfMonthDeserializer {
@@ -33053,6 +33493,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DayOfMonthSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DeckTypeDeserializer {
@@ -33195,6 +33643,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DeckTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -33347,6 +33803,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DehumidifierTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -33512,6 +33976,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DepressurizationFindingPoorCaseSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DiameterDimensionDeserializer {
@@ -33664,6 +34136,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DiameterDimensionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DishwasherTypeDeserializer {
@@ -33812,6 +34292,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DishwasherTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -33975,6 +34463,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DispositionofExistingSystemSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DistrictSteamTypeDeserializer {
@@ -34127,6 +34623,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DistrictSteamTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DoorMaterialDeserializer {
@@ -34273,6 +34777,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DoorMaterialSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -34436,6 +34948,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DoorThirdPartyCertificationsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DoorTypeDeserializer {
@@ -34578,6 +35098,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DoorTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -34747,6 +35275,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DrainWaterHeatRecoveryFacilitiesConnectedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DuctBuriedInsulationLevelDeserializer {
@@ -34901,6 +35437,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctBuriedInsulationLevelSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DuctLeakageTestMethodDeserializer {
@@ -35054,6 +35598,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctLeakageTestMethodSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -35217,6 +35769,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctLeakageTestUnitofMeasureSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DuctLeakageTotalOrToOutsideDeserializer {
@@ -35379,6 +35939,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctLeakageTotalOrToOutsideSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DuctLocationDeserializer {
@@ -35525,6 +36093,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -35673,6 +36249,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctMaterialSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DuctShapeDeserializer {
@@ -35817,6 +36401,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctShapeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct DuctTypeDeserializer {
@@ -35959,6 +36551,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: DuctTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -36112,6 +36712,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EvChargerLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EvChargingConnectorDeserializer {
@@ -36263,6 +36871,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EvChargingConnectorSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -36416,6 +37032,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EvChargingLevelSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EarthquakeZoneDeserializer {
@@ -36564,6 +37188,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EarthquakeZoneSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -36717,6 +37349,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EducationLevelsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EfficiencyDeserializer {
@@ -36860,6 +37500,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EfficiencySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -37015,6 +37663,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ElectricDistributionTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ElectricPanelMainOrSubDeserializer {
@@ -37169,6 +37825,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ElectricPanelMainOrSubSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ElectricPanelVoltageDeserializer {
@@ -37321,6 +37985,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ElectricPanelVoltageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EmailAddressDeserializer {
@@ -37467,6 +38139,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EmailAddressSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -37617,6 +38297,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EmailTypeCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EmissionTypeDeserializer {
@@ -37763,6 +38451,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EmissionTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -37913,6 +38609,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EmissionUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EmittanceDeserializer {
@@ -38056,6 +38760,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EmittanceSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -38203,6 +38915,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EnergyFactorSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -38353,6 +39073,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EstimatedLifeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EventTypeDeserializer {
@@ -38496,6 +39224,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EventTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -38665,6 +39401,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ExteriorLocationsWaterIntrusionorDamageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ExteriorShadingDeserializer {
@@ -38816,6 +39560,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ExteriorShadingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -38969,6 +39721,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ExternalResourceTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FanPressureDeserializer {
@@ -39115,6 +39875,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FanPressureSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -39263,6 +40031,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FanRingUsedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FanSpeedDeserializer {
@@ -39405,6 +40181,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FanSpeedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -39555,6 +40339,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FloorCoveringSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FloorOrCeilingDeserializer {
@@ -39704,6 +40496,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FloorOrCeilingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FlowRateDeserializer {
@@ -39846,6 +40646,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FlowRateSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -39995,6 +40803,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FlueConditionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -40150,6 +40966,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FluorescentBallastTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FluorescentTubeTypeDeserializer {
@@ -40302,6 +41126,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FluorescentTubeTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FootprintShapeDeserializer {
@@ -40450,6 +41282,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FootprintShapeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -40605,6 +41445,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FoundationThermalBoundarySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FoundationWallTypeDeserializer {
@@ -40757,6 +41605,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FoundationWallTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FractionDeserializer {
@@ -40899,6 +41755,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FractionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -41054,6 +41918,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FractionExcludingZeroSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FractionGreaterThanOneDeserializer {
@@ -41208,6 +42080,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FractionGreaterThanOneSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FramingTypeDeserializer {
@@ -41355,6 +42235,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FramingTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FreezerStyleDeserializer {
@@ -41501,6 +42389,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FreezerStyleSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -41654,6 +42550,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FuelEconomyUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FuelInterruptibilityDeserializer {
@@ -41806,6 +42710,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FuelInterruptibilitySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FuelLoadTypeDeserializer {
@@ -41941,6 +42853,14 @@ pub mod quick_xml_deserialize {
             Ok(super::FuelLoadType {
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FuelLoadTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -42079,6 +42999,14 @@ pub mod quick_xml_deserialize {
             Ok(super::FuelLoadUnits {
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FuelLoadUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -42222,6 +43150,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FuelTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -42375,6 +43311,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FundingSourceCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct FundingSourceNameDeserializer {
@@ -42527,6 +43471,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: FundingSourceNameSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct GarageLocationDeserializer {
@@ -42676,6 +43628,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GarageLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct GasFillDeserializer {
@@ -42821,6 +43781,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GasFillSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -42969,6 +43937,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GlassLayersSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct GlassTypeDeserializer {
@@ -43112,6 +44088,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GlassTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -43264,6 +44248,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GlazingMaterialSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -43429,6 +44421,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GreenBuildingVerificationSourceSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct GreenBuildingVerificationStatusDeserializer {
@@ -43593,6 +44593,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GreenBuildingVerificationStatusSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct GreenBuildingVerificationTypeDeserializer {
@@ -43755,6 +44763,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GreenBuildingVerificationTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct GrossOrNetDeserializer {
@@ -43898,6 +44914,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GrossOrNetSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -44053,6 +45077,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GrossVehicleWeightRatingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct GroutOrPipeTypeDeserializer {
@@ -44204,6 +45236,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: GroutOrPipeTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -44357,6 +45397,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HpwhOperatingModeTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HpwhVoltageDeserializer {
@@ -44503,6 +45551,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HpwhVoltageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -44651,6 +45707,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: super :: xs :: Boolean as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HpxmlDateDeserializer {
@@ -44794,6 +45858,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: super :: xs :: Date as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -44944,6 +46016,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: super :: xs :: DateTime as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HpxmlDecimalDeserializer {
@@ -45091,6 +46171,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: super :: xs :: Decimal as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HpxmlDoubleDeserializer {
@@ -45237,6 +46325,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: super :: xs :: Double as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -45403,6 +46499,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HpxmlDoubleGreaterThanOrEqualToZeroSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HpxmlDoubleGreaterThanZeroDeserializer {
@@ -45559,6 +46663,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HpxmlDoubleGreaterThanZeroSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HpxmlIntegerDeserializer {
@@ -45706,6 +46818,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: super :: xs :: Integer as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HpxmlStringDeserializer {
@@ -45852,6 +46972,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: super :: xs :: String as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -46007,6 +47135,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HvacInstallationStandardSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HvacMaintenanceScheduleDeserializer {
@@ -46161,6 +47297,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HvacMaintenanceScheduleSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HvacSizingCalcsDeserializer {
@@ -46312,6 +47456,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HvacSizingCalcsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -46475,6 +47627,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HvacThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HeatPumpBackupTypeDeserializer {
@@ -46627,6 +47787,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HeatPumpBackupTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HeatPumpTypeDeserializer {
@@ -46773,6 +47941,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HeatPumpTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -46928,6 +48104,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HeatingEfficiencyUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HotWaterResetControlDeserializer {
@@ -47080,6 +48264,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HotWaterResetControlSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HoursDeserializer {
@@ -47224,6 +48416,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HoursSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -47371,6 +48571,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HoursPerDaySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -47521,6 +48729,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HousePressureSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct HouseholdTypeDeserializer {
@@ -47669,6 +48885,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HouseholdTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -47824,6 +49048,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: HydronicDistributionTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct IeccYearDeserializer {
@@ -47966,6 +49198,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: IeccYearSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -48121,6 +49361,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ImplementerQualificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ImprovementStatusTypeDeserializer {
@@ -48275,6 +49523,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ImprovementStatusTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct IncentiveAmountDeserializer {
@@ -48427,6 +49683,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: IncentiveAmountSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct IndividualTypeDeserializer {
@@ -48575,6 +49839,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: IndividualTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -48728,6 +50000,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InstallationDateSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct InstallationTypeDeserializer {
@@ -48879,6 +50159,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InstallationTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -49032,6 +50320,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InsulationBattTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct InsulationConditionDeserializer {
@@ -49184,6 +50480,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InsulationConditionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct InsulationGradeDeserializer {
@@ -49335,6 +50639,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InsulationGradeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -49490,6 +50802,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InsulationLooseFillTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct InsulationRigidTypeDeserializer {
@@ -49641,6 +50961,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InsulationRigidTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -49795,6 +51123,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InsulationSprayFoamTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -49960,6 +51296,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: IntegerGreaterThanOrEqualToZeroSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct IntegerGreaterThanZeroDeserializer {
@@ -50114,6 +51458,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: IntegerGreaterThanZeroSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct InteriorFinishDeserializer {
@@ -50262,6 +51614,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InteriorFinishSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -50430,6 +51790,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InteriorLocationsofWaterLeaksorDamageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct InteriorShadingDeserializer {
@@ -50582,6 +51950,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InteriorShadingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct IntervalTypeDeserializer {
@@ -50728,6 +52104,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: IntervalTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -50876,6 +52260,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: InverterTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct JobRoleDeserializer {
@@ -51021,6 +52413,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: JobRoleSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -51174,6 +52574,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: KnownOrEstimatedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LatitudeDeserializer {
@@ -51316,6 +52724,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LatitudeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -51470,6 +52886,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LaundryMachineLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -51636,6 +53060,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LeakinessObservedVisualInspectionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LengthMeasurementDeserializer {
@@ -51787,6 +53219,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LengthMeasurementSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -51950,6 +53390,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LightingAndPlugLoadLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LightingControlsDeserializer {
@@ -52102,6 +53550,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LightingControlsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LightingDailyHoursDeserializer {
@@ -52253,6 +53709,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LightingDailyHoursSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -52422,6 +53886,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LightingFixtureThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LightingThirdPartyCertificationDeserializer {
@@ -52585,6 +54057,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LightingThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -52750,6 +54230,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LivingSpaceComponentsAirSealedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LoadProfileDeserializer {
@@ -52897,6 +54385,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LoadProfileSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LongitudeDeserializer {
@@ -53040,6 +54536,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LongitudeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -53193,6 +54697,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LoopConfigurationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct LoopTypeDeserializer {
@@ -53335,6 +54847,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: LoopTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -53480,6 +55000,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MervSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -53646,6 +55174,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ManufacturedHomeBellyWrapConditionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ManufacturedHomeSectionsDeserializer {
@@ -53800,6 +55336,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ManufacturedHomeSectionsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ManufacturerDeserializer {
@@ -53947,6 +55491,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ManufacturerSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct MeasureCodeDeserializer {
@@ -54093,6 +55645,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MeasureCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -54246,6 +55806,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MeasureDescriptionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct MeasuredDuctLeakageDeserializer {
@@ -54397,6 +55965,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MeasuredDuctLeakageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -54550,6 +56126,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MeasuredOrEstimatedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct MeterReadingTypeDeserializer {
@@ -54701,6 +56285,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MeterReadingTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -54856,6 +56448,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MeteringConfigurationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct MinutesPerDayDeserializer {
@@ -55005,6 +56605,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MinutesPerDaySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ModelDeserializer {
@@ -55149,6 +56757,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ModelSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -55297,6 +56913,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MoistureTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct MonthDeserializer {
@@ -55441,6 +57065,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MonthSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -55590,6 +57222,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: MonthsPerYearSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -55743,6 +57383,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: NetPressureChangeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct NotesDeserializer {
@@ -55887,6 +57535,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: NotesSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -56040,6 +57696,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: NumberOfFloorsTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct OccupancyDeserializer {
@@ -56183,6 +57847,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: OccupancySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -56338,6 +58010,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: OccupantIncomeRangeUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct OpenClosedDeserializer {
@@ -56481,6 +58161,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: OpenClosedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -56634,6 +58322,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: OrientationTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PvModuleTypeDeserializer {
@@ -56780,6 +58476,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PvModuleTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -56933,6 +58637,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PvSystemLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PvSystemOwnershipDeserializer {
@@ -57085,6 +58797,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PvSystemOwnershipSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PvTrackingDeserializer {
@@ -57229,6 +58949,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PvTrackingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PeakSeasonDeserializer {
@@ -57372,6 +59100,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PeakSeasonSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -57519,6 +59255,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PeopleCountSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -57672,6 +59416,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PerformanceClassSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PitchDeserializer {
@@ -57816,6 +59568,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PitchSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -57969,6 +59729,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PlugLoadControlTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PlugLoadTypeDeserializer {
@@ -58115,6 +59883,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PlugLoadTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -58264,6 +60040,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PlugLoadUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -58417,6 +60201,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolCleanerTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PoolFilterTypeDeserializer {
@@ -58565,6 +60357,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolFilterTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -58715,6 +60515,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolHeaterTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PoolHeaterUnitsDeserializer {
@@ -58855,6 +60663,14 @@ pub mod quick_xml_deserialize {
             Ok(super::PoolHeaterUnits {
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolHeaterUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -59018,6 +60834,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolPump3RdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PoolPumpSpeedSettingDeserializer {
@@ -59170,6 +60994,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolPumpSpeedSettingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PoolPumpTypeDeserializer {
@@ -59317,6 +61149,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolPumpTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PoolTypeDeserializer {
@@ -59459,6 +61299,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PoolTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -59605,6 +61453,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PowerSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct PrefixNameDeserializer {
@@ -59748,6 +61604,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: PrefixNameSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -59895,6 +61759,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ProgramNameSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -60045,6 +61917,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ProgramSponsorSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ProjectTypeDeserializer {
@@ -60192,6 +62072,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ProjectTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct QuantityDeserializer {
@@ -60334,6 +62222,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: QuantitySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -60480,6 +62376,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RValueSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -60635,6 +62539,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RValueGreaterThanZeroSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RadiantBarrierLocationDeserializer {
@@ -60789,6 +62701,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RadiantBarrierLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RadonTestLocationDeserializer {
@@ -60941,6 +62861,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RadonTestLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RadonTestTypesDeserializer {
@@ -61090,6 +63018,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RadonTestTypesSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RadonZoneDeserializer {
@@ -61233,6 +63169,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RadonZoneSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -61382,6 +63326,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RatedAnnualkWhSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -61536,6 +63488,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RatedWaterGalPerCycleSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -61698,6 +63658,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ReceivingSystemIdentifierTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -61863,6 +63831,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ReceivingSystemIdentifierValueSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RecirculationControlTypeDeserializer {
@@ -62017,6 +63993,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RecirculationControlTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RecommendationDeserializer {
@@ -62165,6 +64149,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RecommendationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -62318,6 +64310,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RecoveryEfficiencySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RefrigeratorLocationDeserializer {
@@ -62470,6 +64470,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RefrigeratorLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RefrigeratorStyleDeserializer {
@@ -62621,6 +64629,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RefrigeratorStyleSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -62776,6 +64792,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ResidentPopulationTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ResidentialFacilityTypeDeserializer {
@@ -62930,6 +64954,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ResidentialFacilityTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ResourceTypeCodeDeserializer {
@@ -63082,6 +65114,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ResourceTypeCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct RoofTypeDeserializer {
@@ -63224,6 +65264,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RoofTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -63377,6 +65425,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: RoomCoolingTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ShgcDeserializer {
@@ -63521,6 +65577,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ShgcSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -63670,6 +65734,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ScreenMaterialSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -63833,6 +65905,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SendingSystemIdentifierTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SendingSystemIdentifierValueDeserializer {
@@ -63995,6 +66075,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SendingSystemIdentifierValueSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SensibleHeatFractionDeserializer {
@@ -64146,6 +66234,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SensibleHeatFractionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -64301,6 +66397,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ServiceFeederLoadTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SharedEnergySystemDeserializer {
@@ -64452,6 +66556,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SharedEnergySystemSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -64605,6 +66717,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ShieldingofHomeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SidingDeserializer {
@@ -64751,6 +66871,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SidingSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SiteTypeDeserializer {
@@ -64893,6 +67021,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SiteTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -65046,6 +67182,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SodiumLightPressureSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SoftwareProgramUsedDeserializer {
@@ -65197,6 +67341,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SoftwareProgramUsedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -65352,6 +67504,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SoftwareProgramVersionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SoilTypeDeserializer {
@@ -65494,6 +67654,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SoilTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -65647,6 +67815,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SolarAbsorptanceSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SolarFractionDeserializer {
@@ -65795,6 +67971,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SolarFractionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -65958,6 +68142,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SolarThermalCollectorLoopTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SolarThermalCollectorTypeDeserializer {
@@ -66111,6 +68303,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SolarThermalCollectorTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -66276,6 +68476,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SolarThermalSystemEnergyFactorSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SolarThermalSystemTypeDeserializer {
@@ -66430,6 +68638,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SolarThermalSystemTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SpaceAboveGarageDeserializer {
@@ -66582,6 +68798,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SpaceAboveGarageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SpeedDeserializer {
@@ -66726,6 +68950,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SpeedSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -66881,6 +69113,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SpotVentilationLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SpotVentilationUnitsDeserializer {
@@ -67032,6 +69272,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SpotVentilationUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -67185,6 +69433,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: StandbyLossUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct StartDateDeserializer {
@@ -67329,6 +69585,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: StartDateSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct StateCodeDeserializer {
@@ -67472,6 +69736,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: StateCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -67625,6 +69897,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: StaticPressureSourceSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct StormLocationDeserializer {
@@ -67774,6 +70054,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: StormLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct StudMaterialDeserializer {
@@ -67921,6 +70209,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: StudMaterialSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct StudSizeDeserializer {
@@ -68063,6 +70359,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: StudSizeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -68207,6 +70511,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SuffixNameSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -68355,6 +70667,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SurfaceAreaSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct SurroundingsDeserializer {
@@ -68501,6 +70821,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: SurroundingsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -68654,6 +70982,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TelephoneExtensionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TelephoneNumberDeserializer {
@@ -68805,6 +71141,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TelephoneNumberSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -68958,6 +71302,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TelephoneTypeCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TemperatureDeserializer {
@@ -69104,6 +71456,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TemperatureSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -69261,6 +71621,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TemperatureGreaterThanZeroSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TermiteZoneDeserializer {
@@ -69407,6 +71775,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TermiteZoneSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -69556,6 +71932,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TestResultTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -69709,6 +72093,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ThermalEfficiencySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ThermostatTypeDeserializer {
@@ -69858,6 +72250,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ThermostatTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TiltDeserializer {
@@ -70003,6 +72403,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TiltSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TitleDeserializer {
@@ -70147,6 +72555,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TitleSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -70310,6 +72726,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TotalCostHealthSafetyMeasuresSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TotalCostQualEnergyMeasuresDeserializer {
@@ -70472,6 +72896,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TotalCostQualEnergyMeasuresSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TransactionTypeDeserializer {
@@ -70624,6 +73056,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TransactionTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct TypeofBlowerDoorTestDeserializer {
@@ -70775,6 +73215,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TypeofBlowerDoorTestSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -70929,6 +73377,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TypeofInfiltrationLeakageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -71092,6 +73548,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: TypeofInfiltrationMeasurementSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct UFactorDeserializer {
@@ -71237,6 +73701,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: UFactorSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -71385,6 +73857,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: UspsBarCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct UtcOffsetDeserializer {
@@ -71528,6 +74008,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: UtcOffsetSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -71676,6 +74164,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: UnitLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct UsageBinDeserializer {
@@ -71818,6 +74314,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: UsageBinSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -71973,6 +74477,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VehicleChargingLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct VehicleClassTypeDeserializer {
@@ -72124,6 +74636,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VehicleClassTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -72277,6 +74797,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VehicleFuelTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct VehicleLocationDeserializer {
@@ -72429,6 +74957,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VehicleLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct VentSystemDeserializer {
@@ -72572,6 +75108,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VentSystemSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -72726,6 +75270,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VentilationFanLocationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -72894,6 +75446,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VentilationFanThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct VentilationFanTypeDeserializer {
@@ -73045,6 +75605,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VentilationFanTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -73198,6 +75766,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VentilationRateUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct VentilationUnitDeserializer {
@@ -73349,6 +75925,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VentilationUnitSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -73502,6 +76086,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VerticalSurroundingsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct VoltageDeserializer {
@@ -73648,6 +76240,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VoltageSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct VolumeDeserializer {
@@ -73793,6 +76393,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: VolumeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -73945,6 +76553,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WallAndRoofColorSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -74111,6 +76727,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WaterFixtureThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WaterFixtureTypeDeserializer {
@@ -74262,6 +76886,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WaterFixtureTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -74415,6 +77047,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WaterHeaterTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WaterTypeDeserializer {
@@ -74558,6 +77198,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WaterTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -74713,6 +77361,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WaterUseIntensityUnitsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WeatherStationTypeDeserializer {
@@ -74865,6 +77521,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WeatherStationTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WeatherStationUseDeserializer {
@@ -75016,6 +77680,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WeatherStationUseSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -75184,6 +77856,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WholeBldgVentilationRequirementMethodSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WindConditionsDeserializer {
@@ -75332,6 +78012,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WindConditionsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -75495,6 +78183,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WindThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WindowConditionDeserializer {
@@ -75646,6 +78342,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WindowConditionSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -75809,6 +78513,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WindowThirdPartyCertificationSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WindowTypeDeserializer {
@@ -75952,6 +78664,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WindowTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -76102,6 +78822,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: XmlGeneratedBySimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct XmlTypeDeserializer {
@@ -76248,6 +78976,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: XmlTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct YearDeserializer {
@@ -76392,6 +79128,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: YearSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -76539,6 +79283,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ZipCodeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct ZoneTypeDeserializer {
@@ -76681,6 +79433,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: ZoneTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -76828,6 +79588,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EGridRegionsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -76981,6 +79749,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EGridSubregionsSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct EndUseTypeDeserializer {
@@ -77124,6 +79900,14 @@ pub mod quick_xml_deserialize {
                 data_source: self.data_source,
                 content: helper.finish_content(self.content)?,
             })
+        }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EndUseTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
         }
     }
     #[derive(Debug)]
@@ -77274,6 +80058,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: EnergyUnitTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
     #[derive(Debug)]
     pub struct WaterUnitTypeDeserializer {
@@ -77423,6 +80215,14 @@ pub mod quick_xml_deserialize {
                 content: helper.finish_content(self.content)?,
             })
         }
+        fn is_known_start_tag(
+            helper: &::xsd_parser_types::quick_xml::DeserializeHelper,
+            x: &::xsd_parser_types::quick_xml::BytesStart<'_>,
+        ) -> bool {
+            let _ = helper;
+            if < super :: WaterUnitTypeSimple as :: xsd_parser_types :: quick_xml :: WithDeserializer > :: Deserializer :: is_known_start_tag (helper , x) { return true ; }
+            false
+        }
     }
 }
 pub mod quick_xml_serialize {
@@ -77457,7 +80257,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -77537,7 +80341,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -77623,7 +80431,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -77698,7 +80510,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -77775,7 +80591,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -77854,7 +80674,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -77940,7 +80764,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78017,7 +80845,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78101,7 +80933,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78180,7 +81016,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78257,7 +81097,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78336,7 +81180,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78411,7 +81259,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78493,7 +81345,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78579,7 +81435,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78656,7 +81516,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78735,7 +81599,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78814,7 +81682,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78891,7 +81763,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -78966,7 +81842,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79052,7 +81932,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79127,7 +82011,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79204,7 +82092,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79283,7 +82175,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79360,7 +82256,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79439,7 +82339,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79516,7 +82420,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79595,7 +82503,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79674,7 +82586,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79751,7 +82667,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79839,7 +82759,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -79914,7 +82838,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80000,7 +82928,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80075,7 +83007,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80152,7 +83088,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80229,7 +83169,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80306,7 +83250,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80385,7 +83333,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80464,7 +83416,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80541,7 +83497,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80618,7 +83578,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80698,7 +83662,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80777,7 +83745,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80854,7 +83826,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -80933,7 +83909,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81012,7 +83992,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81096,7 +84080,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81173,7 +84161,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81252,7 +84244,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81336,7 +84332,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81411,7 +84411,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81497,7 +84501,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81572,7 +84580,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81651,7 +84663,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81730,7 +84746,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81818,7 +84838,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81902,7 +84926,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -81977,7 +85005,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82054,7 +85086,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82134,7 +85170,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82211,7 +85251,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82288,7 +85332,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82367,7 +85415,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82444,7 +85496,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82521,7 +85577,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82610,7 +85670,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82687,7 +85751,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82774,7 +85842,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82853,7 +85925,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -82932,7 +86008,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83012,7 +86092,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83091,7 +86175,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83168,7 +86256,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83254,7 +86346,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83338,7 +86434,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83413,7 +86513,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83490,7 +86594,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83567,7 +86675,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83644,7 +86756,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83721,7 +86837,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83807,7 +86927,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83882,7 +87006,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -83961,7 +87089,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84040,7 +87172,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84119,7 +87255,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84196,7 +87336,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84273,7 +87417,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84350,7 +87498,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84436,7 +87588,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84511,7 +87667,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84588,7 +87748,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84674,7 +87838,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84751,7 +87919,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84838,7 +88010,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84915,7 +88091,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -84994,7 +88174,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85069,7 +88253,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85153,7 +88341,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85228,7 +88420,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85305,7 +88501,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85391,7 +88591,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85466,7 +88670,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85543,7 +88751,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85622,7 +88834,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85699,7 +88915,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85776,7 +88996,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85855,7 +89079,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -85941,7 +89169,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86016,7 +89248,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86095,7 +89331,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86174,7 +89414,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86249,7 +89493,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86326,7 +89574,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86403,7 +89655,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86482,7 +89738,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
                     FuelLoadTypeSerializerState::Content__(x) => {
@@ -86554,7 +89814,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
                     FuelLoadUnitsSerializerState::Content__(x) => {
@@ -86635,7 +89899,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86710,7 +89978,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86787,7 +90059,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86864,7 +90140,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -86950,7 +90230,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87025,7 +90309,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87109,7 +90397,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87184,7 +90476,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87261,7 +90557,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87341,7 +90641,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87421,7 +90725,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87510,7 +90818,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87585,7 +90897,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87664,7 +90980,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87741,7 +91061,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87818,7 +91142,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87893,7 +91221,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -87979,7 +91311,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88054,7 +91390,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88131,7 +91471,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88208,7 +91552,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88284,7 +91632,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88368,7 +91720,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88447,7 +91803,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88524,7 +91884,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88599,7 +91963,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88678,7 +92046,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88757,7 +92129,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88834,7 +92210,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88913,7 +92293,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -88990,7 +92374,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89067,7 +92455,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89146,7 +92538,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89232,7 +92628,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89307,7 +92707,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89382,7 +92786,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89459,7 +92867,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89536,7 +92948,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89624,7 +93040,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89699,7 +93119,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89778,7 +93202,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89857,7 +93285,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -89934,7 +93366,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90011,7 +93447,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90088,7 +93528,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90165,7 +93609,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90242,7 +93690,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90319,7 +93771,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90396,7 +93852,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90475,7 +93935,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90552,7 +94016,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90631,7 +94099,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90711,7 +94183,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90790,7 +94266,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90869,7 +94349,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -90955,7 +94439,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91032,7 +94520,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91109,7 +94601,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91195,7 +94691,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91270,7 +94770,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91356,7 +94860,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91431,7 +94939,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91510,7 +95022,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91594,7 +95110,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91671,7 +95191,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91750,7 +95274,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91827,7 +95355,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91906,7 +95438,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -91992,7 +95528,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92072,7 +95612,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92152,7 +95696,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92236,7 +95784,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92311,7 +95863,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92397,7 +95953,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92479,7 +96039,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92555,7 +96119,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92639,7 +96207,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92718,7 +96290,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92795,7 +96371,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92870,7 +96450,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -92947,7 +96531,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93024,7 +96612,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93101,7 +96693,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93178,7 +96774,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93257,7 +96857,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93341,7 +96945,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93416,7 +97024,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93498,7 +97110,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93573,7 +97189,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93650,7 +97270,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93734,7 +97358,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93809,7 +97437,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93895,7 +97527,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -93970,7 +97606,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94058,7 +97698,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94133,7 +97777,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94210,7 +97858,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94287,7 +97939,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94364,7 +98020,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94450,7 +98110,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94534,7 +98198,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94609,7 +98277,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94684,7 +98356,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94768,7 +98444,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94843,7 +98523,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94920,7 +98604,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -94997,7 +98685,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95074,7 +98766,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95151,7 +98847,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95228,7 +98928,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95305,7 +99009,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         return Ok(Some(::xsd_parser_types::quick_xml::Event::Start(bytes)));
                     }
                     PoolHeaterUnitsSerializerState::Content__(x) => {
@@ -95377,7 +99085,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95457,7 +99169,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95536,7 +99252,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95622,7 +99342,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95704,7 +99428,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95788,7 +99516,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95863,7 +99595,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -95938,7 +99674,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96015,7 +99755,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96099,7 +99843,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96183,7 +99931,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96258,7 +100010,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96337,7 +100093,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96416,7 +100176,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96493,7 +100257,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96579,7 +100347,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96654,7 +100426,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96731,7 +100507,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96810,7 +100590,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96890,7 +100674,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -96970,7 +100758,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97049,7 +100841,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97126,7 +100922,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97203,7 +101003,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97282,7 +101086,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97359,7 +101167,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97438,7 +101250,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97517,7 +101333,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97603,7 +101423,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97678,7 +101502,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97762,7 +101590,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97837,7 +101669,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97914,7 +101750,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -97993,7 +101833,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98073,7 +101917,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98152,7 +102000,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98231,7 +102083,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98308,7 +102164,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98394,7 +102254,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98478,7 +102342,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98553,7 +102421,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98630,7 +102502,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98707,7 +102583,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98795,7 +102675,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98870,7 +102754,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -98947,7 +102835,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99024,7 +102916,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99104,7 +103000,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99183,7 +103083,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99263,7 +103167,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99342,7 +103250,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99426,7 +103338,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99501,7 +103417,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99580,7 +103500,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99659,7 +103583,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99745,7 +103673,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99829,7 +103761,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99904,7 +103840,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -99983,7 +103923,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100060,7 +104004,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100146,7 +104094,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100230,7 +104182,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100305,7 +104261,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100380,7 +104340,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100457,7 +104421,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100534,7 +104502,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100611,7 +104583,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100688,7 +104664,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100763,7 +104743,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100842,7 +104826,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100917,7 +104905,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -100994,7 +104986,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101071,7 +105067,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101155,7 +105155,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101237,7 +105241,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101312,7 +105320,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101392,7 +105404,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101471,7 +105487,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101548,7 +105568,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101627,7 +105651,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101706,7 +105734,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101795,7 +105827,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101870,7 +105906,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -101954,7 +105994,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102029,7 +106073,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102115,7 +106163,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102190,7 +106242,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102269,7 +106325,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102346,7 +106406,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102423,7 +106487,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102509,7 +106577,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102584,7 +106656,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102665,7 +106741,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102751,7 +106831,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102828,7 +106912,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102907,7 +106995,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -102984,7 +107076,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103072,7 +107168,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103156,7 +107256,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103231,7 +107335,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103309,7 +107417,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103393,7 +107505,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103470,7 +107586,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103556,7 +107676,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103631,7 +107755,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103710,7 +107838,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103787,7 +107919,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103866,7 +108002,11 @@ pub mod quick_xml_serialize {
                             );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -103952,7 +108092,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104029,7 +108173,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104108,7 +108256,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104185,7 +108337,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104274,7 +108430,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104349,7 +108509,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104435,7 +108599,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104517,7 +108685,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104601,7 +108773,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104685,7 +108861,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104760,7 +108940,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104837,7 +109021,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104923,7 +109111,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -104998,7 +109190,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",
@@ -105075,7 +109271,11 @@ pub mod quick_xml_serialize {
                         );
                         let mut bytes = ::xsd_parser_types::quick_xml::BytesStart::new(self.name);
                         helper.begin_ns_scope();
-                        helper.write_xmlns(&mut bytes, None, &super::super::NS_UNNAMED_5);
+                        helper.write_xmlns_for_tag(
+                            &mut bytes,
+                            self.name,
+                            &super::super::NS_UNNAMED_5,
+                        );
                         helper.write_attrib_opt(
                             &mut bytes,
                             "dataSource",

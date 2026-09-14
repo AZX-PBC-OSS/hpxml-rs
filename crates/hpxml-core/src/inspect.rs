@@ -101,7 +101,10 @@ pub fn inspect_with_config(
                 for attr in e.attributes() {
                     let attr = attr.map_err(|e| InspectError::MalformedXml(e.to_string()))?;
                     let value = attr
-                        .decode_and_unescape_value(reader.decoder())
+                        .decoded_and_normalized_value(
+                            quick_xml::XmlVersion::Implicit1_0,
+                            reader.decoder(),
+                        )
                         .map_err(|e| InspectError::MalformedXml(e.to_string()))?
                         .into_owned();
 
