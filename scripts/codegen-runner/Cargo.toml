@@ -8,11 +8,17 @@ publish = false
 [dependencies]
 proc-macro2 = "1"
 quote = "1"
-# Codegen-only dependency on the maintained upstream release.
-# Contains all 4 fixes previously carried in vendor/xsd-parser.
-xsd-parser = "1.5.2"
+# Codegen-only dependency. Pinned to the AZX-PBC-OSS fork rev that carries
+# the quick-xml 0.41 bump and the skip-unknown-elements runtime fix
+# (https://github.com/Bergmann89/xsd-parser/pull/294); drop for the plain
+# crates.io release once upstream publishes xsd-parser > 1.5.2.
+xsd-parser = { git = "https://github.com/AZX-PBC-OSS/xsd-parser", rev = "b2b672aa60a5f032878662aa94f6e554666a9091" }
 
 [workspace]
+
+[patch.crates-io]
+xsd-parser = { git = "https://github.com/AZX-PBC-OSS/xsd-parser", rev = "b2b672aa60a5f032878662aa94f6e554666a9091" }
+xsd-parser-types = { git = "https://github.com/AZX-PBC-OSS/xsd-parser", rev = "b2b672aa60a5f032878662aa94f6e554666a9091", package = "xsd-parser-types" }
 
 [profile.release]
 opt-level = 3

@@ -98,10 +98,25 @@ pub fn inspect_with_config(
                 }
 
                 // Extract schemaVersion (unaffected by the element's prefix).
+                //
+                // Normalization uses XML 1.0 attribute-value rules
+                // (literal #x9/#xA/#xD in the attribute become spaces;
+                // character references such as `&#9;` are preserved). The
+                // only rules that differ for XML 1.1 documents are the
+                // NEL/LS line-end characters, which are irrelevant here:
+                // they survive normalization and are then rejected by the
+                // numeric `major.minor` gate below, exactly as they were
+                // under quick-xml 0.38 (which performed no normalization at
+                // all). HPXML itself is XML 1.0 (schemas declare
+                // `<?xml version="1.0"?>`, and the serializer emits a 1.0
+                // declaration).
                 for attr in e.attributes() {
                     let attr = attr.map_err(|e| InspectError::MalformedXml(e.to_string()))?;
                     let value = attr
-                        .decode_and_unescape_value(reader.decoder())
+                        .decoded_and_normalized_value(
+                            quick_xml::XmlVersion::Implicit1_0,
+                            reader.decoder(),
+                        )
                         .map_err(|e| InspectError::MalformedXml(e.to_string()))?
                         .into_owned();
 
@@ -377,5 +392,42 @@ mod tests {
 <HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="3.0"/>"#;
         let info = inspect(xml).unwrap();
         assert_eq!(info.version, HpxmlVersion::V3);
+    }
+
+    #[test]
+    fn test_inspect_literal_whitespace_in_attribute_is_normalized() {
+        // quick-xml >= 0.41 normalizes literal #x9/#xA/#xD in attribute
+        // values to spaces (XML 1.0 section 3.3.3); under 0.38 the raw
+        // characters survived `decode_and_unescape_value`. The validity
+        // gate trims, but the exposed `schema_version` keeps the
+        // normalized spacing.
+        let xml = b"<?xml version=\"1.0\"?>\n<HPXML xmlns=\"http://hpxmlonline.com/2023/09\" schemaVersion=\"\n4.0\t\"/>";
+        let info = inspect(xml).unwrap();
+        assert_eq!(info.version, HpxmlVersion::V4);
+        assert_eq!(info.schema_version, " 4.0 ");
+    }
+
+    #[test]
+    fn test_inspect_char_ref_whitespace_is_preserved_then_trimmed() {
+        // Character references are NOT normalized (XML 1.0 section 3.3.3
+        // step 1); `&#9;` survives as a literal tab and only the validity
+        // gate trims it away.
+        let xml = b"<?xml version=\"1.0\"?>\n<HPXML xmlns=\"http://hpxmlonline.com/2023/09\" schemaVersion=\"4.0&#9;\"/>";
+        let info = inspect(xml).unwrap();
+        assert_eq!(info.version, HpxmlVersion::V4);
+        assert_eq!(info.schema_version, "4.0\t");
+    }
+
+    #[test]
+    fn test_inspect_xml11_declaration_is_ignored() {
+        // The XML declaration's version is not otherwise honored by the
+        // reader or the generated deserializers; a 1.1-declared document is
+        // inspected/accepted exactly as it was before the quick-xml 0.41
+        // bump. HPXML documents are XML 1.0 in practice.
+        let xml = br#"<?xml version="1.1"?>
+<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.0"></HPXML>"#;
+        let info = inspect(xml).unwrap();
+        assert_eq!(info.version, HpxmlVersion::V4);
+        assert_eq!(info.schema_version, "4.0");
     }
 }

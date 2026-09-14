@@ -4,10 +4,15 @@ exclude = ["scripts/codegen-runner", "examples/*"]
 resolver = "2"
 
 # Workspace dependencies (upstream crates.io releases).
-# Our 4 xsd-parser fixes are all merged upstream and contained in
-# xsd-parser 1.5.2 / xsd-parser-types 0.2.1, so no vendor fork is needed.
+# Patched below: the AZX-PBC-OSS xsd-parser fork carries two things that have
+# not shipped on crates.io yet (xsd-parser 1.5.3 / xsd-parser-types 0.2.2
+# pending): the quick-xml 0.38 -> 0.41 bump and the runtime fix that skips
+# elements absent from the content model instead of erroring
+# (https://github.com/Bergmann89/xsd-parser/issues/293, fixed by
+# https://github.com/Bergmann89/xsd-parser/pull/294). Pinned to an exact rev
+# so builds are reproducible; drop the patch once upstream releases.
 [workspace.dependencies]
-quick-xml = "0.38"
+quick-xml = "0.41"
 regex = "1.11"
 xsd-parser-types = { version = "0.2.1", features = ["quick-xml"] }
 
@@ -48,3 +53,7 @@ codegen-units = 1
 debug = 0
 strip = "symbols"
 panic = "abort"
+
+[patch.crates-io]
+xsd-parser = { git = "https://github.com/AZX-PBC-OSS/xsd-parser", rev = "b2b672aa60a5f032878662aa94f6e554666a9091" }
+xsd-parser-types = { git = "https://github.com/AZX-PBC-OSS/xsd-parser", rev = "b2b672aa60a5f032878662aa94f6e554666a9091" }
