@@ -24,3 +24,8 @@ wildcards = "deny"
 [sources]
 unknown-registry = "deny"
 unknown-git = "deny"
+# The AZX-PBC-OSS xsd-parser fork is pinned in the root [patch.crates-io]
+# (and scripts/codegen-runner) until upstream ships the skip-unknown-elements
+# fix and the quick-xml 0.41 bump; see the [patch.crates-io] comment in the
+# root Cargo.toml.
+allow-git = ["https://github.com/AZX-PBC-OSS/xsd-parser"]

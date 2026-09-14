@@ -14,6 +14,13 @@
 # fixes also tracked there: default-value simpleContent, shared
 # content-type boxing, group-traversal need_box.
 #
+# NOTE: after the workspace [patch.crates-io] pin (xsd-parser fork carrying
+# the quick-xml 0.41 bump), `cargo tree -i quick-xml` shows 0.41 for the
+# workspace and codegen-runner, but examples/codegen-compile-check still
+# compiles against the released xsd-parser 1.5.2 and therefore still pulls
+# quick-xml 0.38.4. These ignores are required until that example's
+# dependency moves to >= 0.41 as well.
+#
 # Mitigations in the meantime (see crates/hpxml-common/src/config.rs):
 # - ParseConfig::max_bytes defaults to 50 MiB (bounds NsReader allocation)
 # - DepthLimitedReader defaults to 128 levels (bounds recursion/stack)
@@ -22,11 +29,13 @@
 ignore = [
     # RUSTSEC-2026-0194: quadratic dup-attribute check. Blocked on upstream
     # xsd-parser-types release with quick-xml >= 0.41.
-    # REVIEW 2027-03-01: remove when `cargo tree -i quick-xml` shows >= 0.41.
+    # REVIEW 2027-03-01: remove when examples/codegen-compile-check (the last
+    # quick-xml 0.38 consumer) is off 0.38 as well.
     "RUSTSEC-2026-0194",
     # RUSTSEC-2026-0195: unbounded NsReader namespace allocation. Blocked on
     # upstream xsd-parser-types release with quick-xml >= 0.41; bounded by
     # ParseConfig::max_bytes.
-    # REVIEW 2027-03-01: remove when `cargo tree -i quick-xml` shows >= 0.41.
+    # REVIEW 2027-03-01: remove when examples/codegen-compile-check (the last
+    # quick-xml 0.38 consumer) is off 0.38 as well.
     "RUSTSEC-2026-0195",
 ]
